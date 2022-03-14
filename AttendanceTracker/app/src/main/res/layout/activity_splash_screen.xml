@@ -20,14 +20,15 @@
 
     <TextView
         android:id="@+id/textView"
+
         android:layout_width="312dp"
         android:layout_height="140dp"
         android:layout_marginEnd="48dp"
         android:layout_marginBottom="236dp"
-        android:text="       MELHAM \n CONSTRUCTION \n   CORPORATION"
-
+        android:fontFamily="@font/barlow_bold"
+        android:text="        MELHAM \n CONSTRUCTION \n   CORPORATION"
         android:textColor="@color/white"
-        android:textSize="34sp"
+        android:textSize="36sp"
 
         android:textStyle="bold"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -38,10 +39,11 @@
         android:layout_width="100dp"
         android:layout_height="46dp"
         android:layout_marginEnd="176dp"
-        android:layout_marginBottom="200dp"
+        android:layout_marginBottom="192dp"
+        android:fontFamily="@font/barlow_regular"
         android:text="EST. 2020"
         android:textColor="#86FFFFFF"
-        android:textSize="20sp"
+        android:textSize="18sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent" />
 </androidx.constraintlayout.widget.ConstraintLayout>
