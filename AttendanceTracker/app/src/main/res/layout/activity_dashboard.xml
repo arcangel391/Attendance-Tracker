@@ -1,94 +1,86 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Dashboard">
+    tools:context=".MainActivity">
 
-    <com.google.android.material.floatingactionbutton.FloatingActionButton
-        android:id="@+id/fab"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"
-        android:layout_marginEnd="@dimen/fab_margin"
-        android:layout_marginBottom="16dp"
-        app:srcCompat="@android:drawable/ic_dialog_email" />
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="98dp"
-        android:background="?attr/colorPrimary"
-        app:popupTheme="@style/Theme.AttendanceTracker.PopupOverlay" />
-
-    <TextView
-        android:id="@+id/txtDashboard"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginHorizontal="20sp"
-        android:layout_marginTop="35sp"
-        android:text="Dashboard"
-        android:textAppearance="@style/TextAppearance.AppCompat.Large"
-        android:textColor="#ffff"
-        android:textSize="34sp" />
-    <TextView
-        android:id="@+id/txtAnnouncement"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="120sp"
-        android:layout_marginStart="20sp"
-        android:layout_below="@+id/txtDashboard"
-        android:text="Announcements"
-        android:textColor="#000"
-        android:textSize="26sp" />
     <LinearLayout
-        android:id="@+id/LLayout"
+        android:id="@+id/ann_layout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_marginTop="50sp"
-        android:orientation="vertical">
-        <!-- A CardView that contains a TextView -->
+        android:layout_height="410dp"
+        android:orientation="vertical"
+        tools:layout_editor_absoluteX="0dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:ignore="MissingConstraints">
 
-        <androidx.cardview.widget.CardView
-            android:id="@+id/card_view1"
-            android:layout_width="380dp"
-            android:layout_height="80dp"
-            android:layout_marginStart="15dp"
-            android:layout_marginTop="110sp"
-            android:background="#8AC645"
-            app:cardCornerRadius="12dp"/>
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="98dp"
+            android:background="?attr/colorPrimary"
+            app:title="Dashboard"
+            app:titleMargin="4dp"
+            app:titleTextAppearance="@style/TextAppearance.AppCompat.Display1"
+            app:titleTextColor="#FFFFFF"></androidx.appcompat.widget.Toolbar>
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15sp"
+            android:text="Announcements"
+            android:textColor="#000000"
+            android:textSize="24sp" />
 
         <androidx.cardview.widget.CardView
             android:id="@+id/card_view"
             android:layout_width="380dp"
             android:layout_height="80dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="10sp"
+            android:background="#03A9F4"
+            app:cardCornerRadius="12dp" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view1"
+            android:layout_width="380dp"
+            android:layout_height="80dp"
             android:layout_marginStart="15sp"
             android:layout_marginTop="10sp"
-            android:background="@color/blue"
-            app:cardCornerRadius="12dp">
+            android:background="#8BC34A"
+            app:cardCornerRadius="12dp" />
 
-            <TextView
-                android:id="@+id/info_text"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="#03A9F4" />
-        </androidx.cardview.widget.CardView>
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="380dp"
+            android:layout_height="80dp"
+            android:layout_marginStart="15sp"
+            android:layout_marginTop="10sp"
+            android:background="#00BCD4"
+            app:cardCornerRadius="12dp" />
+
+
     </LinearLayout>
 
     <RelativeLayout
         android:id="@+id/relativeLayout"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/LLayout"
-        app:layout_anchor="@+id/LLayout"
-        app:layout_anchorGravity="center">
+        android:layout_height="321dp"
+        android:layout_below="@+id/ann_layout"
+        app:layout_anchorGravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ann_layout">
 
         <TextView
             android:id="@+id/txtDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
             android:layout_centerInParent="true"
+            android:layout_marginTop="20dp"
             android:text="Wednesday"
             android:textColor="#000"
             android:textSize="28sp" />
@@ -112,15 +104,17 @@
             android:textSize="28sp" />
 
         <Button
-            android:id="@+id/button"
+            android:id="@+id/btnAttendance"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_below="@+id/digitalClock"
             android:layout_centerHorizontal="true"
-            android:background="@color/green"
+            android:background="@color/black"
+            android:layout_marginTop="20dp"
             android:text="Time-in" />
 
     </RelativeLayout>
 
 
-</androidx.coordinatorlayout.widget.CoordinatorLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
