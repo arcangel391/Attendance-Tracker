@@ -10,7 +10,7 @@
         android:id="@+id/tx_forgot"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="12dp"
         android:text="Forgot Password?"
 
         android:textColor="@color/blue"
@@ -33,7 +33,7 @@
         android:id="@+id/btn_signin"
         android:layout_width="169dp"
         android:layout_height="45dp"
-        android:layout_marginBottom="104dp"
+        android:layout_marginBottom="96dp"
         android:background="@color/pink"
         android:text="SIGN-IN"
         app:layout_constraintBottom_toBottomOf="parent"
