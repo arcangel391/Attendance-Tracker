@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/Signuppicture"
+    android:background="@drawable/undraw_welcoming_re_x0qo"
     tools:context=".LoginPage">
 
     <TextView
@@ -32,10 +32,11 @@
     <Button
         android:id="@+id/btn_signin"
         android:layout_width="169dp"
-        android:layout_height="45dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="52dp"
         android:background="@color/pink"
         android:text="SIGN-IN"
+        android:textColor="#212121"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
@@ -43,7 +44,7 @@
     <EditText
         android:id="@+id/txt_email"
         android:layout_width="275dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="32dp"
         android:ems="10"
         android:hint="user123@gmail.com"
@@ -55,7 +56,7 @@
     <EditText
         android:id="@+id/txt_password"
         android:layout_width="275dp"
-        android:layout_height="47dp"
+        android:layout_height="48dp"
         android:layout_marginBottom="44dp"
         android:ems="10"
         android:hint="********"
