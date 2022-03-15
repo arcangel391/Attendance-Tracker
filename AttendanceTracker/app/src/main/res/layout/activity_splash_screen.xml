@@ -19,7 +19,7 @@
         />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/txtAnnce"
 
         android:layout_width="312dp"
         android:layout_height="140dp"
