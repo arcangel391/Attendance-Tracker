@@ -247,7 +247,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_below="@+id/ann_layout"
-        android:layout_marginTop="48dp"
+        android:layout_marginTop="36dp"
         app:layout_anchorGravity="center"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/ann_layout">
@@ -276,7 +276,7 @@
             android:text="Date"
             android:textColor="#000"
             android:textSize="16sp" />
-   <!--Time-->
+        <!--Time-->
         <DigitalClock
             android:id="@+id/digitalClock"
             android:layout_width="wrap_content"
@@ -286,7 +286,7 @@
             android:layout_marginTop="10dp"
             android:textColor="#4C4C4C"
             android:textSize="32sp" />
- <!--Btn Time In/ Timeout-->
+        <!--Btn Time In/ Timeout-->
         <Button
             android:id="@+id/btnAttendance"
             android:layout_width="310dp"
