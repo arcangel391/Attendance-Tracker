@@ -14,6 +14,7 @@
         app:layout_constraintStart_toStartOf="parent"
         android:fontFamily="@font/barlow_regular"
         android:textColor="@color/black"
+        android:textSize="12sp"
         tools:layout_editor_absoluteY="160dp"
         tools:ignore="MissingConstraints" />
 
@@ -37,7 +38,6 @@
                 android:layout_height="160dp"
                 android:layout_marginTop="-30dp"
                 android:background="@drawable/rounded_box_shape_view"
-                android:fontFamily="@font/barlow_black"
                 app:backgroundTint="@color/blue"></ImageView>
 
         </LinearLayout>
@@ -59,11 +59,11 @@
             android:layout_marginLeft="80dp"
             android:layout_marginTop="-50dp"
             android:layout_marginRight="80dp"
-
+            android:textAlignment="center"
             android:fontFamily="@font/barlow_bold"
             android:text="TITLE"
             android:textColor="@color/white"
-            android:textSize="16sp" />
+            android:textSize="24sp" />
 
         <TextView
             android:id="@+id/textDate"
@@ -72,9 +72,11 @@
             android:layout_marginLeft="80dp"
             android:layout_marginRight="80dp"
             android:layout_weight="1"
-            android:fontFamily="@font/barlow_regular"
+            android:fontFamily="@font/barlow_bold"
             android:text="DATE"
-            android:textColor="@color/white" />
+            android:textSize="18sp"
+            android:textColor="@color/white"
+            android:textAlignment="center"/>
 
     </LinearLayout>
 
