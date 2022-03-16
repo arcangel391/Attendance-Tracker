@@ -9,7 +9,10 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendanceTracker">
-        <activity android:name=".LoginPage"></activity>
+        <activity
+            android:name=".SubmitReport"
+            android:exported="false" />
+        <activity android:name=".LoginPage" />
         <activity
             android:name=".SplashScreen"
             android:exported="false" />

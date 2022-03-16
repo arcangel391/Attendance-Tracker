@@ -12,10 +12,12 @@
         <entry key="..\:/Android_Projects/Attendance Tracker v2/AttendanceTracker/app/src/main/res/layout/activity_main.xml" value="0.152" />
         <entry key="..\:/Android_Projects/Attendance Tracker v2/AttendanceTracker/app/src/main/res/layout/content_dashboard.xml" value="0.11354166666666667" />
         <entry key="..\:/Documents/GitHub/Attendance-Tracker/AttendanceTracker/app/src/main/res/layout/activity_splash_screen.xml" value="0.1272644927536232" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/Attendance-Tracker/AttendanceTracker/app/src/main/res/drawable/rounded_box_shape.xml" value="0.2555" />
+        <entry key="..\:/Users/Acer/Documents/GitHub/Attendance-Tracker/AttendanceTracker/app/src/main/res/layout/activity_submit_report.xml" value="0.264" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="false" project-jdk-name="1.8" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_11" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
