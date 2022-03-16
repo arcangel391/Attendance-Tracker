@@ -262,7 +262,7 @@
             android:layout_centerInParent="true"
             android:layout_marginTop="20dp"
             android:fontFamily="@font/barlow_semibold"
-            android:text="Wednesday"
+            android:text="txtDay"
             android:textColor="#4C4C4C"
             android:textSize="24sp" />
         <!--Date-->
@@ -273,7 +273,7 @@
             android:layout_below="@+id/txtDay"
             android:layout_centerInParent="true"
             android:fontFamily="@font/barlow_regular"
-            android:text="March 3, 2022"
+            android:text="Date"
             android:textColor="#000"
             android:textSize="16sp" />
    <!--Time-->
