@@ -468,7 +468,8 @@
         android:focusable="true"
         android:src="@drawable/sign_out_alt_solid"
         app:backgroundTint="@color/sky"
-        app:tint="@color/white" />
+        app:tint="@color/white"
+        />
 
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:layout_width="wrap_content"
