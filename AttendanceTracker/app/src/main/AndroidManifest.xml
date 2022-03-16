@@ -9,16 +9,22 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendanceTracker">
-        <activity android:name=".LoginPage"></activity>
-        <!--<activity
+        <!-- <activity
+            android:name=".Navbar"
+            android:exported="false" />
+        <activity android:name=".LoginPage" />
+         -->
+        <!--
+<activity
             android:name=".SplashScreen"
-            android:exported="false" />-->
+            android:exported="false" />
+        -->
         <activity
             android:name=".Dashboard"
             android:exported="false"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.AttendanceTracker.NoActionBar" />
-        <activity android:name=".SplashScreen">
+        <activity android:name=".Navbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
