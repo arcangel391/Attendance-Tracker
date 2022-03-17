@@ -16,8 +16,35 @@ public class Navbar extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_navbar);
 
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
+        bottomNavigationView.setOnItemSelectedListener(navigationSelectedListener);
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
 
     }
+
+    private BottomNavigationView.OnItemSelectedListener navigationSelectedListener = new BottomNavigationView.OnItemSelectedListener() {
+        @Override
+        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+
+            Fragment selectedFragment = null;
+            switch (item.getItemId()){
+                case R.id.firstFragment:
+                    selectedFragment = new FirstFragment();
+                    break;
+                case R.id.secondFragment:
+                    selectedFragment = new SecondFragment();
+                    break;
+                case R.id.thirdFragment:
+                    selectedFragment = new ThirdFragment();
+                    break;
+                case R.id.fourthFragment:
+                    selectedFragment = new FourthFragment();
+                    break;
+            }
+            getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
+            return true;
+        }
+    };
 
 
 

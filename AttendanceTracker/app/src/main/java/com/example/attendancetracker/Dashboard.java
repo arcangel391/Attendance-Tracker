@@ -23,35 +23,12 @@ public class Dashboard extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_dashboard);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
-        bottomNavigationView.setOnItemSelectedListener(navigationSelectedListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Dashboard()).commit();
+
 
     }
 
-    private BottomNavigationView.OnItemSelectedListener navigationSelectedListener = new BottomNavigationView.OnItemSelectedListener() {
-        @Override
-        public boolean onNavigationItemSelected(@NonNull MenuItem item) {
 
-            Fragment selectedFragment = null;
-            switch (item.getItemId()){
-                case R.id.mainActivity:
-                    selectedFragment = new Dashboard();
-                    break;
-                case R.id.first2Fragment:
-                    selectedFragment = new First2Fragment();
-                    break;
-                case R.id.second2Fragment:
-                    selectedFragment = new Second2Fragment();
-                    break;
-                case R.id.fragment_third:
-                    selectedFragment = new fragment_third();
-                    break;
-            }
-
-            return true;
-        }
-    };
 
 }
