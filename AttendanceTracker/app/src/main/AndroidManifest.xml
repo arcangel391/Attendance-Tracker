@@ -24,7 +24,7 @@
             android:exported="false"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.AttendanceTracker.NoActionBar" />
-        <activity android:name=".Navbar">
+        <activity android:name=".LoginPage">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

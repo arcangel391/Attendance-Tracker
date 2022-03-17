@@ -9,27 +9,20 @@
     android:orientation="vertical"
     tools:context=".LoginPage">
 
-    <RelativeLayout
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:background="@color/white" >
 
-        <ImageView
-            android:id="@+id/curve"
-            android:layout_width="match_parent"
-            android:layout_height="351dp"
-            android:background="@drawable/curve_shape" />
+    <ImageView
+        android:id="@+id/curve"
+        android:layout_width="match_parent"
+        android:layout_height="351dp"
+        android:background="@drawable/curve_shape" />
 
 
-        <ImageView
-            android:id="@+id/imageView7"
-            android:layout_width="286dp"
-            android:layout_height="286dp"
-            android:layout_marginTop="150dp"
-            android:layout_marginLeft="60dp"
-            app:srcCompat="@drawable/undraw_welcoming_re_x0qo" />
-
-    </RelativeLayout>
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="286dp"
+        android:layout_height="286dp"
+        android:layout_marginTop="-200dp"
+        app:srcCompat="@drawable/undraw_welcoming_re_x0qo" />
 
     <TextView
         android:id="@+id/txt_welcome"
@@ -45,13 +38,13 @@
         android:layout_height="wrap_content"
         android:orientation="vertical"
         android:layout_marginTop="-40dp">
+
         <LinearLayout
             android:layout_width="320dp"
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:layout_gravity="center"
-            android:gravity="center"
-            >
+            android:gravity="center">
 
             <TextView
                 android:id="@+id/textView3"
@@ -63,11 +56,6 @@
                 android:textColor="@color/black"
                 android:text="Email" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-
-                >
 
                 <EditText
                     android:id="@+id/txt_email"
@@ -76,9 +64,8 @@
                     android:layout_height="47dp"
                     android:hint="user123@gmail.com"
                     android:textSize="14sp"
-                    android:inputType="textEmailAddress" />
-
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:inputType="textEmailAddress"
+                    android:paddingStart="15dp"/>
 
         </LinearLayout>
 
@@ -88,7 +75,6 @@
             android:orientation="vertical"
             android:layout_gravity="center"
             android:gravity="center"
-
             android:layout_marginTop="10dp">
 
             <TextView
@@ -101,11 +87,6 @@
                 android:textColor="@color/black"
                 android:text="Password" />
 
-            <com.google.android.material.textfield.TextInputLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                app:passwordToggleEnabled="true"
-                app:passwordToggleTint="@color/black">
 
                 <EditText
                     android:background="@drawable/textbox_shape"
@@ -114,8 +95,18 @@
                     android:layout_height="47dp"
                     android:hint="***********"
                     android:textSize="14sp"
-                    android:inputType="textPassword" />
-            </com.google.android.material.textfield.TextInputLayout>
+                    android:inputType="textPassword"
+                    android:paddingStart="15dp"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/fa_solid"
+                    android:text="\uf06e"
+                    android:textColor="@color/black"
+                    android:textSize="22sp"
+                    android:layout_marginTop="-35dp"
+                    android:layout_marginStart="120dp"/>
 
 
         </LinearLayout>
