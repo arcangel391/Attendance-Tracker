@@ -241,6 +241,30 @@
             android:layout_gravity="center"/>
     </LinearLayout>
 
+
+    <Button
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_box_shape1"
+        app:backgroundTint = "@color/green"
+        android:textSize="18sp"
+        android:fontFamily="@font/barlow_bold"
+        android:text="SAVE"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"/>
+
+    <Button
+        android:layout_width="310dp"
+        android:layout_height="48dp"
+        android:background="@drawable/rounded_box_shape1"
+        app:backgroundTint = "@color/pink"
+        android:textSize="18sp"
+        android:fontFamily="@font/barlow_bold"
+        android:text="CANCEL"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="10dp"/>
     
 
 </LinearLayout>
