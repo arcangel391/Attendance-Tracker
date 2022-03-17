@@ -51,12 +51,16 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal">
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_marginTop="80dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
+            android:orientation="vertical"
+            android:layout_marginEnd="50dp">
 
             <TextView
                 android:layout_width="wrap_content"
@@ -131,56 +135,56 @@
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Task ID"
-                android:fontFamily="@font/barlow_bold"
+                android:text="2206"
+                android:fontFamily="@font/barlow_regular"
                 android:textSize="16sp"
                 android:textColor="@color/gray"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Name"
-                android:fontFamily="@font/barlow_bold"
+                android:text="John Martin Sampaga"
+                android:fontFamily="@font/barlow_regular"
                 android:textSize="16sp"
                 android:textColor="@color/gray"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Department"
-                android:fontFamily="@font/barlow_bold"
+                android:text="PROJ-IT-29"
+                android:fontFamily="@font/barlow_regular"
                 android:textSize="16sp"
                 android:textColor="@color/gray"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Task Name"
-                android:fontFamily="@font/barlow_bold"
+                android:text="Group Meeting"
+                android:fontFamily="@font/barlow_regular"
                 android:textSize="16sp"
                 android:textColor="@color/gray"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="File Format"
-                android:fontFamily="@font/barlow_bold"
+                android:text="DOCUMENT"
+                android:fontFamily="@font/barlow_regular"
                 android:textSize="16sp"
                 android:textColor="@color/gray"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Date Assigned"
-                android:fontFamily="@font/barlow_bold"
+                android:text="March 6, 2022"
+                android:fontFamily="@font/barlow_regular"
                 android:textSize="16sp"
                 android:textColor="@color/gray"/>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="March 8, 2022"
-                android:fontFamily="@font/barlow_bold"
+                android:text="March 8, 2022, 5:11PM"
+                android:fontFamily="@font/barlow_regular"
                 android:textSize="16sp"
                 android:textColor="@color/gray"/>
 
@@ -195,5 +199,9 @@
 
 
     </LinearLayout>
+    
+    <ImageView
+        android:layout_width=""
+        android:layout_height=""
 
 </LinearLayout>
