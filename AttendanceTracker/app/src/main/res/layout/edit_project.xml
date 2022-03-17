@@ -32,15 +32,18 @@
             android:layout_marginTop="6dp"/>
     </LinearLayout>
 
+    <!-- DEPARTMENT INPUT TEXT-->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="80dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:orientation="horizontal">
+            android:orientation="horizontal"
+            android:layout_marginStart="30dp">
 
             <TextView
                 android:layout_width="match_parent"
@@ -60,12 +63,169 @@
         </LinearLayout>
 
         <EditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:background="@drawable/textbox_shape"
+            android:id="@+id/txt_password"
+            android:layout_width="350dp"
+            android:layout_height="47dp"
             android:hint="PROJ-IT-29"
+            android:textSize="14sp"
+            android:fontFamily="@font/barlow_medium"
+            android:paddingStart="15dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
 
+    <!-- TASK NAME INPUT TEXT -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
 
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="30dp">
 
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Task Name"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_regular"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/pink"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_regular"/>
+        </LinearLayout>
+
+        <EditText
+            android:background="@drawable/textbox_shape"
+            android:layout_width="350dp"
+            android:layout_height="47dp"
+            android:hint="Group Meeting"
+            android:textSize="14sp"
+            android:fontFamily="@font/barlow_medium"
+            android:paddingStart="15dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Date Assigned"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_regular"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/pink"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_regular"/>
+        </LinearLayout>
+
+        <EditText
+            android:background="@drawable/textbox_shape"
+            android:layout_width="350dp"
+            android:layout_height="47dp"
+            android:hint="mm/dd/yy"
+            android:inputType="date"
+            android:textSize="14sp"
+            android:fontFamily="@font/barlow_medium"
+            android:paddingStart="15dp"
+            android:layout_gravity="center"/>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="File Format"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_regular"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/pink"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_regular"/>
+        </LinearLayout>
+
+        <Spinner>
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="15dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginStart="30dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Department"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_regular"
+                android:textColor="@color/black"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="*"
+                android:textColor="@color/pink"
+                android:textSize="14sp"
+                android:fontFamily="@font/barlow_regular"/>
+        </LinearLayout>
+
+        <EditText
+            android:background="@drawable/textbox_shape"
+            android:layout_width="350dp"
+            android:layout_height="47dp"
+            android:hint="PROJ-IT-29"
+            android:textSize="14sp"
+            android:fontFamily="@font/barlow_medium"
+            android:paddingStart="15dp"
+            android:layout_gravity="center"/>
     </LinearLayout>
 
 </LinearLayout>
