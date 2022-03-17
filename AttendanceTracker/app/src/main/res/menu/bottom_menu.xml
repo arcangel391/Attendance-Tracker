@@ -2,7 +2,7 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
-        android:id="@+id/mainActivity2"
+        android:id="@+id/mainActivity"
         android:title="Dashboard" android:icon="@drawable/home_solid"/>
     <item
         android:id="@+id/first2Fragment"
