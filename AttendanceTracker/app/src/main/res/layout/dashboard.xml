@@ -111,6 +111,23 @@
             app:backgroundTint="@color/green" />
 
 
+        <Button
+            android:layout_marginTop="10dp"
+            android:id="@+id/btnAtt_log"
+            android:layout_width="310dp"
+            android:layout_height="48dp"
+            android:width="320dp"
+            android:background="@drawable/rounded_box_shape"
+            android:fontFamily="@font/barlow_semibold"
+            android:text="Attendance Log"
+            android:drawableLeft="@drawable/att_log"
+            android:textSize="18sp"
+            app:backgroundTint="@color/pink"/>
+
+
+
+
+
     </LinearLayout>
 
 </LinearLayout>
