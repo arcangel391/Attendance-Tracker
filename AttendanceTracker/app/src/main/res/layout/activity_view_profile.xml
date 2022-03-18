@@ -496,7 +496,7 @@
             android:src="@drawable/pencil_alt_solid"
             app:backgroundTint="@color/sky"
             app:tint="@color/white" />
-        
+
     </com.github.clans.fab.FloatingActionMenu>
 
 
