@@ -8,6 +8,10 @@
     xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context=".ViewProfile">
 
+    <!-- FLOATING ACTION BUTTON -->
+
+
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -220,7 +224,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/rounded_box_shape1"
-            android:elevation="10dp"
+            android:elevation="1dp"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             >
@@ -299,7 +303,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/rounded_box_shape1"
-            android:elevation="10dp"
+            android:elevation="1dp"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             >
@@ -308,7 +312,6 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
-
                 android:layout_gravity="center_vertical"
                 android:gravity="center_vertical"
                 >
@@ -375,7 +378,7 @@
             android:layout_height="wrap_content"
             android:orientation="vertical"
             android:background="@drawable/rounded_box_shape1"
-            android:elevation="10dp"
+            android:elevation="1dp"
             android:padding="10dp"
             android:layout_marginBottom="10dp"
             >
@@ -448,47 +451,76 @@
 
     </LinearLayout>
 
-    <!-- FLOATING ACTION BUTTON -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="-400dp">
+        <com.github.clans.fab.FloatingActionMenu
+            android:id="@+id/fabMenu"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:menu_fab_size="normal"
+            android:paddingBottom="25dp"
+            android:paddingRight="10dp"
+            fab:menu_animationDelayPerItem="55"
+            fab:menu_buttonSpacing="0dp"
+            app:menu_labels_ellipsize="none"
+            app:menu_labels_singleLine="false"
+            app:menu_labels_textColor="@color/white"
 
-    <com.github.clans.fab.FloatingActionMenu
-        android:id="@+id/fabMenu"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="310dp"
-        android:layout_marginTop="-220dp"
-        fab:menu_animationDelayPerItem="55"
-        fab:menu_buttonSpacing="0dp"
-        android:src="@drawable/fab_add"
-        fab:menu_colorPressed="@color/blue"
-        fab:menu_colorNormal="@color/pink"
-        fab:menu_openDirection="up"
-        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
-        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right">
+            app:menu_labels_maxLines="-1"
+            app:menu_labels_position="left"
+            app:menu_labels_padding="8dp"
+            app:menu_labels_showShadow="false"
+            android:src="@drawable/ic_plus"
+            fab:menu_colorPressed="@color/pink"
+            fab:menu_colorNormal="@color/pink"
+            fab:menu_openDirection="up"
+            fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+            fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right">
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fabSignOut"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/green"
-            app:fab_size="mini"
-            android:src="@drawable/sign_out_alt_solid"/>
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fabLeave"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/sky"
+                app:fab_size="normal"
+                android:src="@drawable/ic_calendar_xmark_solid"
+                />
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fabCP"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/green"
-            app:fab_size="mini"
-            android:src="@drawable/user_lock_solid"/>
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fabEditProfile"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/green"
+                app:fab_size="normal"
+                android:src="@drawable/ic_pencil_alt_solid"
+                />
 
-        <com.github.clans.fab.FloatingActionButton
-            android:id="@+id/fabEditProfile"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:fab_colorNormal="@color/green"
-            app:fab_size="mini"
-            android:src="@drawable/pencil_alt_solid"/>
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fabCP"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/sky"
+                app:fab_size="normal"
+                android:src="@drawable/ic_user_lock_solid"
+                />
 
-    </com.github.clans.fab.FloatingActionMenu>
+
+            <com.github.clans.fab.FloatingActionButton
+                android:id="@+id/fabSignOut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fab_colorNormal="@color/green"
+                app:fab_size="normal"
+                android:src="@drawable/ic_sign_out_alt_solid"
+                />
+
+        </com.github.clans.fab.FloatingActionMenu>
+
+    </LinearLayout>
+
+
 
 </LinearLayout>
