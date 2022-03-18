@@ -35,10 +35,10 @@ public class Navbar extends AppCompatActivity {
                     selectedFragment = new ViewProfile();
                     break;
                 case R.id.thirdFragment:
-                    selectedFragment = new ThirdFragment();
+                    selectedFragment = new ProjectStatus();
                     break;
                 case R.id.fourthFragment:
-                    selectedFragment = new FourthFragment();
+                    selectedFragment = new Reports();
                     break;
             }
             getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, selectedFragment).commit();
