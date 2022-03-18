@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
     tools:context=".ViewProfile">
 
     <LinearLayout
@@ -455,9 +456,14 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="310dp"
         android:layout_marginTop="-220dp"
-        android:src="@drawable/plus"
-        app:backgroundTint="@color/pink"
-        app:tint="@color/white">
+        fab:menu_animationDelayPerItem="55"
+        fab:menu_buttonSpacing="0dp"
+        android:src="@drawable/fab_add"
+        fab:menu_colorPressed="@color/blue"
+        fab:menu_colorNormal="@color/pink"
+        fab:menu_openDirection="up"
+        fab:menu_labels_hideAnimation="@anim/fab_slide_out_to_right"
+        fab:menu_labels_showAnimation="@anim/fab_slide_in_from_right">
 
         <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fabSignOut"
