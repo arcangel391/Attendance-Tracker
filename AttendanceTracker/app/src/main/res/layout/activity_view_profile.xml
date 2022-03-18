@@ -448,6 +448,7 @@
     </LinearLayout>
 
     <!-- FLOATING ACTION BUTTON -->
+
     <com.github.clans.fab.FloatingActionMenu
         android:id="@+id/fabMenu"
         android:layout_width="wrap_content"
@@ -498,9 +499,5 @@
             app:tint="@color/white" />
 
     </com.github.clans.fab.FloatingActionMenu>
-
-
-
-
 
 </LinearLayout>
