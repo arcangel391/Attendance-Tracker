@@ -8,307 +8,327 @@
 
 <!--To organize Upper Part-->
 
-    <LinearLayout
-        android:id="@+id/ann_layout"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
-        android:orientation="vertical"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints">
-<!--Alignment of Header Text-->
+        android:layout_height="match_parent">
+
         <LinearLayout
+            android:id="@+id/ann_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical">
-<!--Toolbar-->
-            <ImageView
-                android:id="@+id/toolbar"
-                android:layout_width="match_parent"
-                android:layout_height="140dp"
-                android:layout_marginTop="-20dp"
-                android:background="@drawable/rounded_toolbar_shape"
-                android:fontFamily="@font/barlow_black"
-                app:backgroundTint="@color/blue"
-                ></ImageView>
-
-            <TextView
-                android:id="@+id/txtDashboard"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:layout_marginTop="-80dp"
-                android:fontFamily="@font/barlow_semibold"
-                android:text="Dashboard"
-                android:textColor="#FFFFFF"
-                android:textSize="36sp" />
-
-            <TextView
-                android:id="@+id/txtSub"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="15dp"
-                android:text="UIP Attendance Tracker"
-                android:textColor="#FBF8F8" />
-
-        </LinearLayout>
-
-        <TextView
-            android:id="@+id/txtAnnce"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="25sp"
-            android:layout_marginTop="1sp"
-            android:fontFamily="@font/barlow_semibold"
-            android:text="Announcements"
-            android:textColor="#4C4C4C"
-            android:textSize="24sp" />
-
-       <ScrollView
-            android:id="@+id/Ann_Cont"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:orientation="vertical"
+            tools:ignore="MissingConstraints">
+            <!--Alignment of Header Text-->
 
             <LinearLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="1sp"
                 android:orientation="vertical">
+                <!--Toolbar-->
+                <ImageView
+                    android:id="@+id/toolbar"
+                    android:layout_width="match_parent"
+                    android:layout_height="140dp"
+                    android:layout_marginTop="-20dp"
+                    android:background="@drawable/rounded_toolbar_shape"
+                    android:fontFamily="@font/barlow_black"
+                    app:backgroundTint="@color/blue"></ImageView>
 
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_view2"
-                    android:layout_width="380dp"
-                    android:layout_height="80dp"
+                <TextView
+                    android:id="@+id/txtDashboard"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:layout_marginTop="10sp"
-                    android:background="#03A9F4"
-                    app:cardCornerRadius="12dp">
-<!---For Alignment of Cards-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-<!--Cards Text Organizer-->
-                       <LinearLayout
-                            android:layout_width="300dp"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
+                    android:layout_marginTop="-80dp"
+                    android:fontFamily="@font/barlow_semibold"
+                    android:text="Dashboard"
+                    android:textColor="#FFFFFF"
+                    android:textSize="36sp" />
 
-                            <TextView
-                                android:id="@+id/txtTitle2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/barlow_semibold"
-                                android:text="Title"
-                                android:textSize="20sp" />
-
-                            <TextView
-                                android:id="@+id/txtDateAnnce2"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/barlow_regular"
-                                android:text="Date" />
-                        </LinearLayout>
-<!--Card Time text-->
-                        <TextView
-                            android:id="@+id/txtTimeAnnce2"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="right"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/barlow_regular"
-                            android:gravity="center"
-                            android:text="Time"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_view1"
-                    android:layout_width="380dp"
-                    android:layout_height="80dp"
+                <TextView
+                    android:id="@+id/txtSub"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
                     android:layout_marginStart="15dp"
-                    android:layout_marginTop="10sp"
-                    android:background="#03A9F4"
-                    app:cardCornerRadius="12dp">
-<!---For Alignment of Cards-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-  <!--Cards Text Organizer-->
-                        <LinearLayout
-                            android:layout_width="300dp"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
+                    android:text="UIP Attendance Tracker"
+                    android:textColor="#FBF8F8" />
 
-                            <TextView
-                                android:id="@+id/txtTitle1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/barlow_semibold"
-                                android:text="Title"
-                                android:textSize="20sp" />
-
-                            <TextView
-                                android:id="@+id/txtDateAnnce1"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/barlow_regular"
-                                android:text="Date" />
-                        </LinearLayout>
-<!--Card Time text-->
-                        <TextView
-                            android:id="@+id/txtTimeAnnce1"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="right"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/barlow_regular"
-                            android:gravity="center"
-                            android:text="Time"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-                </androidx.cardview.widget.CardView>
-
-                <androidx.cardview.widget.CardView
-                    android:id="@+id/card_view"
-                    android:layout_width="380dp"
-                    android:layout_height="80dp"
-                    android:layout_marginStart="15dp"
-                    android:layout_marginTop="10sp"
-                    android:background="#03A9F4"
-                    app:cardCornerRadius="12dp">
-<!---For Alignment of Cards-->
-                    <LinearLayout
-                        android:layout_width="match_parent"
-                        android:layout_height="match_parent"
-                        android:orientation="horizontal">
-<!--Cards Text Organizer-->
-                        <LinearLayout
-                            android:layout_width="300dp"
-                            android:layout_height="match_parent"
-                            android:orientation="vertical">
-
-                            <TextView
-                                android:id="@+id/txtTitle"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="10dp"
-                                android:fontFamily="@font/barlow_semibold"
-                                android:text="Title"
-                                android:textSize="20sp" />
-
-                            <TextView
-                                android:id="@+id/txtDateAnnce"
-                                android:layout_width="wrap_content"
-                                android:layout_height="wrap_content"
-                                android:layout_marginStart="10dp"
-                                android:layout_marginTop="5dp"
-                                android:layout_weight="1"
-                                android:fontFamily="@font/barlow_regular"
-                                android:text="Date" />
-                        </LinearLayout>
-<!--Card Time text-->
-                        <TextView
-                            android:id="@+id/txtTimeAnnce"
-                            android:layout_width="wrap_content"
-                            android:layout_height="match_parent"
-                            android:layout_gravity="right"
-                            android:layout_weight="1"
-                            android:fontFamily="@font/barlow_regular"
-                            android:gravity="center"
-                            android:text="Time"
-                            android:textSize="14sp" />
-
-                    </LinearLayout>
-
-                </androidx.cardview.widget.CardView>
             </LinearLayout>
-        </ScrollView>
 
-    </LinearLayout>
+            <TextView
+                android:id="@+id/txtAnnce"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="25sp"
+                android:layout_marginTop="1sp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="Announcements"
+                android:textColor="#4C4C4C"
+                android:textSize="24sp" />
 
-    <RelativeLayout
-        android:id="@+id/relativeLayout"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/ann_layout"
-        android:layout_marginTop="36dp"
-        app:layout_anchorGravity="center"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/ann_layout">
-        <!--Day-->
+            <ScrollView
+                android:id="@+id/Ann_Cont"
+                android:layout_width="match_parent"
+                android:layout_height="200dp">
 
-        <TextView
-            android:id="@+id/txtDay"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="1sp"
+                    android:orientation="vertical">
 
-            android:layout_centerInParent="true"
-            android:layout_marginTop="20dp"
-            android:fontFamily="@font/barlow_semibold"
-            android:text="txtDay"
-            android:textColor="#4C4C4C"
-            android:textSize="24sp" />
-        <!--Date-->
-        <TextView
-            android:id="@+id/txtDate"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtDay"
-            android:layout_centerInParent="true"
-            android:fontFamily="@font/barlow_regular"
-            android:text="Date"
-            android:textColor="#000"
-            android:textSize="16sp" />
-        <!--Time-->
-        <DigitalClock
-            android:id="@+id/digitalClock"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/txtDate"
-            android:layout_centerInParent="true"
-            android:layout_marginTop="10dp"
-            android:textColor="#4C4C4C"
-            android:textSize="32sp" />
-        <!--Btn Time In/ Timeout-->
-        <Button
-            android:id="@+id/btnAttendance"
-            android:layout_width="310dp"
-            android:layout_height="48dp"
-            android:layout_below="@+id/digitalClock"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="10dp"
-            android:width="320dp"
-            android:background="@drawable/rounded_box_shape"
-            android:fontFamily="@font/barlow_semibold"
-            android:text="Time-in"
-            android:textSize="18sp"
-            app:backgroundTint="@color/green"
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view2"
+                        android:layout_width="380dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10sp"
+                        android:background="#03A9F4"
+                        app:cardCornerRadius="12dp">
+                        <!---For Alignment of Cards-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <!--Cards Text Organizer-->
+                            <LinearLayout
+                                android:layout_width="300dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
 
-            />
+                                <TextView
+                                    android:id="@+id/txtTitle2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/barlow_semibold"
+                                    android:text="Title"
+                                    android:textSize="20sp" />
 
-        <androidx.constraintlayout.widget.Barrier
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            app:barrierDirection="top" />
+                                <TextView
+                                    android:id="@+id/txtDateAnnce2"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/barlow_regular"
+                                    android:text="Date" />
+                            </LinearLayout>
+                            <!--Card Time text-->
 
-    </RelativeLayout>
+                            <TextView
+                                android:id="@+id/txtTimeAnnce2"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/barlow_regular"
+                                android:gravity="center"
+                                android:text="Time"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view1"
+                        android:layout_width="380dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10sp"
+                        android:background="#03A9F4"
+                        app:cardCornerRadius="12dp">
+                        <!---For Alignment of Cards-->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <!--Cards Text Organizer-->
+                            <LinearLayout
+                                android:layout_width="300dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtTitle1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/barlow_semibold"
+                                    android:text="Title"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/txtDateAnnce1"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/barlow_regular"
+                                    android:text="Date" />
+                            </LinearLayout>
+                            <!--Card Time text-->
+                            <TextView
+                                android:id="@+id/txtTimeAnnce1"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/barlow_regular"
+                                android:gravity="center"
+                                android:text="Time"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/card_view"
+                        android:layout_width="380dp"
+                        android:layout_height="80dp"
+                        android:layout_marginStart="15dp"
+                        android:layout_marginTop="10sp"
+                        android:background="#03A9F4"
+                        app:cardCornerRadius="12dp">
+                        <!---For Alignment of Cards-->
+
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:orientation="horizontal">
+                            <!--Cards Text Organizer-->
+                            <!--Card Time text-->
+                            <LinearLayout
+                                android:layout_width="300dp"
+                                android:layout_height="match_parent"
+                                android:orientation="vertical">
+
+                                <TextView
+                                    android:id="@+id/txtTitle"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="10dp"
+                                    android:fontFamily="@font/barlow_semibold"
+                                    android:text="Title"
+                                    android:textSize="20sp" />
+
+                                <TextView
+                                    android:id="@+id/txtDateAnnce"
+                                    android:layout_width="wrap_content"
+                                    android:layout_height="wrap_content"
+                                    android:layout_marginStart="10dp"
+                                    android:layout_marginTop="5dp"
+                                    android:layout_weight="1"
+                                    android:fontFamily="@font/barlow_regular"
+                                    android:text="Date" />
+                            </LinearLayout>
+
+                            <TextView
+                                android:id="@+id/txtTimeAnnce"
+                                android:layout_width="wrap_content"
+                                android:layout_height="match_parent"
+                                android:layout_gravity="right"
+                                android:layout_weight="1"
+                                android:fontFamily="@font/barlow_regular"
+                                android:gravity="center"
+                                android:text="Time"
+                                android:textSize="14sp" />
+
+                        </LinearLayout>
+
+                    </androidx.cardview.widget.CardView>
+                </LinearLayout>
+            </ScrollView>
+
+            <RelativeLayout
+                android:id="@+id/relativeLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/ann_layout"
+                android:layout_marginTop="36dp"
+                app:layout_anchorGravity="center">
+                <!--Day-->
+
+                <TextView
+                    android:id="@+id/txtDay"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentTop="true"
+
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="20dp"
+                    android:fontFamily="@font/barlow_semibold"
+                    android:text="txtDay"
+                    android:textColor="#4C4C4C"
+                    android:textSize="24sp" />
+                <!--Date-->
+                <TextView
+                    android:id="@+id/txtDate"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDay"
+                    android:layout_centerInParent="true"
+                    android:fontFamily="@font/barlow_regular"
+                    android:text="Date"
+                    android:textColor="#000"
+                    android:textSize="16sp" />
+                <!--Time-->
+
+                <DigitalClock
+                    android:id="@+id/digitalClock"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/txtDate"
+                    android:layout_centerInParent="true"
+                    android:layout_marginTop="10dp"
+                    android:textColor="#4C4C4C"
+                    android:textSize="32sp" />
+                <!--Btn Time In/ Timeout-->
+                <Button
+                    android:id="@+id/btnAtt_stat"
+                    android:layout_width="310dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/digitalClock"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="10dp"
+                    android:width="320dp"
+                    android:background="@drawable/rounded_box_shape"
+                    android:fontFamily="@font/barlow_semibold"
+                    android:text="Time-in"
+                    android:textSize="18sp"
+                    app:backgroundTint="@color/green"
+
+                    />
+
+                <Button
+                    android:id="@+id/btnAtt_log"
+                    android:layout_width="310dp"
+                    android:layout_height="48dp"
+                    android:layout_below="@+id/digitalClock"
+                    android:layout_centerHorizontal="true"
+                    android:layout_marginTop="70dp"
+                    android:width="320dp"
+                    android:background="@drawable/rounded_box_shape"
+                    android:fontFamily="@font/barlow_semibold"
+                    android:text="Attendance Log"
+                    android:textSize="18sp"
+
+                    app:backgroundTint="@color/pink" />
+
+                <androidx.constraintlayout.widget.Barrier
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:barrierDirection="top" />
+
+            </RelativeLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
