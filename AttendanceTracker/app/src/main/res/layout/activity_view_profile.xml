@@ -494,7 +494,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:fab_colorNormal="@color/green"
-                app:fab_size="noral"
+                app:fab_size="normal"
                 android:src="@drawable/ic_pencil_alt_solid"
                 />
 
