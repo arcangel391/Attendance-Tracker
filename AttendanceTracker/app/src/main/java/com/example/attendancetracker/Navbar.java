@@ -18,7 +18,7 @@ public class Navbar extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottomNavigationView);
         bottomNavigationView.setOnItemSelectedListener(navigationSelectedListener);
-        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new FirstFragment()).commit();
+        getSupportFragmentManager().beginTransaction().replace(R.id.fragment_container, new Dashboard()).commit();
 
     }
 
@@ -29,10 +29,10 @@ public class Navbar extends AppCompatActivity {
             Fragment selectedFragment = null;
             switch (item.getItemId()){
                 case R.id.firstFragment:
-                    selectedFragment = new FirstFragment();
+                    selectedFragment = new Dashboard();
                     break;
                 case R.id.secondFragment:
-                    selectedFragment = new SecondFragment();
+                    selectedFragment = new ViewProfile();
                     break;
                 case R.id.thirdFragment:
                     selectedFragment = new ThirdFragment();

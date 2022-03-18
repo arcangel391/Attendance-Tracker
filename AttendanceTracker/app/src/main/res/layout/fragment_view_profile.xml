@@ -473,7 +473,7 @@
             app:menu_labels_position="left"
             app:menu_labels_padding="8dp"
             app:menu_labels_showShadow="false"
-            android:src="@drawable/ic_plus"
+            android:src="@drawable/ic_add"
             fab:menu_colorPressed="@color/pink"
             fab:menu_colorNormal="@color/pink"
             fab:menu_openDirection="up"

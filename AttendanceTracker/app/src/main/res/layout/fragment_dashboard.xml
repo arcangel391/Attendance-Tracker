@@ -10,7 +10,7 @@
         android:layout_width="match_parent"
         android:layout_height="140dp"
         android:layout_marginTop="-20dp"
-        android:background="@drawable/rounded_toolbar_shape"
+        android:background="@drawable/rounded_box_shape"
         android:fontFamily="@font/barlow_black"
         app:backgroundTint="@color/blue"/>
 
