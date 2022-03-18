@@ -48,12 +48,345 @@
         </LinearLayout>
     </LinearLayout>
 
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="400dp"
+        android:scrollbars="vertical"
+        android:layout_marginTop="40dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:layout_marginTop="10dp">
+
+            <!-- STREET INPUT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Street/Bldg."
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/pink"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"/>
+                </LinearLayout>
+
+                <EditText
+                    android:background="@drawable/textbox_shape"
+                    android:layout_width="350dp"
+                    android:layout_height="47dp"
+                    android:hint="e.g. Sampaguita"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_medium"
+                    android:paddingStart="15dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <!-- BARANGAY INPUT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Barangay"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/pink"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"/>
+                </LinearLayout>
+
+                <EditText
+                    android:background="@drawable/textbox_shape"
+                    android:layout_width="350dp"
+                    android:layout_height="47dp"
+                    android:hint="e.g. Pembo"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_medium"
+                    android:paddingStart="15dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <!-- CITY INPUT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="City"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/pink"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"/>
+                </LinearLayout>
+
+                <EditText
+                    android:background="@drawable/textbox_shape"
+                    android:layout_width="350dp"
+                    android:layout_height="47dp"
+                    android:hint="e.g. Makati"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_medium"
+                    android:paddingStart="15dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_gravity="center">
+
+                <!-- CONTACT INPUT TEXT-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp"
+                    android:layout_marginEnd="20dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Contact Number"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/barlow_regular"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/pink"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/barlow_regular"/>
+                    </LinearLayout>
+
+                    <EditText
+                        android:background="@drawable/textbox_shape"
+                        android:layout_width="160dp"
+                        android:layout_height="47dp"
+                        android:hint="09123456789"
+                        android:textSize="14sp"
+                        android:inputType="number"
+                        android:maxLength="11"
+                        android:fontFamily="@font/barlow_medium"
+                        android:paddingStart="15dp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+                <!-- EMAIL INPUT TEXT-->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="10dp">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:text="Email"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/barlow_regular"
+                            android:textColor="@color/black"/>
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="*"
+                            android:textColor="@color/pink"
+                            android:textSize="14sp"
+                            android:fontFamily="@font/barlow_regular"/>
+                    </LinearLayout>
+
+                    <EditText
+                        android:background="@drawable/textbox_shape"
+                        android:id="@+id/txt_password"
+                        android:layout_width="170dp"
+                        android:layout_height="47dp"
+                        android:hint="email@gmail.com"
+                        android:inputType="textEmailAddress"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_medium"
+                        android:paddingStart="15dp"
+                        android:layout_gravity="center"/>
+                </LinearLayout>
+
+            </LinearLayout>
+
+            <!-- DEPARTMENT INPUT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Department"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/pink"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"/>
+                </LinearLayout>
+
+                <EditText
+                    android:background="@drawable/textbox_shape"
+                    android:layout_width="350dp"
+                    android:layout_height="47dp"
+                    android:hint="e.g. PROJ-IT-29"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_medium"
+                    android:paddingStart="15dp"
+                    android:layout_gravity="center"/>
+            </LinearLayout>
+
+            <!-- GOOGLE DRIVE INPUT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:layout_marginStart="30dp">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Google Drive Link"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/pink"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"/>
+                </LinearLayout>
+
+                <EditText
+                    android:background="@drawable/textbox_shape"
+                    android:layout_width="350dp"
+                    android:layout_height="47dp"
+                    android:hint="e.g. drive.google.com/drive/u/1/folder"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_medium"
+                    android:paddingStart="15dp"
+                    android:layout_gravity="center"/>
+
+            </LinearLayout>
+        </LinearLayout>
+    </ScrollView>
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
 
-        
+        <Button
+            android:layout_width="310dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_box_shape1"
+            app:backgroundTint = "@color/green"
+            android:textSize="18sp"
+            android:fontFamily="@font/barlow_bold"
+            android:text="SAVE"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="30dp"/>
+
+        <Button
+            android:layout_width="310dp"
+            android:layout_height="48dp"
+            android:background="@drawable/rounded_box_shape1"
+            app:backgroundTint = "@color/pink"
+            android:textSize="18sp"
+            android:fontFamily="@font/barlow_bold"
+            android:text="CANCEL"
+            android:gravity="center"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"/>
 
     </LinearLayout>
 
