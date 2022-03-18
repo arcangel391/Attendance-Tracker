@@ -455,8 +455,6 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="310dp"
         android:layout_marginTop="-220dp"
-        android:clickable="true"
-        android:focusable="true"
         android:src="@drawable/plus"
         app:backgroundTint="@color/pink"
         app:tint="@color/white">
@@ -465,8 +463,6 @@
             android:id="@+id/fabSignOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="-220dp"
             app:fab_colorNormal="@color/green"
             app:fab_size="mini"
             android:src="@drawable/sign_out_alt_solid"/>
@@ -475,8 +471,6 @@
             android:id="@+id/fabCP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="-220dp"
             app:fab_colorNormal="@color/green"
             app:fab_size="mini"
             android:src="@drawable/user_lock_solid"/>
@@ -485,8 +479,6 @@
             android:id="@+id/fabEditProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="310dp"
-            android:layout_marginTop="-220dp"
             app:fab_colorNormal="@color/green"
             app:fab_size="mini"
             android:src="@drawable/pencil_alt_solid"/>
