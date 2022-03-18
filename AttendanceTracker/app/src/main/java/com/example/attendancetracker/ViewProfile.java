@@ -26,33 +26,5 @@ public class ViewProfile extends AppCompatActivity {
         getSupportActionBar().hide();
         setContentView(R.layout.activity_view_profile);
 
-        fabSignOut = findViewById(R.id.fabSignOut);
-        fabCP = findViewById(R.id.fabCP);
-        fabEditProfile = findViewById(R.id.fabEditProfile);
-
-        fabSignOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                showToast("fabSignOut clicked!");
-            }
-
-        });
-        fabCP.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                showToast("fabCP clicked!");
-            }
-
-        });
-        fabEditProfile.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view){
-                showToast("fabEditProfile clicked!");
-            }
-
-        });
-    }
-    private void showToast(String message){
-        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }
