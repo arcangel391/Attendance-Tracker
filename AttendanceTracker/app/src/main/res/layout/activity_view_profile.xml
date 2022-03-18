@@ -454,14 +454,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="340dp"
-        android:layout_marginTop="-30dp"
+        android:layout_marginTop="-220dp"
         android:clickable="true"
         android:focusable="true"
         android:src="@drawable/plus"
         app:backgroundTint="@color/pink"
         app:tint="@color/white">
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fabSignOut"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -474,7 +474,7 @@
             app:tint="@color/white"
             />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fabCP"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -486,7 +486,7 @@
             app:backgroundTint="@color/green"
             app:tint="@color/white" />
 
-        <com.google.android.material.floatingactionbutton.FloatingActionButton
+        <com.github.clans.fab.FloatingActionButton
             android:id="@+id/fabEditProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
