@@ -3,10 +3,20 @@ package com.example.attendancetracker;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
+import android.widget.Toast;
+
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
+import com.github.clans.fab.FloatingActionMenu;
+
 
 public class ViewProfile extends AppCompatActivity {
+
+    FloatingActionButton fabSignOut;
+    FloatingActionButton fabCP;
+    FloatingActionButton fabEditProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -15,5 +25,34 @@ public class ViewProfile extends AppCompatActivity {
         this.getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         getSupportActionBar().hide();
         setContentView(R.layout.activity_view_profile);
+
+        fabSignOut = findViewById(R.id.fabSignOut);
+        fabCP = findViewById(R.id.fabCP);
+        fabEditProfile = findViewById(R.id.fabEditProfile);
+
+        fabSignOut.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                showToast("fabSignOut clicked!");
+            }
+
+        });
+        fabCP.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                showToast("fabCP clicked!");
+            }
+
+        });
+        fabEditProfile.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view){
+                showToast("fabEditProfile clicked!");
+            }
+
+        });
+    }
+    private void showToast(String message){
+        Toast.makeText(this, message, Toast.LENGTH_SHORT).show();
     }
 }

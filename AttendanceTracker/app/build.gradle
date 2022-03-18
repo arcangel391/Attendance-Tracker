@@ -44,4 +44,5 @@ dependencies {
 
     /*FLOATING ACTION BUTTON*/
     implementation 'com.github.clans:fab:1.6.2'
+    implementation 'com.github.pires:obd-java-api:1.0'
 }
