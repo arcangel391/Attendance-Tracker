@@ -33,49 +33,50 @@
         android:text="WELCOME"
         android:textColor="#000000"
         android:textSize="43sp" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:layout_marginTop="-40dp">
+        android:layout_marginTop="-40dp"
+        android:orientation="vertical">
 
         <LinearLayout
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
-            android:gravity="center">
+            android:gravity="center"
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:fontFamily="@font/barlow_medium"
-                android:textSize="14sp"
                 android:layout_gravity="left"
+                android:fontFamily="@font/barlow_medium"
+                android:text="Email"
                 android:textColor="@color/black"
-                android:text="Email" />
+                android:textSize="14sp" />
 
 
-                <EditText
-                    android:id="@+id/txt_email"
-                    android:background="@drawable/textbox_shape"
-                    android:layout_width="match_parent"
-                    android:layout_height="47dp"
-                    android:hint="user123@gmail.com"
-                    android:textSize="14sp"
-                    android:inputType="textEmailAddress"
-                    android:paddingStart="15dp"/>
+            <EditText
+                android:id="@+id/txt_email"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:background="@drawable/textbox_shape"
+                android:hint="user123@gmail.com"
+                android:inputType="textEmailAddress"
+                android:paddingStart="15dp"
+                android:textSize="14sp" />
 
         </LinearLayout>
 
         <LinearLayout
             android:layout_width="320dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
             android:layout_gravity="center"
+            android:layout_marginTop="10dp"
             android:gravity="center"
-            android:layout_marginTop="10dp">
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView5"
@@ -83,30 +84,30 @@
                 android:layout_height="wrap_content"
                 android:layout_gravity="left"
                 android:fontFamily="@font/barlow_medium"
-                android:textSize="14sp"
+                android:text="Password"
                 android:textColor="@color/black"
-                android:text="Password" />
+                android:textSize="14sp" />
 
 
-                <EditText
-                    android:background="@drawable/textbox_shape"
-                    android:id="@+id/txt_password"
-                    android:layout_width="match_parent"
-                    android:layout_height="47dp"
-                    android:hint="***********"
-                    android:textSize="14sp"
-                    android:inputType="textPassword"
-                    android:paddingStart="15dp"/>
+            <EditText
+                android:id="@+id/txt_password"
+                android:layout_width="match_parent"
+                android:layout_height="47dp"
+                android:background="@drawable/textbox_shape"
+                android:hint="***********"
+                android:inputType="textPassword"
+                android:paddingStart="15dp"
+                android:textSize="14sp" />
 
-                <TextView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:fontFamily="@font/fa_solid"
-                    android:text="\uf06e"
-                    android:textColor="@color/black"
-                    android:textSize="22sp"
-                    android:layout_marginTop="-35dp"
-                    android:layout_marginStart="120dp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="-35dp"
+                android:fontFamily="@font/fa_solid"
+                android:text="\uf06e"
+                android:textColor="@color/black"
+                android:textSize="22sp" />
 
 
         </LinearLayout>
@@ -118,9 +119,9 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="12dp"
         android:fontFamily="@font/barlow_medium"
-        android:textSize="14sp"
         android:text="FORGOT PASSWORD?"
-        android:textColor="@color/blue" />
+        android:textColor="@color/blue"
+        android:textSize="14sp" />
 
 
     <Button
@@ -129,16 +130,10 @@
         android:layout_height="60dp"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="100dp"
-        android:background="@drawable/rounded_box_shape"
+        android:background="@drawable/rounded_box_shape1"
         android:backgroundTint="@color/pink"
-        app:backgroundTint = "@color/pink"
-        android:text="SIGN-IN" />
-
-
-
-
-
-
+        android:text="SIGN-IN"
+        app:backgroundTint="@color/pink" />
 
 
 </LinearLayout>
