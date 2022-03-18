@@ -69,7 +69,7 @@
             <ScrollView
                 android:id="@+id/Ann_Cont"
                 android:layout_width="match_parent"
-                android:layout_height="200dp">
+                android:layout_height="250dp">
 
                 <LinearLayout
                     android:layout_width="match_parent"
@@ -250,7 +250,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/ann_layout"
-                android:layout_marginTop="36dp"
+                android:layout_marginTop="30dp"
                 app:layout_anchorGravity="center">
                 <!--Day-->
 
@@ -307,6 +307,7 @@
 
                 <Button
                     android:id="@+id/btnAtt_log"
+                    style="Widget.MaterialComponents.Button.icon"
                     android:layout_width="310dp"
                     android:layout_height="48dp"
                     android:layout_below="@+id/digitalClock"
@@ -314,11 +315,14 @@
                     android:layout_marginTop="70dp"
                     android:width="320dp"
                     android:background="@drawable/rounded_box_shape"
+                    android:drawableLeft="@drawable/att_log"
                     android:fontFamily="@font/barlow_semibold"
                     android:text="Attendance Log"
                     android:textSize="18sp"
+                    app:backgroundTint="@color/pink"
 
-                    app:backgroundTint="@color/pink" />
+
+                    />
 
                 <androidx.constraintlayout.widget.Barrier
                     android:layout_width="wrap_content"
