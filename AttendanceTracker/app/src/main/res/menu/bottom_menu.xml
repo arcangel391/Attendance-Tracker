@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/firstFragment"
+        android:title="Dashboard" android:icon="@drawable/home_solid"/>
+    <item
+        android:id="@+id/secondFragment"
+        android:title="Profile" android:icon="@drawable/user_alt_solid"/>
+    <item
+        android:id="@+id/thirdFragment"
+        android:title="Project" android:icon="@drawable/file_alt_solid"/>
+    <item
+        android:id="@+id/fourthFragment"
+        android:title="Report" android:icon="@drawable/file_signature_solid"/>
+</menu>
