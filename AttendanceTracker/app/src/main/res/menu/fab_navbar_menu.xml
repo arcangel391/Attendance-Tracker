@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/btnHome"
+        android:title="Home"
+        android:icon="@drawable/home_solid"
+        app:backgroundTint="@color/white"
+        />
+    <item
+        android:id="@+id/btnUser"
+        android:title="User"
+        android:icon="@drawable/user_alt_solid"
+        app:backgroundTint="@color/white"
+        />
+    <item
+        android:id="@+id/btnspace"
+        android:title=""
+        />
+    <item
+        android:id="@+id/btnFile"
+        android:title="File"
+        android:icon="@drawable/file_alt_solid"
+        app:backgroundTint="@color/white"
+        />
+    <item
+        android:id="@+id/btnFileSig"
+        android:title="SignatureFile"
+        android:icon="@drawable/file_signature_solid"
+        app:backgroundTint="@color/white"
+        />
+</menu>
