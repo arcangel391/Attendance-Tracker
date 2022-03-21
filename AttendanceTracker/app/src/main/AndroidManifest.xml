@@ -14,7 +14,7 @@
         android:usesCleartextTraffic="true"
         android:networkSecurityConfig="@xml/network_security_config"
        >
-        >
+
         <!-- <activity
             android:name=".Navbar"
             android:exported="false" />

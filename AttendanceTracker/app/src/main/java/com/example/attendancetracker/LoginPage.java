@@ -82,7 +82,7 @@ public class LoginPage extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setIndeterminate(false);
         progressDialog.show();
-        String uRl = "https://10.0.2.2/MelhamApp/login.php";
+        String uRl = "http://192.168.1.110/MelhamApp/login.php";
         StringRequest request = new StringRequest(Request.Method.POST, uRl, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
