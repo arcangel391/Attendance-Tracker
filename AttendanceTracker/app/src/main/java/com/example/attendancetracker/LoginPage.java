@@ -33,6 +33,10 @@ public class LoginPage extends AppCompatActivity {
     Button register,login;
     CheckBox checkedStatus;
     SharedPreferences sharedPreferences;
+    public static final String ROOT_URL="http://192.168.1.107/MelhamApp/";
+    public static final String URL_LOGIN ="login.php";
+    public static final String prefstatus1 ="";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -40,19 +44,18 @@ public class LoginPage extends AppCompatActivity {
         btnSignup = findViewById(R.id.btn_signin);
         txtUsername = findViewById(R.id.txt_email);
         txtPass = findViewById(R.id.txt_password);
-        checkedStatus = findViewById(R.id.checkbox);
-        sharedPreferences = getSharedPreferences("UserInfo", Context.MODE_PRIVATE);
+        // checkedStatus = findViewById(R.id.cbsamp);
+        sharedPreferences = getSharedPreferences("a_tracker", Context.MODE_PRIVATE);
         String loginStatus = sharedPreferences.getString(getResources().getString(R.string.prefStatus),"");
         if (loginStatus.equals("loggedin")){
-            startActivity(new Intent(LoginPage.this,Dashboard.class));
-            finish();
+            startActivity(new Intent(LoginPage.this,Navbar.class));
+
 
 
 
     }
 
         //Button is pressed
-
        btnSignup.setOnClickListener(new View.OnClickListener() {
            @Override
            public void onClick(View v) {
@@ -82,12 +85,13 @@ public class LoginPage extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setIndeterminate(false);
         progressDialog.show();
-        String uRl = "http://192.168.1.110/MelhamApp/login.php";
-        StringRequest request = new StringRequest(Request.Method.POST, uRl, new Response.Listener<String>() {
+        String uRl = "http://192.168.1.107/MelhamApp/login.php";
+
+        StringRequest request = new StringRequest(Request.Method.POST, ROOT_URL+URL_LOGIN, new Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
 
-                if (response.equals("Login Success Welcome")){
+                if (response.equals("Login Success")){
                     Toast.makeText(LoginPage.this, response, Toast.LENGTH_SHORT).show();
                     SharedPreferences.Editor editor = sharedPreferences.edit();
                     if (checkedStatus.isChecked()){
@@ -97,9 +101,9 @@ public class LoginPage extends AppCompatActivity {
                         editor.putString(getResources().getString(R.string.prefStatus),"loggedout");
                     }
                     editor.apply();
-                    startActivity(new Intent(LoginPage.this,Dashboard.class));
+                    startActivity(new Intent(LoginPage.this,Navbar.class));
                     progressDialog.dismiss();
-                    finish();
+
                 }
                 else {
                     Toast.makeText(LoginPage.this, response, Toast.LENGTH_SHORT).show();
@@ -123,7 +127,7 @@ public class LoginPage extends AppCompatActivity {
             }
         };
 
-        request.setRetryPolicy(new DefaultRetryPolicy(30000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
+        request.setRetryPolicy(new DefaultRetryPolicy(50000,DefaultRetryPolicy.DEFAULT_MAX_RETRIES,DefaultRetryPolicy.DEFAULT_BACKOFF_MULT));
         MySingleton.getmInstance(LoginPage.this).addToRequestQueue(request);
     }
 
