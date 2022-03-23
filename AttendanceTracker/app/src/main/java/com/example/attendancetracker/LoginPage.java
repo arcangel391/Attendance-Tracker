@@ -33,7 +33,7 @@ public class LoginPage extends AppCompatActivity {
     Button register,login;
     CheckBox checkedStatus;
     SharedPreferences sharedPreferences;
-    public static final String ROOT_URL="http://192.168.1.107/MelhamApp/";
+    public static final String ROOT_URL="http://192.168.1.50/Melham/";
     public static final String URL_LOGIN ="login.php";
     public static final String prefstatus1 ="";
 
@@ -85,7 +85,7 @@ public class LoginPage extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setIndeterminate(false);
         progressDialog.show();
-        String uRl = "http://192.168.1.107/MelhamApp/login.php";
+        String uRl = "http://192.168.1.50/Melham/login.php";
 
         StringRequest request = new StringRequest(Request.Method.POST, ROOT_URL+URL_LOGIN, new Response.Listener<String>() {
             @Override
@@ -113,7 +113,7 @@ public class LoginPage extends AppCompatActivity {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(LoginPage.this, error.toString(), Toast.LENGTH_SHORT).show();
+                Toast.makeText(LoginPage.this, error.toString(), Toast.LENGTH_LONG).show();
                 progressDialog.dismiss();
             }
         }){
