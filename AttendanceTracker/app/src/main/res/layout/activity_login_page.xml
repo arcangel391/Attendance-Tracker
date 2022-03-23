@@ -63,20 +63,10 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:background="@drawable/textbox_shape"
-                android:hint="user123@gmail.com"
+                android:hint="Email"
                 android:inputType="textEmailAddress"
                 android:paddingStart="15dp"
                 android:textSize="14sp" />
-
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="320dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginTop="10dp"
-            android:gravity="center"
-            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView5"
@@ -87,6 +77,19 @@
                 android:text="Password"
                 android:textColor="@color/black"
                 android:textSize="14sp" />
+        </LinearLayout>
+
+        <com.google.android.material.textfield.TextInputLayout
+            android:layout_width="320dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="10dp"
+            android:gravity="center"
+            android:orientation="vertical"
+            app:passwordToggleEnabled="true"
+            android:hint="Password">
+
+
 
 
             <EditText
@@ -94,12 +97,12 @@
                 android:layout_width="match_parent"
                 android:layout_height="47dp"
                 android:background="@drawable/textbox_shape"
-                android:hint="***********"
                 android:inputType="textPassword"
                 android:paddingStart="15dp"
                 android:textSize="14sp" />
 
-            <TextView
+            <!--<TextView
+                android:id="@+id/showPass"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="120dp"
@@ -108,9 +111,10 @@
                 android:text="\uf06e"
                 android:textColor="@color/black"
                 android:textSize="22sp" />
+                -->
 
 
-        </LinearLayout>
+        </com.google.android.material.textfield.TextInputLayout>
     </LinearLayout>
 
     <TextView

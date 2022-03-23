@@ -1,11 +1,13 @@
 package com.example.attendancetracker;
 
+import androidx.annotation.RequiresApi;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.os.Build;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.view.View;
@@ -23,17 +25,24 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
+//import android.text.method.HideReturnsTransformationMethod;
+//import android.text.method.PasswordTransformationMethod;
+
 import java.util.HashMap;
 import java.util.Map;
 
 public class LoginPage extends AppCompatActivity {
 
     Button btnSignup;
-    TextView txtUsername, txtPass;
+    TextView txtUsername, txtPass, showPass;
     Button register,login;
     CheckBox checkedStatus;
     SharedPreferences sharedPreferences;
-    public static final String ROOT_URL="http://192.168.1.110/MelhamApp/";
+    /*email validation*/
+    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
+
+    public static final String ROOT_URL="http://192.168.1.50/Melham/";
     public static final String URL_LOGIN ="login.php";
     public static final String prefstatus1 ="";
 
@@ -44,8 +53,12 @@ public class LoginPage extends AppCompatActivity {
         btnSignup = findViewById(R.id.btn_signin);
         txtUsername = findViewById(R.id.txt_email);
         txtPass = findViewById(R.id.txt_password);
+        //showPass = findViewById(R.id.showPass);
 //        checkedStatus = findViewById(R.id.cbsamp);
         sharedPreferences = getSharedPreferences("a_tracker", Context.MODE_PRIVATE);
+
+
+
         String loginStatus = sharedPreferences.getString(getResources().getString(R.string.prefStatus),"");
         if (loginStatus.equals("loggedin")){
             startActivity(new Intent(LoginPage.this,Navbar.class));
@@ -69,6 +82,14 @@ public class LoginPage extends AppCompatActivity {
                    LoginMet(username,password);
 
                }
+                /* email validation */
+
+               if (txtUsername.getText().toString().trim().matches(emailPattern)) {
+                   Toast.makeText(getApplicationContext(),"Valid email address",Toast.LENGTH_SHORT).show();
+               } else {
+                       Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
+               }
+
            }
        });
 
@@ -82,7 +103,7 @@ public class LoginPage extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setIndeterminate(false);
         progressDialog.show();
-        String uRl = "http://192.168.1.110/Melham/login.php";
+        String uRl = "http://192.168.1.50/Melham/login.php";
 
         StringRequest request = new StringRequest(Request.Method.POST, ROOT_URL+URL_LOGIN, new Response.Listener<String>() {
             @Override

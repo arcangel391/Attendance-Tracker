@@ -46,6 +46,8 @@ dependencies {
     implementation 'com.github.clans:fab:1.6.2'
     implementation 'com.github.pires:obd-java-api:1.0'
 
+    /*Password Eye*/
+    implementation 'com.google.android.material:material:1.2.1'
 
     /*For mysql exec*/
 
