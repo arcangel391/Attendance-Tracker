@@ -25,8 +25,8 @@ import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 
-//import android.text.method.HideReturnsTransformationMethod;
-//import android.text.method.PasswordTransformationMethod;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -38,6 +38,7 @@ public class LoginPage extends AppCompatActivity {
     Button register,login;
     CheckBox checkedStatus;
     SharedPreferences sharedPreferences;
+    String eyeSwitch = "even";
     /*email validation*/
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -53,7 +54,7 @@ public class LoginPage extends AppCompatActivity {
         btnSignup = findViewById(R.id.btn_signin);
         txtUsername = findViewById(R.id.txt_email);
         txtPass = findViewById(R.id.txt_password);
-        //showPass = findViewById(R.id.showPass);
+        showPass = findViewById(R.id.showPass);
 //        checkedStatus = findViewById(R.id.cbsamp);
         sharedPreferences = getSharedPreferences("a_tracker", Context.MODE_PRIVATE);
 
@@ -67,6 +68,24 @@ public class LoginPage extends AppCompatActivity {
 
 
     }
+
+        //mata
+        showPass.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                switch (eyeSwitch) {
+                    case "even":
+                        txtPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                        eyeSwitch = "odd";
+                        break;
+
+                    case "odd":
+                        txtPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                        eyeSwitch = "even";
+                        break;
+                }
+            }
+        });
 
         //Button is pressed
        btnSignup.setOnClickListener(new View.OnClickListener() {
