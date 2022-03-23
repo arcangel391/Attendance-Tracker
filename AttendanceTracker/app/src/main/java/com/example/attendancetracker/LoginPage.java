@@ -38,7 +38,6 @@ public class LoginPage extends AppCompatActivity {
     Button register,login;
     CheckBox checkedStatus;
     SharedPreferences sharedPreferences;
-    String eyeSwitch = "even";
     /*email validation*/
     String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
@@ -73,15 +72,15 @@ public class LoginPage extends AppCompatActivity {
         showPass.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                switch (eyeSwitch) {
-                    case "even":
+                switch (showPass.getText().toString()) {
+                    case "\uf06e":
                         txtPass.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
-                        eyeSwitch = "odd";
+                        showPass.setText("\uf070");
                         break;
 
-                    case "odd":
+                    case "\uf070":
                         txtPass.setTransformationMethod(PasswordTransformationMethod.getInstance());
-                        eyeSwitch = "even";
+                        showPass.setText("\uf06e");
                         break;
                 }
             }
