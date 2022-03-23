@@ -33,7 +33,7 @@ public class LoginPage extends AppCompatActivity {
     Button register,login;
     CheckBox checkedStatus;
     SharedPreferences sharedPreferences;
-    public static final String ROOT_URL="http://192.168.1.50/Melham/";
+    public static final String ROOT_URL="http://192.168.1.110/MelhamApp/";
     public static final String URL_LOGIN ="login.php";
     public static final String prefstatus1 ="";
 
@@ -44,7 +44,7 @@ public class LoginPage extends AppCompatActivity {
         btnSignup = findViewById(R.id.btn_signin);
         txtUsername = findViewById(R.id.txt_email);
         txtPass = findViewById(R.id.txt_password);
-        // checkedStatus = findViewById(R.id.cbsamp);
+//        checkedStatus = findViewById(R.id.cbsamp);
         sharedPreferences = getSharedPreferences("a_tracker", Context.MODE_PRIVATE);
         String loginStatus = sharedPreferences.getString(getResources().getString(R.string.prefStatus),"");
         if (loginStatus.equals("loggedin")){
@@ -64,11 +64,8 @@ public class LoginPage extends AppCompatActivity {
 
                if(TextUtils.isEmpty(username)||TextUtils.isEmpty(password)){
                    Toast.makeText(LoginPage.this, "All Fields Required", Toast.LENGTH_SHORT).show();
-
-
                }
                else{
-
                    LoginMet(username,password);
 
                }
@@ -85,7 +82,7 @@ public class LoginPage extends AppCompatActivity {
         progressDialog.setCanceledOnTouchOutside(false);
         progressDialog.setIndeterminate(false);
         progressDialog.show();
-        String uRl = "http://192.168.1.50/Melham/login.php";
+        String uRl = "http://192.168.1.110/Melham/login.php";
 
         StringRequest request = new StringRequest(Request.Method.POST, ROOT_URL+URL_LOGIN, new Response.Listener<String>() {
             @Override
@@ -94,20 +91,22 @@ public class LoginPage extends AppCompatActivity {
                 if (response.equals("Login Success")){
                     Toast.makeText(LoginPage.this, response, Toast.LENGTH_SHORT).show();
                     SharedPreferences.Editor editor = sharedPreferences.edit();
-                    if (checkedStatus.isChecked()){
+                    /*if (checkedStatus.isChecked()){
                         editor.putString(getResources().getString(R.string.prefStatus),"loggedin");
                     }
                     else{
                         editor.putString(getResources().getString(R.string.prefStatus),"loggedout");
-                    }
+                    }*/
                     editor.apply();
-                    startActivity(new Intent(LoginPage.this,Navbar.class));
+                    startActivity(new Intent(LoginPage.this, Navbar.class));
                     progressDialog.dismiss();
+                    finish();
 
                 }
                 else {
                     Toast.makeText(LoginPage.this, response, Toast.LENGTH_SHORT).show();
                     progressDialog.dismiss();
+
                 }
             }
         }, new Response.ErrorListener() {
