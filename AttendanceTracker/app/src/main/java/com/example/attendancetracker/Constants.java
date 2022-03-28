@@ -2,6 +2,7 @@ package com.example.attendancetracker;
 
 public class Constants {
 
-    public static final String ROOT_URL = "http://192.168.1.113/MCC-AttendanceTracker/v1/";
+    public static final String ROOT_URL = "http://192.168.1.110/MCC-AttendanceTracker/v1/";
     public static final String URL_LOGIN = ROOT_URL+"loginFunction.php";
+    public static final String URL_FORGOT_PASS = ROOT_URL+"forgot_password.php";
 }
