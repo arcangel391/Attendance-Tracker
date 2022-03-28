@@ -12,16 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendanceTracker"
         android:usesCleartextTraffic="true">
-        <!-- <activity
-            android:name=".Navbar"
-            android:exported="false" />
-        <activity android:name=".LoginPage" />
-         -->
-        <!--
-<activity
-            android:name=".SplashScreen"
-            android:exported="false" />
-        -->
+
         <activity
             android:name=".EmailVerificationFP"
             android:exported="false"

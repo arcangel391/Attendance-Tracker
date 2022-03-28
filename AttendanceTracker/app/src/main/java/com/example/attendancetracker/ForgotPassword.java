@@ -85,6 +85,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
     public void onClick(View v){
         if(v == sendCode){
+            sendCode.setEnabled(false);
             checkEmail();
         }
     }

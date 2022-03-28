@@ -105,7 +105,7 @@
 
             <EditText
                 android:background="@drawable/textbox_shape"
-                android:id="@+id/txt_password"
+                android:id="@+id/tbxVerificationCode"
                 android:layout_width="350dp"
                 android:layout_height="47dp"
                 android:hint="Enter the verification code sent in your email"
@@ -117,18 +117,20 @@
         </LinearLayout>
 
             <Button
+                android:id="@+id/btnSubmit"
                 android:layout_width="310dp"
                 android:layout_height="48dp"
                 android:background="@drawable/rounded_box_shape1"
                 app:backgroundTint = "@color/green"
                 android:textSize="18sp"
                 android:fontFamily="@font/barlow_bold"
-                android:text="SEND CODE"
+                android:text="SUBMIT"
                 android:gravity="center"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"/>
 
             <TextView
+                android:id="@+id/txtResendCode"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Resend Code?"
