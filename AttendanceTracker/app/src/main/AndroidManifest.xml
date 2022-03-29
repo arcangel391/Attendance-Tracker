@@ -13,16 +13,9 @@
         android:theme="@style/Theme.AttendanceTracker"
         android:usesCleartextTraffic="true">
 
-        <activity
-            android:name=".EmailVerificationFP"
-            android:exported="false"
-            android:label="@string/title_activity_dashboard"
-            android:theme="@style/Theme.AttendanceTracker.NoActionBar" />
-        <activity
-            android:name=".Dashboard"
-            android:exported="false"
-            android:label="@string/title_activity_dashboard"
-            android:theme="@style/Theme.AttendanceTracker.NoActionBar" />
+        <activity android:name=".EmailVerificationFP" />
+        <activity android:name=".ResetPassword" />
+
         <activity android:name=".ForgotPassword">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

@@ -1,6 +1,8 @@
 package com.example.attendancetracker;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -28,6 +30,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
     EditText userEmail;
     Button sendCode;
+    SharedPreferences sp;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,7 +39,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
 
         userEmail = findViewById(R.id.tbxEmail);
         sendCode = findViewById(R.id.btnSendCode);
-
+        sp = getApplicationContext().getSharedPreferences("SharedPref", Context.MODE_PRIVATE);
         sendCode.setOnClickListener(this);
 
     }
@@ -52,6 +55,12 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
                         try{
                             JSONObject obj = new JSONObject(response);
                             if(!obj.getBoolean("error")){
+                                SharedPreferences.Editor editor = sp.edit();
+                                String verificationCode = obj.getString("code");
+                                editor.putString("code", verificationCode);
+                                editor.putString("email", inputEmail);
+                                editor.commit();
+
                                 Intent intent = new Intent(ForgotPassword.this, EmailVerificationFP.class);
                                 startActivity(intent);
                                 finish();
