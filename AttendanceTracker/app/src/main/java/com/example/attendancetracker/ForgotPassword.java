@@ -59,7 +59,7 @@ public class ForgotPassword extends AppCompatActivity implements View.OnClickLis
                                 String verificationCode = obj.getString("code");
                                 editor.putString("code", verificationCode);
                                 editor.putString("email", inputEmail);
-                                editor.commit();
+                                editor.apply();
 
                                 Intent intent = new Intent(ForgotPassword.this, EmailVerificationFP.class);
                                 startActivity(intent);

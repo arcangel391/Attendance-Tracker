@@ -15,9 +15,11 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -42,6 +44,7 @@ public class EmailVerificationFP extends AppCompatActivity implements View.OnCli
         resendCode = findViewById(R.id.txtResendCode);
         submit = findViewById(R.id.btnSubmitCode);
         submit.setOnClickListener(this);
+        resendCode.setOnClickListener(this);
 
 
     }
@@ -58,9 +61,12 @@ public class EmailVerificationFP extends AppCompatActivity implements View.OnCli
                         try{
                             JSONObject obj = new JSONObject(response);
                             if(!obj.getBoolean("error")){
-                                if(codeInput == code) {
+                                if(codeInput.equals(code)) {
                                     Toast.makeText(getApplicationContext(), "Verified successfully.", Toast.LENGTH_LONG).show();
-                                    Intent intent = new Intent(EmailVerificationFP.this, EmailVerificationFP.class);
+                                    SharedPreferences.Editor editor = sp.edit();
+                                    editor.putString("code", "");
+                                    editor.apply();
+                                    Intent intent = new Intent(EmailVerificationFP.this, ResetPassword.class);
                                     startActivity(intent);
                                     finish();
                                 }else{
@@ -78,7 +84,7 @@ public class EmailVerificationFP extends AppCompatActivity implements View.OnCli
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
         ){
@@ -90,15 +96,68 @@ public class EmailVerificationFP extends AppCompatActivity implements View.OnCli
                 return params;
             }
         };
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
 
 
+    }
+
+    private void codeResend(){
+        final String inputEmail = sp.getString("email", "");
+
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                Constants.URL_FORGOT_PASS,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try{
+                            JSONObject obj = new JSONObject(response);
+                            if(!obj.getBoolean("error")){
+                                SharedPreferences.Editor editor = sp.edit();
+                                String verificationCode = obj.getString("code");
+                                editor.putString("code", verificationCode);
+                                editor.apply();
+
+                                Toast.makeText(getApplicationContext(), "Code sent successfully.", Toast.LENGTH_LONG).show();
+
+                            }else{
+                                Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+                            }
+
+                        }catch (JSONException e){
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params  = new HashMap<>();
+                params.put("email", inputEmail);
+                return params;
+            }
+        };
+
+        RequestQueue requestQueue = Volley.newRequestQueue(this);
+        requestQueue.add(stringRequest);
     }
 
 
     public void onClick(View v){
         if(v == submit){
             String verificationCode = sp.getString("code", "");
+            String codeInput = inputCode.getText().toString().trim();
+            Toast.makeText(getApplicationContext(), verificationCode + " -" + codeInput, Toast.LENGTH_LONG).show();
             verifyCode(verificationCode);
+        }
+
+        if(v == resendCode){
+            codeResend();
         }
     }
 }
