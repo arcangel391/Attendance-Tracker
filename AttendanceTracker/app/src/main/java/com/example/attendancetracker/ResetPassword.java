@@ -3,6 +3,8 @@ package com.example.attendancetracker;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.text.method.HideReturnsTransformationMethod;
+import android.text.method.PasswordTransformationMethod;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -100,5 +102,38 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
         if(v==btnSavePassword){
             passwordReset();
         }
+        if(v==eye1){
+            switch (eye1.getText().toString()) {
+                case "\uf06e":
+                    newPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    eye1.setText("\uf070");
+                    break;
+
+                case "\uf070":
+                    newPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    eye1.setText("\uf06e");
+                    break;
+            }
+        }
+
+        if(v==eye2){
+            switch (eye2.getText().toString()) {
+                case "\uf06e":
+                    confirmNewPassword.setTransformationMethod(HideReturnsTransformationMethod.getInstance());
+                    eye2.setText("\uf070");
+                    break;
+
+                case "\uf070":
+                    confirmNewPassword.setTransformationMethod(PasswordTransformationMethod.getInstance());
+                    eye2.setText("\uf06e");
+                    break;
+            }
+        }
+
+        
+
+
+
+
     }
 }
