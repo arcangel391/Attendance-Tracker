@@ -27,8 +27,11 @@ public class Dashboard extends Fragment {
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
-        btnAttendance = (Button)findViewById(R.id.btnAttendance);
+        View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
 
-        return inflater.inflate(R.layout.fragment_dashboard, container, false);
+        btnAttendance = (Button)view.findViewById(R.id.btnAttendance);
+
+        return view;
     }
+
 }
