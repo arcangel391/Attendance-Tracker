@@ -12,10 +12,22 @@ import android.view.ViewGroup;
 import android.view.Window;
 import android.view.WindowManager;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
+
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 public class ViewProfile extends Fragment {
@@ -40,6 +52,8 @@ public class ViewProfile extends Fragment {
         birthdate = v.findViewById(R.id.txtBirthdate);
         gender = v.findViewById(R.id.txtGender);
 
+
+        getUserData();
         return v;
     }
 
@@ -47,7 +61,48 @@ public class ViewProfile extends Fragment {
         final String userEmail = "intensityg36@gmail.com";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
-                Constants.)
+                Constants.URL_VIEW_PROFILE,
+                new Response.Listener<String>() {
+                    @Override
+                    public void onResponse(String response) {
+                        try{
+                            JSONObject obj = new JSONObject(response);
+                            if(!obj.getBoolean("error")){
+                                String full_name = obj.getString("first_name") + " " + obj.getString("last_name");
+                                name.setText(full_name);
+                                applicationID.setText(obj.getString("application_id"));
+                                email.setText(obj.getString("email"));
+                                contactNumber.setText(obj.getString("contact_number"));
+                                street.setText(obj.getString("street"));
+                                address.setText(obj.getString("address"));
+                                birthdate.setText(obj.getString("birthdate"));
+                                gender.setText(obj.getString("gender"));
+
+                            }else{
+                                Toast.makeText(getActivity().getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+                            }
+
+                        }catch(JSONException e){
+                            e.printStackTrace();
+                        }
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity().getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+        ){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params  = new HashMap<>();
+                params.put("email", userEmail);
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        requestQueue.add(stringRequest);
     }
 
 }
