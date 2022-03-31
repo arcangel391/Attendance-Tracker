@@ -3,7 +3,9 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical">
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    tools:context=".EditProfile">
 
     <ImageView
         android:id="@+id/toolbar"
@@ -89,6 +91,7 @@
                 </LinearLayout>
 
                 <EditText
+                    android:id="@+id/tbxEditStreet"
                     android:background="@drawable/textbox_shape"
                     android:layout_width="350dp"
                     android:layout_height="47dp"
@@ -130,6 +133,7 @@
                 </LinearLayout>
 
                 <EditText
+                    android:id="@+id/tbxEditBarangay"
                     android:background="@drawable/textbox_shape"
                     android:layout_width="350dp"
                     android:layout_height="47dp"
@@ -171,6 +175,7 @@
                 </LinearLayout>
 
                 <EditText
+                    android:id="@+id/tbxEditCity"
                     android:background="@drawable/textbox_shape"
                     android:layout_width="350dp"
                     android:layout_height="47dp"
@@ -218,6 +223,7 @@
                     </LinearLayout>
 
                     <EditText
+                        android:id="@+id/tbxEditContactNumber"
                         android:background="@drawable/textbox_shape"
                         android:layout_width="160dp"
                         android:layout_height="47dp"
@@ -261,7 +267,7 @@
 
                     <EditText
                         android:background="@drawable/textbox_shape"
-                        android:id="@+id/txt_password"
+                        android:id="@+id/tbxEditEmail"
                         android:layout_width="170dp"
                         android:layout_height="47dp"
                         android:hint="email@gmail.com"
@@ -305,6 +311,7 @@
                 </LinearLayout>
 
                 <EditText
+                    android:id="@+id/tbxEditDepartment"
                     android:background="@drawable/textbox_shape"
                     android:layout_width="350dp"
                     android:layout_height="47dp"
@@ -346,6 +353,7 @@
                 </LinearLayout>
 
                 <EditText
+                    android:id="@+id/tbxEditGoogleDriveLink"
                     android:background="@drawable/textbox_shape"
                     android:layout_width="350dp"
                     android:layout_height="47dp"
@@ -365,6 +373,7 @@
         android:orientation="vertical">
 
         <Button
+            android:id="@+id/btnSave"
             android:layout_width="310dp"
             android:layout_height="48dp"
             android:background="@drawable/rounded_box_shape1"
@@ -377,6 +386,7 @@
             android:layout_marginTop="30dp"/>
 
         <Button
+            android:id="@+id/btnCancel"
             android:layout_width="310dp"
             android:layout_height="48dp"
             android:background="@drawable/rounded_box_shape1"

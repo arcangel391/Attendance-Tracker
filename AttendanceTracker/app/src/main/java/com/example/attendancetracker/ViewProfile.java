@@ -30,11 +30,12 @@ import java.util.HashMap;
 import java.util.Map;
 
 
-public class ViewProfile extends Fragment {
+public class ViewProfile extends Fragment implements View.OnClickListener{
 
     FloatingActionButton fabSignOut;
-    FloatingActionButton fabCP;
+    FloatingActionButton fabChangePassword;
     FloatingActionButton fabEditProfile;
+    FloatingActionButton fabViewLeave;
 
     TextView name, applicationID, email, contactNumber, street, address, birthdate, gender;
 
@@ -52,6 +53,15 @@ public class ViewProfile extends Fragment {
         birthdate = v.findViewById(R.id.txtBirthdate);
         gender = v.findViewById(R.id.txtGender);
 
+        fabSignOut = v.findViewById(R.id.fabSignOut);
+        fabChangePassword = v.findViewById(R.id.fabChangePassword);
+        fabViewLeave = v.findViewById(R.id.fabLeave);
+        fabEditProfile = v.findViewById(R.id.fabEditProfile);
+
+        fabSignOut.setOnClickListener(this);
+        fabChangePassword.setOnClickListener(this);
+        fabViewLeave.setOnClickListener(this);
+        fabEditProfile.setOnClickListener(this);
 
         getUserData();
         return v;
@@ -103,6 +113,16 @@ public class ViewProfile extends Fragment {
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
         requestQueue.add(stringRequest);
+    }
+
+    private void userEditProfile(){
+
+    }
+
+    public void onClick(View v){
+        if(v == fabEditProfile){
+
+        }
     }
 
 }
