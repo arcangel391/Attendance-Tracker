@@ -53,15 +53,15 @@ public class ViewProfile extends Fragment implements View.OnClickListener{
         birthdate = v.findViewById(R.id.txtBirthdate);
         gender = v.findViewById(R.id.txtGender);
 
-        fabSignOut = v.findViewById(R.id.fabSignOut);
+       /* fabSignOut = v.findViewById(R.id.fabSignOut);
         fabChangePassword = v.findViewById(R.id.fabChangePassword);
         fabViewLeave = v.findViewById(R.id.fabLeave);
-        fabEditProfile = v.findViewById(R.id.fabEditProfile);
+        fabEditProfile = v.findViewById(R.id.fabEditProfile);*/
 
-        fabSignOut.setOnClickListener(this);
+       /* fabSignOut.setOnClickListener(this);
         fabChangePassword.setOnClickListener(this);
         fabViewLeave.setOnClickListener(this);
-        fabEditProfile.setOnClickListener(this);
+        fabEditProfile.setOnClickListener(this);*/
 
         getUserData();
         return v;
