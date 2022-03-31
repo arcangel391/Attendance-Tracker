@@ -5,6 +5,7 @@ import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -32,10 +33,10 @@ import java.util.Map;
 
 public class ViewProfile extends Fragment implements View.OnClickListener{
 
-    FloatingActionButton fabSignOut;
-    FloatingActionButton fabChangePassword;
-    FloatingActionButton fabEditProfile;
-    FloatingActionButton fabViewLeave;
+    com.github.clans.fab.FloatingActionButton fabSignOut;
+    com.github.clans.fab.FloatingActionButton fabChangePassword;
+    com.github.clans.fab.FloatingActionButton fabEditProfile;
+    com.github.clans.fab.FloatingActionButton fabViewLeave;
 
     TextView name, applicationID, email, contactNumber, street, address, birthdate, gender;
 
@@ -53,15 +54,15 @@ public class ViewProfile extends Fragment implements View.OnClickListener{
         birthdate = v.findViewById(R.id.txtBirthdate);
         gender = v.findViewById(R.id.txtGender);
 
-       /* fabSignOut = v.findViewById(R.id.fabSignOut);
+        fabSignOut = v.findViewById(R.id.fabSignOut);
         fabChangePassword = v.findViewById(R.id.fabChangePassword);
         fabViewLeave = v.findViewById(R.id.fabLeave);
-        fabEditProfile = v.findViewById(R.id.fabEditProfile);*/
+        fabEditProfile = v.findViewById(R.id.fabEditProfile);
 
-       /* fabSignOut.setOnClickListener(this);
+        fabSignOut.setOnClickListener(this);
         fabChangePassword.setOnClickListener(this);
         fabViewLeave.setOnClickListener(this);
-        fabEditProfile.setOnClickListener(this);*/
+        fabEditProfile.setOnClickListener(this);
 
         getUserData();
         return v;
@@ -121,7 +122,7 @@ public class ViewProfile extends Fragment implements View.OnClickListener{
 
     public void onClick(View v){
         if(v == fabEditProfile){
-
+            Intent intent = new Intent(ViewProfile.this, EditProfile.class);
         }
     }
 
