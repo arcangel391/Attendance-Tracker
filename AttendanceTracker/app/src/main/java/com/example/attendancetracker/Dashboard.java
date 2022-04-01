@@ -53,8 +53,6 @@ public class Dashboard extends Fragment {
 
     public void clicked (View v){
         message();
-
-
     }
 
 
