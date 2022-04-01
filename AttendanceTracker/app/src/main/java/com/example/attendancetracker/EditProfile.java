@@ -1,6 +1,9 @@
 package com.example.attendancetracker;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -20,8 +23,9 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class EditProfile extends AppCompatActivity {
+public class EditProfile extends AppCompatActivity implements View.OnClickListener{
     EditText street, barangay, city, contactNumber, email, department, driveLink;
+    Button saveData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -34,6 +38,9 @@ public class EditProfile extends AppCompatActivity {
         email = findViewById(R.id.tbxEditEmail);
         department = findViewById(R.id.tbxEditDepartment);
         driveLink = findViewById(R.id.tbxEditGoogleDriveLink);
+
+        saveData = findViewById(R.id.btnSave);
+        saveData.setOnClickListener(this);
         fillInTextbox();
     }
 
@@ -99,20 +106,51 @@ public class EditProfile extends AppCompatActivity {
                 new Response.Listener<String>() {
                     @Override
                     public void onResponse(String response) {
+                        try{
+                            JSONObject obj = new JSONObject(response);
+                            if(!obj.getBoolean("error")) {
+                                Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+                                Intent intent = new Intent(EditProfile.this, Navbar.class);
+                                startActivity(intent);
+                                finish();
+                            }else{
+                                Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+                            }
+                        }catch(JSONException e){
+                            e.printStackTrace();
+                        }
 
                     }
                 }, new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-
+                        Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
         ){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                return super.getParams();
+                Map<String, String> params  = new HashMap<>();
+                params.put("user_email", userEmail);
+                params.put("street", userStreet);
+                params.put("barangay", userBarangay);
+                params.put("city", userCity);
+                params.put("email", userEmailAddress);
+                params.put("contact_number", userContactNumber);
+                params.put("department", userDepartment);
+                params.put("drive", userDrive);
+                return params;
             }
         };
+        RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
+        requestQueue.add(stringRequest);
 
+    }
+
+    @Override
+    public void onClick(View v){
+        if(v==saveData){
+            updateProfile();
+        }
     }
 }

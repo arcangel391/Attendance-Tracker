@@ -123,6 +123,11 @@ public class ViewProfile extends Fragment implements View.OnClickListener{
             Intent intent = new Intent(getActivity(), EditProfile.class);
             startActivity(intent);
         }
+
+        if(v==fabChangePassword){
+            Intent intent = new Intent(getActivity(), ChangePassword.class);
+            startActivity(intent);
+        }
     }
 
 }

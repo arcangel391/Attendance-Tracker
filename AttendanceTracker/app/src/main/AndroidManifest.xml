@@ -16,6 +16,7 @@
 
         <activity android:name=".SplashScreen"/>
         <activity android:name=".EditProfile"/>
+        <activity android:name=".ChangePassword"/>
 
 
         <activity android:name=".Navbar">

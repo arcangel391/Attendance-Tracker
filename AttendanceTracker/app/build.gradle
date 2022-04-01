@@ -48,4 +48,7 @@ dependencies {
 
     /*MYSQL VOLLEY*/
     implementation 'com.android.volley:volley:1.1.0' //connect app to mysql
+
+    /*CIRCULAR IMAGE VIEW*/
+    implementation 'de.hdodenhof:circleimageview:3.1.0'
 }
