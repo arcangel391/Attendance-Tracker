@@ -5,6 +5,8 @@ import android.content.DialogInterface;
 import android.graphics.Color;
 import android.os.Bundle;
 
+//import com.android.volley.Request;
+//import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
@@ -18,10 +20,16 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.text.DateFormat;
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -32,7 +40,9 @@ public class Dashboard extends Fragment {
     Context context;
     String mess = "time in";
     int nswitch = 0;
-    String URL = "htt192.168.1.1"
+    ListView listView;
+    String uRl = "http://192.168.1.50/MCC-AttendanceTracker/v1/view_announcements.php";
+    ArrayList<String> announceList = new ArrayList<String>();
 
 
     @Nullable
@@ -42,6 +52,7 @@ public class Dashboard extends Fragment {
         time = (TextView)view.findViewById(R.id.digitalClock);
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
         btnTime.setOnClickListener(this::clickTimeBtn );
+       // listView= (ListView)view.findViewById(R.id.listAnnounceView);
 
         return view;
 
@@ -49,6 +60,37 @@ public class Dashboard extends Fragment {
 
 
     }
+
+    /*
+    private void viewAnnouncements(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET, uRl,(response) ->{
+            announceList.clear();
+
+            try{
+                JSONArray announceResponce = new JSONArray(response);
+
+                for(int i=0; i<announceResponce.length(); i++){
+                    JSONObject announcementsObject = announceResponce.getJSONObject(i);
+                    announceList.add(announcementsObject.getString("id"));
+
+
+                    // adapter
+                }
+
+
+            } catch (JSONException e){
+
+                e.printStackTrace();
+            }
+
+
+        }, (error)->{
+
+
+        });
+
+    }
+*/
 
     public void clickTimeBtn (View v){
         message();
