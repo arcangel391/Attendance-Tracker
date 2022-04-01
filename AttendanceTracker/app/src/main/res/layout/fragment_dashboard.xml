@@ -115,6 +115,7 @@
             android:width="320dp"
             android:background="@drawable/rounded_box_shape1"
             android:fontFamily="@font/barlow_semibold"
+            android:onClick="clicked"
             android:text="Time-in"
             android:textSize="18sp"
             app:backgroundTint="@color/green" />
