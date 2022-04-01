@@ -40,7 +40,7 @@ public class Dashboard extends Fragment {
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
         btnTime.setOnClickListener(this::clicked );
 
-        message();
+
 
 
 
@@ -52,7 +52,7 @@ public class Dashboard extends Fragment {
     }
 
     public void clicked (View v){
-
+        message();
 
 
     }
@@ -99,4 +99,4 @@ public class Dashboard extends Fragment {
             }
         };
 
-}
+}}
