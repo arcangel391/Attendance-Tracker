@@ -9,6 +9,7 @@ import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -18,6 +19,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DateFormat;
 import java.util.Calendar;
@@ -25,24 +27,21 @@ import java.util.Date;
 
 
 public class Dashboard extends Fragment {
-    TextView  day, date;
+    TextView  day, date, time;
     Button btnTime;
     Context context;
     String mess = "time in";
     int nswitch = 0;
+    String URL = "htt192.168.1.1"
 
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        this.context =context;
+        time = (TextView)view.findViewById(R.id.digitalClock);
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
-        btnTime.setOnClickListener(this::clicked );
-
-
-
-
+        btnTime.setOnClickListener(this::clickTimeBtn );
 
         return view;
 
@@ -51,16 +50,17 @@ public class Dashboard extends Fragment {
 
     }
 
-    public void clicked (View v){
+    public void clickTimeBtn (View v){
         message();
     }
 
 
 
 
+
+
     //method for btn color switching
     public void clicked (Button btnTime1, int n ){
-
 
         if (n==0){
             btnTime1.setText("TIME OUT");
@@ -82,6 +82,7 @@ public class Dashboard extends Fragment {
 
     public void message (){
 
+
         DialogInterface.OnClickListener dialogClickListener = new DialogInterface.OnClickListener() {
             @Override
             public void onClick(DialogInterface dialog, int which) {
@@ -89,12 +90,15 @@ public class Dashboard extends Fragment {
                     case DialogInterface.BUTTON_POSITIVE:
                         clicked(btnTime,nswitch);
                         break;
-
                     case DialogInterface.BUTTON_NEGATIVE:
 
                         break;
                 }
             }
         };
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(getActivity() );
+        builder.setMessage("Are you sure you want to "+ mess + "? \n (" + time.getText().toString() +")").setPositiveButton("Yes", dialogClickListener)
+                .setNegativeButton("No", dialogClickListener).show();
 
 }}

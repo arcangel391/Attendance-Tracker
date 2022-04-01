@@ -64,7 +64,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:scrollbars="vertical"/>
+                android:scrollbars="vertical" />
 
         </LinearLayout>
 
@@ -115,7 +115,7 @@
             android:width="320dp"
             android:background="@drawable/rounded_box_shape1"
             android:fontFamily="@font/barlow_semibold"
-            android:onClick="clicked"
+            android:onClick="clickTimeBtn"
             android:text="Time-in"
             android:textSize="18sp"
             app:backgroundTint="@color/green" />
