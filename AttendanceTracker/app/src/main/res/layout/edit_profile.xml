@@ -11,7 +11,7 @@
         android:id="@+id/toolbar"
         android:layout_width="match_parent"
         android:layout_height="160dp"
-        android:layout_marginTop="-30dp"
+        android:layout_marginTop="-50dp"
         android:background="@drawable/rounded_box_shape"
         app:backgroundTint="@color/blue"/>
 
@@ -19,7 +19,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="-80dp">
+        android:layout_marginTop="-75dp">
 
         <TextView
             android:layout_width="wrap_content"
@@ -52,9 +52,9 @@
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="400dp"
+        android:layout_height="500dp"
         android:scrollbars="vertical"
-        android:layout_marginTop="40dp">
+        android:layout_marginTop="50dp">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -275,6 +275,7 @@
                         android:textSize="14sp"
                         android:fontFamily="@font/barlow_medium"
                         android:paddingStart="15dp"
+                        android:paddingEnd="15dp"
                         android:layout_gravity="center"/>
                 </LinearLayout>
 
@@ -370,7 +371,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:layout_marginTop="-50dp">
 
         <Button
             android:id="@+id/btnSave"

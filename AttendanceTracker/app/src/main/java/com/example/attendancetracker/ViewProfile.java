@@ -116,13 +116,12 @@ public class ViewProfile extends Fragment implements View.OnClickListener{
         requestQueue.add(stringRequest);
     }
 
-    private void userEditProfile(){
 
-    }
 
     public void onClick(View v){
         if(v == fabEditProfile){
-            Intent intent = new Intent(ViewProfile.this, EditProfile.class);
+            Intent intent = new Intent(getActivity(), EditProfile.class);
+            startActivity(intent);
         }
     }
 
