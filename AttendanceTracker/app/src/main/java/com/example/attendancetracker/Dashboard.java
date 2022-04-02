@@ -106,14 +106,14 @@ public class Dashboard extends Fragment {
 
         if (n==0){
             btnTime1.setText("TIME OUT");
-            btnTime1.setBackgroundColor(Color.RED);
+            btnTime1.setBackgroundColor(btnTime1.getContext().getResources().getColor(R.color.red));
             mess = "time-out";
             nswitch = 1;
 
         }
         else{
             btnTime1.setText("TIME IN");
-            btnTime1.setBackgroundColor(Color.GREEN);
+            btnTime1.setBackgroundColor(btnTime1.getContext().getResources().getColor(R.color.green));
             mess = "time-in";
             nswitch = 0;
 
