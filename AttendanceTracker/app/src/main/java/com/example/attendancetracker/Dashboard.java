@@ -9,6 +9,8 @@ import android.os.Bundle;
 
 //import com.android.volley.Request;
 //import com.android.volley.toolbox.StringRequest;
+import com.android.volley.Request;
+import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
@@ -63,9 +65,9 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
     }
 
-    /*
     private void viewAnnouncements(){
-        StringRequest stringRequest = new StringRequest(Request.Method.GET, uRl,(response) ->{
+
+        StringRequest stringRequest = new StringRequest(Request.Method.GET , uRl+"?id=1",(response) ->{
             announceList.clear();
 
             try{
@@ -92,7 +94,6 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         });
 
     }
-*/
 
     public void onClick (View v){
             message();
