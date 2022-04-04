@@ -2,7 +2,9 @@ package com.example.attendancetracker;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.graphics.drawable.Drawable;
 import android.os.Bundle;
 
 //import com.android.volley.Request;
@@ -13,6 +15,7 @@ import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
@@ -54,10 +57,9 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         btnTime.setOnClickListener(this);
        // listView= (ListView)view.findViewById(R.id.listAnnounceView);
 
+
+
         return view;
-
-
-
 
     }
 
@@ -92,43 +94,11 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     }
 */
 
-    public void clickTimeBtn (View v){
-        message();
-    }
-
-
-
-
-
-    @Override
-    //method for btn color switching
-    private void onClicked(View v){
-
-        if (v==btnTime) {
-            if (btnTime.getText().toString().equals("TIME IN")){
-                btnTime.setBackgroundColor(btnTime.getContext().getResources().getColor(R.color.red));
-                btnTime.setText("TIME OUT");
-            }
-            else{
-                btnTime.setBackgroundColor(btnTime.getContext().getResources().getColor(R.color.green));
-                btnTime.setText("TIME IN");
-            }
-            /*btnTime1.setText("TIME OUT");
-
-            mess = "time-out";
-            nswitch = 1;*/
-
-        }
-       /* else{
-            btnTime1.setText("TIME IN");
-            btnTime1.setBackgroundColor(btnTime1.getContext().getResources().getColor(R.color.green));
-            mess = "time-in";
-            nswitch = 0;
-
-        }*/
-
+    public void onClick (View v){
+            message();
 
     }
+
 
     public void message (){
 
@@ -151,4 +121,23 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         builder.setMessage("Are you sure you want to "+ mess + "? \n (" + time.getText().toString() +")").setPositiveButton("Yes", dialogClickListener)
                 .setNegativeButton("No", dialogClickListener).show();
 
-}}
+    }
+    
+
+    public void clicked(Button b, int a){
+
+
+        if(a==0){
+            btnTime.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.pink)));
+            b.setText("TIME OUT");
+            mess = "time-out";
+            nswitch = 1;
+        }else{
+            btnTime.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+            b.setText("TIME IN");
+            mess = "time-in";
+            nswitch = 0;
+        }
+    }
+
+}
