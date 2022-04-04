@@ -10,6 +10,9 @@ import android.os.Bundle;
 //import com.android.volley.Request;
 //import com.android.volley.toolbox.StringRequest;
 import com.android.volley.Request;
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.google.android.material.snackbar.Snackbar;
 
@@ -19,6 +22,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.drawable.DrawableCompat;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
@@ -40,14 +45,17 @@ import java.util.Date;
 
 
 public class Dashboard extends Fragment implements View.OnClickListener{
+    private RecyclerView recyclerView;
+    private AnnouncementAdapter adapter;
+    private ArrayList<AnnouncementsModel> announcementsArrayList;
     TextView  day, date, time;
     Button btnTime;
     Context context;
     String mess = "time in";
     int nswitch = 0;
     ListView listView;
-    String uRl = "http://192.168.1.50/MCC-AttendanceTracker/v1/view_announcements.php";
-    ArrayList<String> announceList = new ArrayList<String>();
+    String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_announcements.php";
+    /*ArrayList<String> announceList = new ArrayList<String>();*/
 
 
     @Nullable
@@ -57,42 +65,50 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         time = (TextView)view.findViewById(R.id.digitalClock);
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
         btnTime.setOnClickListener(this);
+
        // listView= (ListView)view.findViewById(R.id.listAnnounceView);
+        recyclerView = view.findViewById(R.id.recyclerAnnouncement);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
+        viewAnnouncements();
 
         return view;
 
     }
 
     private void viewAnnouncements(){
-
-        StringRequest stringRequest = new StringRequest(Request.Method.GET , uRl+"?id=1",(response) ->{
-            announceList.clear();
+        StringRequest stringRequest = new StringRequest(Request.Method.GET , uRl,(response) ->{
 
             try{
-                JSONArray announceResponce = new JSONArray(response);
+                JSONArray announcements = new JSONArray(response);
+                announcementsArrayList = new ArrayList<>();
 
-                for(int i=0; i<announceResponce.length(); i++){
-                    JSONObject announcementsObject = announceResponce.getJSONObject(i);
-                    announceList.add(announcementsObject.getString("id"));
+                for(int i=0; i<announcements.length(); i++){
+                    JSONObject announcementsObject = announcements.getJSONObject(i);
+                    String title = announcementsObject.getString("title");
+                    String date = announcementsObject.getString("date");
+                    String time = announcementsObject.getString("time");
+                    Toast.makeText(getContext(), title + "" + date + "" + time, Toast.LENGTH_LONG).show();
+                    AnnouncementsModel announcementsModel = new AnnouncementsModel(title, date, time);
+                    announcementsArrayList.add(announcementsModel);
+                    adapter.notifyDataSetChanged();
 
-
-                    // adapter
                 }
-
-
+                adapter = new AnnouncementAdapter(getContext(), announcementsArrayList);
+                recyclerView.setAdapter(adapter);
             } catch (JSONException e){
 
                 e.printStackTrace();
             }
 
 
-        }, (error)->{
-
-
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+            }
         });
-
+        RequestQueue 
     }
 
     public void onClick (View v){

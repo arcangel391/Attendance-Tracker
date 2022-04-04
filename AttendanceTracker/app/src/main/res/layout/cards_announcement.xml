@@ -17,7 +17,7 @@
             android:layout_margin="4dp">
 
             <TextView
-                android:id="@+id/txtTitle2"
+                android:id="@+id/txtAnnouncementTitle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -27,7 +27,7 @@
                 android:textSize="20sp" />
 
             <TextView
-                android:id="@+id/txtDateAnnce2"
+                android:id="@+id/txtAnnouncementDate"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_marginStart="10dp"
@@ -38,7 +38,7 @@
         </LinearLayout>
 
         <TextView
-            android:id="@+id/txtTimeAnnce2"
+            android:id="@+id/txtAnnouncementTime"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
             android:layout_gravity="right"

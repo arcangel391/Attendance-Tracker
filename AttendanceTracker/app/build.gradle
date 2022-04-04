@@ -45,4 +45,8 @@ dependencies {
     /*FLOATING ACTION BUTTON*/
     implementation 'com.github.clans:fab:1.6.2'
     implementation 'com.github.pires:obd-java-api:1.0'
+
+    implementation 'com.android.volley:volley:1.1.0' //connect app to mysql
+
+
 }
