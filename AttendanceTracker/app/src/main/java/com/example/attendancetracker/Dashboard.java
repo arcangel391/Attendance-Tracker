@@ -14,6 +14,7 @@ import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
+import com.android.volley.toolbox.Volley;
 import com.google.android.material.snackbar.Snackbar;
 
 import androidx.annotation.NonNull;
@@ -88,14 +89,15 @@ public class Dashboard extends Fragment implements View.OnClickListener{
                     String title = announcementsObject.getString("title");
                     String date = announcementsObject.getString("date");
                     String time = announcementsObject.getString("time");
-                    Toast.makeText(getContext(), title + "" + date + "" + time, Toast.LENGTH_LONG).show();
+
                     AnnouncementsModel announcementsModel = new AnnouncementsModel(title, date, time);
                     announcementsArrayList.add(announcementsModel);
-                    adapter.notifyDataSetChanged();
+
 
                 }
                 adapter = new AnnouncementAdapter(getContext(), announcementsArrayList);
                 recyclerView.setAdapter(adapter);
+                adapter.notifyDataSetChanged();
             } catch (JSONException e){
 
                 e.printStackTrace();
@@ -108,7 +110,8 @@ public class Dashboard extends Fragment implements View.OnClickListener{
                 Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-        RequestQueue 
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        requestQueue.add(stringRequest);
     }
 
     public void onClick (View v){
