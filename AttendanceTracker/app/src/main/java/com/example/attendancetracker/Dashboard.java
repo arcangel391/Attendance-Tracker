@@ -34,7 +34,7 @@ import java.util.Calendar;
 import java.util.Date;
 
 
-public class Dashboard extends Fragment implements View.OnClickListener{
+public class Dashboard extends Fragment{
     TextView  day, date, time;
     Button btnTime;
     Context context;
@@ -51,7 +51,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
         time = (TextView)view.findViewById(R.id.digitalClock);
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
-        btnTime.setOnClickListener(this);
+        btnTime.setOnClickListener(this::clickTimeBtn );
        // listView= (ListView)view.findViewById(R.id.listAnnounceView);
 
         return view;
@@ -100,32 +100,24 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
 
 
-    @Override
+
     //method for btn color switching
-    private void onClicked(View v){
+    public void clicked (Button btnTime1, int n ){
 
-        if (v==btnTime) {
-            if (btnTime.getText().toString().equals("TIME IN")){
-                btnTime.setBackgroundColor(btnTime.getContext().getResources().getColor(R.color.red));
-                btnTime.setText("TIME OUT");
-            }
-            else{
-                btnTime.setBackgroundColor(btnTime.getContext().getResources().getColor(R.color.green));
-                btnTime.setText("TIME IN");
-            }
-            /*btnTime1.setText("TIME OUT");
-
+        if (n==0){
+            btnTime1.setText("TIME OUT");
+            btnTime1.setBackgroundColor(btnTime1.getContext().getResources().getColor(R.color.red));
             mess = "time-out";
-            nswitch = 1;*/
+            nswitch = 1;
 
         }
-       /* else{
+        else{
             btnTime1.setText("TIME IN");
             btnTime1.setBackgroundColor(btnTime1.getContext().getResources().getColor(R.color.green));
             mess = "time-in";
             nswitch = 0;
 
-        }*/
+        }
 
 
     }
