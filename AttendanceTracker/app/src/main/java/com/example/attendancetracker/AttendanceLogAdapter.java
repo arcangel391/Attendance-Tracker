@@ -51,7 +51,7 @@ public class AttendanceLogAdapter extends RecyclerView.Adapter<AttendanceLogAdap
     }
 
     class CardHolder extends RecyclerView.ViewHolder{
-        private TextView txtAttendanceDate, txtAttendanceDay, txtAttendanceRenderedHours, txtAttendanceTimeIn, txtAttendanceTimeOut, txtAttendanceHoursLeft ;
+        private TextView txtAttendanceDate, txtAttendanceDay, txtAttendanceTimeIn, txtAttendanceTimeOut;
         private CardView attendanceCard;
 
 
@@ -60,8 +60,6 @@ public class AttendanceLogAdapter extends RecyclerView.Adapter<AttendanceLogAdap
 
             txtAttendanceDate = v.findViewById(R.id.txtAttendanceDate);
             txtAttendanceDay = v.findViewById(R.id.txtAttendanceDay);
-            txtAttendanceHoursLeft = v.findViewById(R.id.txtAttendanceHoursLeft);
-            txtAttendanceRenderedHours = v.findViewById(R.id.txtHoursRendered);
             txtAttendanceTimeIn = v.findViewById(R.id.txtAttendanceTimeIn);
             txtAttendanceTimeOut = v.findViewById(R.id.txtAttendanceTimeOut);
 
@@ -69,8 +67,6 @@ public class AttendanceLogAdapter extends RecyclerView.Adapter<AttendanceLogAdap
 
             txtAttendanceDate.setTextColor(context.getResources().getColor(R.color.white));
             txtAttendanceDay.setTextColor(context.getResources().getColor(R.color.white));
-            txtAttendanceHoursLeft.setTextColor(context.getResources().getColor(R.color.white));
-            txtAttendanceRenderedHours.setTextColor(context.getResources().getColor(R.color.white));
             txtAttendanceTimeIn.setTextColor(context.getResources().getColor(R.color.white));
             txtAttendanceTimeOut.setTextColor(context.getResources().getColor(R.color.white));
 
@@ -91,8 +87,6 @@ public class AttendanceLogAdapter extends RecyclerView.Adapter<AttendanceLogAdap
         void setDetails(AttendanceLogModel attendanceLogModel){
             txtAttendanceDate.setText(attendanceLogModel.getDate());
             txtAttendanceDay.setText(attendanceLogModel.getDay());
-            txtAttendanceHoursLeft.setText(attendanceLogModel.getHoursLeft());
-            txtAttendanceRenderedHours.setText(attendanceLogModel.getHoursRendered());
             txtAttendanceTimeIn.setText(attendanceLogModel.getTimeIn());
             txtAttendanceTimeOut.setText(attendanceLogModel.getTimeOut());
         }

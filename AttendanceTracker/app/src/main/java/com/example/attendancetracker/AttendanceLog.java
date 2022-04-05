@@ -1,10 +1,13 @@
 package com.example.attendancetracker;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.android.volley.AuthFailureError;
@@ -28,13 +31,26 @@ public class AttendanceLog extends AppCompatActivity {
     private AttendanceLogAdapter adapter;
     private ArrayList<AttendanceLogModel> attendanceLogArrayList;
 
+    TextView refresh, filter;
+
     String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_attendance_log.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.attendance_log);
 
+        refresh = findViewById(R.id.txtRefresh);
+        filter = findViewById(R.id.txtFilter);
+
+        refresh.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                getAttendanceLogs();
+            }
+        });
+
         recyclerView = findViewById(R.id.attendanceRecyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         getAttendanceLogs();
 
 
@@ -52,19 +68,19 @@ public class AttendanceLog extends AppCompatActivity {
                     JSONObject announcementsObject = attendanceLog.getJSONObject(i);
                     String date = announcementsObject.getString("date");
                     String day = announcementsObject.getString("day");
-                    String hours_left = announcementsObject.getString("hours_left");
-                    String rendered_hours = announcementsObject.getString("rendered_hours");
                     String time_in = announcementsObject.getString("time_in");
                     String time_out = announcementsObject.getString("time_out");
 
-                    AttendanceLogModel attendanceLogModel = new AttendanceLogModel(date, day, rendered_hours, time_in, time_out, hours_left);
+                    AttendanceLogModel attendanceLogModel = new AttendanceLogModel(date, day, time_in, time_out);
                     attendanceLogArrayList.add(attendanceLogModel);
 
 
                 }
-                adapter = new AttendanceLogAdapter(getApplicationContext(), attendanceLogArrayList);
+
+                adapter = new AttendanceLogAdapter(AttendanceLog.this, attendanceLogArrayList);
                 recyclerView.setAdapter(adapter);
                 adapter.notifyDataSetChanged();
+
             } catch (JSONException e){
 
                 e.printStackTrace();

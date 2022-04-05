@@ -8,12 +8,12 @@
 
     <ImageView
         android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="140dp"
+        android:layout_width="357dp"
+        android:layout_height="637dp"
         android:layout_marginTop="-20dp"
         android:background="@drawable/rounded_box_shape"
         android:fontFamily="@font/barlow_black"
-        app:backgroundTint="@color/blue"/>
+        app:backgroundTint="@color/blue" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,7 +43,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
-
         android:layout_marginTop="40dp">
 
         <TextView
@@ -139,9 +138,6 @@
             android:drawableLeft="@drawable/att_log"
             android:textSize="18sp"
             app:backgroundTint="@color/sky"/>
-
-
-
 
 
     </LinearLayout>
