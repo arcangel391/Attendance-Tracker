@@ -32,6 +32,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.ListView;
+import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -50,14 +51,16 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     private AnnouncementAdapter adapter;
     private ArrayList<AnnouncementsModel> announcementsArrayList;
     
-    TextView  day, date, time;
+    TextView  day, date;
+    TextClock time;
     Button btnTime;
 
     Context context;
     String mess = "time in";
     int nswitch = 0;
     ListView listView;
-    String uRl = "http://192.168.1.50/Melham/MCC-AttendanceTracker/v1/get_announcements.php";
+    String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_announcements.php";
+    String uRl1 = "http://192.168.1.110/MCC-AttendanceTracker/v1/time.php";
     /*ArrayList<String> announceList = new ArrayList<String>();*/
 
 
@@ -65,7 +68,9 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
-        time = (TextView)view.findViewById(R.id.digitalClock);
+        time = (TextClock) view.findViewById(R.id.txtTime);
+        date = (TextView)view.findViewById(R.id.txtDate);
+        day = (TextView)view.findViewById(R.id.txtDay);
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
         btnTime.setOnClickListener(this);
 
@@ -74,7 +79,12 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         recyclerView = view.findViewById(R.id.recyclerAnnouncement);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+
+
+        time.setTimeZone("Asia/Manila");
+        getTime();
         viewAnnouncements();
+
 
         return view;
 
@@ -121,6 +131,35 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     public void onClick (View v){
             message();
 
+    }
+
+    public void getTime(){
+        StringRequest stringRequest = new StringRequest(Request.Method.GET , uRl1,(response) ->{
+
+            try{
+                JSONObject obj = new JSONObject(response);
+
+                String date1 = obj.getString("date");
+                String day1 = obj.getString("day");
+
+                date.setText(date1);
+                day.setText(day1);
+
+
+            } catch (JSONException e){
+
+                e.printStackTrace();
+            }
+
+
+        }, new Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(getContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+            }
+        });
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        requestQueue.add(stringRequest);
     }
 
 

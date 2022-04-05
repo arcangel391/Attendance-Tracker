@@ -101,11 +101,12 @@
             android:textSize="18sp" />
 
         <!--Time-->
-        <DigitalClock
-            android:id="@+id/digitalClock"
+        <TextClock
+            android:id="@+id/txtTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/gray"
+            android:format12Hour="h:mm:ss a"
             android:fontFamily="@font/barlow_regular"
             android:textSize="36sp" />
 
