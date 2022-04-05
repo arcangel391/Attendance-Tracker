@@ -2,6 +2,7 @@ package com.example.attendancetracker;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
 import android.graphics.drawable.Drawable;
@@ -9,6 +10,7 @@ import android.os.Bundle;
 
 //import com.android.volley.Request;
 //import com.android.volley.toolbox.StringRequest;
+import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
@@ -52,6 +54,10 @@ import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
+import java.util.Map;
+
+import static android.content.Context.MODE_PRIVATE;
 
 public class Dashboard extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
@@ -60,6 +66,9 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
     TextView  day, date;
     TextClock time;
+
+    SharedPreferences sharedPreferences;
+    SharedPreferences.Editor editor;
 
     Button btnTime;
 
@@ -76,6 +85,9 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_dashboard, container, false);
+        sharedPreferences = this.getActivity().getSharedPreferences("MySharedPref", Context.MODE_PRIVATE);
+        editor = sharedPreferences.edit();
+
         time = (TextClock) view.findViewById(R.id.txtTime);
         date = (TextView)view.findViewById(R.id.txtDate);
         day = (TextView)view.findViewById(R.id.txtDay);
@@ -189,6 +201,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
             public void onClick(DialogInterface dialog, int which) {
                 switch (which){
                     case DialogInterface.BUTTON_POSITIVE:
+                        internLogged();
                         clicked(btnTime,nswitch);
                         break;
                     case DialogInterface.BUTTON_NEGATIVE:
@@ -247,7 +260,49 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     }
 
     private void internLogged(){
+        final String userEmail = "intensityg36@gmail.com";
+        final String btnName = btnTime.getText().toString().toUpperCase().trim();
 
+        StringRequest stringRequest = new StringRequest(Request.Method.POST,
+                uRl2,
+                (response) ->{
+
+                        try{
+                            JSONObject obj = new JSONObject(response);
+                            if(!obj.getBoolean("error")){
+                                if(btnName.equalsIgnoreCase("time-in")){
+                                    editor.putInt("last_id", obj.getInt("last_id"));
+                                    editor.commit();
+                                }
+                                Toast.makeText(getActivity().getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+
+                            }else{
+                                Toast.makeText(getActivity().getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
+                            }
+
+                        }catch(JSONException e){
+                            e.printStackTrace();
+                        }
+
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError error) {
+                        Toast.makeText(getActivity().getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
+                    }
+                }
+        ){
+            @Override
+            protected Map<String, String> getParams() throws AuthFailureError {
+                Map<String, String> params  = new HashMap<>();
+                params.put("email", userEmail);
+                params.put("btnName", btnName);
+                params.put("last_id", String.valueOf(sharedPreferences.getInt("last_id", 0)));
+                return params;
+            }
+        };
+        RequestQueue requestQueue = Volley.newRequestQueue(getActivity().getApplicationContext());
+        requestQueue.add(stringRequest);
     }
 
 
