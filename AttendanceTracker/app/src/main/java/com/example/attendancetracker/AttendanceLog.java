@@ -20,6 +20,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.Map;
 
 public class AttendanceLog extends AppCompatActivity {
@@ -40,7 +41,8 @@ public class AttendanceLog extends AppCompatActivity {
     }
 
     private void getAttendanceLogs(){
-        StringRequest stringRequest = new StringRequest(Request.Method.GET , uRl,(response) ->{
+        final String userEmail = "intensityg36@gmail.com";
+        StringRequest stringRequest = new StringRequest(Request.Method.POST , uRl,(response) ->{
 
             try{
                 JSONArray attendanceLog = new JSONArray(response);
@@ -77,7 +79,9 @@ public class AttendanceLog extends AppCompatActivity {
         }){
             @Override
             protected Map<String, String> getParams() throws AuthFailureError {
-                
+                Map<String, String> params  = new HashMap<>();
+                params.put("email", userEmail);
+                return params;
             }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());

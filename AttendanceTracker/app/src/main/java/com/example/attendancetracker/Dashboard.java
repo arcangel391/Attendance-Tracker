@@ -2,6 +2,7 @@ package com.example.attendancetracker;
 
 import android.content.Context;
 import android.content.DialogInterface;
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
@@ -70,7 +71,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
 
-    Button btnTime;
+    Button btnTime, btnAttendanceLog;
 
     Context context;
     String mess = "time in";
@@ -92,7 +93,9 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         date = (TextView)view.findViewById(R.id.txtDate);
         day = (TextView)view.findViewById(R.id.txtDay);
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
+        btnAttendanceLog = view.findViewById(R.id.btnAttendanceLog);
         btnTime.setOnClickListener(this);
+        btnAttendanceLog.setOnClickListener(this);
         recyclerView = view.findViewById(R.id.recyclerAnnouncement);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
@@ -160,7 +163,16 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     }
 
     public void onClick (View v){
-            message();
+            if(v==btnTime){
+                message();
+            }
+
+
+            if(v==btnAttendanceLog){
+                Intent i = new Intent(getContext(), AttendanceLog.class);
+                getContext().startActivity(i);
+                getActivity().finish();
+            }
 
     }
 
