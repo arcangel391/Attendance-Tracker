@@ -89,7 +89,7 @@
             android:textColor="@color/gray"
             android:text="Day"
             android:textSize="24sp"
-            android:layout_marginTop="-10dp"/>
+            android:layout_marginTop="-40dp"/>
 
         <!--Date-->
         <TextView
@@ -107,8 +107,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/gray"
-            android:format12Hour="h:mm:ss a"
+            android:format12Hour="hh:mm:ss a"
             android:fontFamily="@font/barlow_regular"
+            android:timeZone="Asia/Manila"
             android:textSize="36sp" />
 
         <!--Btn Time In/ Timeout-->

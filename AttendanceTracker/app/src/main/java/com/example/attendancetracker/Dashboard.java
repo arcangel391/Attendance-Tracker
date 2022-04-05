@@ -27,6 +27,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.os.StrictMode;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -45,20 +47,19 @@ import org.json.JSONObject;
 import java.io.IOException;
 import java.net.SocketException;
 import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
-
 
 public class Dashboard extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
     private AnnouncementAdapter adapter;
     private ArrayList<AnnouncementsModel> announcementsArrayList;
-    
 
     TextView  day, date;
     TextClock time;
-
 
     Button btnTime;
 
@@ -66,11 +67,8 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     String mess = "time in";
     int nswitch = 0;
 
-
     String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_announcements.php";
     String uRl1 = "http://192.168.1.110/MCC-AttendanceTracker/v1/time.php";
-
-
 
 
     @Nullable
@@ -82,34 +80,30 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         day = (TextView)view.findViewById(R.id.txtDay);
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
         btnTime.setOnClickListener(this);
-
-      /*  timeTCPClient = new TimeTCPClient();
-        //day
-        txtDayy = (TextView)view.findViewById(R.id.txtDay);
-        txtDatee = (TextView)view.findViewById(R.id.txtDate);
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
-
-        try {
-            timeTCPClient.connect("time.nist.gov");
-            txtDayy.setText(timeTCPClient.getDate().toString().substring(0,4));
-
-        } catch (IOException e) {
-            e.printStackTrace();
-        }*/
-
-        //listView= (ListView)view.findViewById(R.id.listAnnounceView);
         recyclerView = view.findViewById(R.id.recyclerAnnouncement);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        time.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
 
+            }
 
-        time.setTimeZone("Asia/Manila");
-        getTime();
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                compareTime(time.getText().toString(), "05:00:00 PM");
+                getDate();
+
+            }
+        });
+
+        getDate();
         viewAnnouncements();
-
-
         return view;
 
     }
@@ -157,7 +151,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
     }
 
-    public void getTime(){
+    public void getDate(){
         StringRequest stringRequest = new StringRequest(Request.Method.GET , uRl1,(response) ->{
 
             try{
@@ -186,7 +180,6 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         requestQueue.add(stringRequest);
     }
 
-
     public void message (){
 
 
@@ -209,22 +202,51 @@ public class Dashboard extends Fragment implements View.OnClickListener{
                 .setNegativeButton("No", dialogClickListener).show();
 
     }
-    
 
     public void clicked(Button b, int a){
 
 
         if(a==0){
             btnTime.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.pink)));
-            b.setText("TIME OUT");
+            b.setText("TIME-OUT");
             mess = "time-out";
             nswitch = 1;
         }else{
             btnTime.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
-            b.setText("TIME IN");
+            b.setText("TIME-IN");
+            b.setEnabled(false);
             mess = "time-in";
             nswitch = 0;
         }
+    }
+
+    public void compareTime(String inputTime, String time){
+        try{
+            SimpleDateFormat sdf = new SimpleDateFormat("hh:mm:ss a");
+            Date timeInput = sdf.parse(inputTime);
+            Date timeScheduled = sdf.parse(time);
+            Date timeReset = sdf.parse("12:00:00 AM");
+
+            if(btnTime.getText().toString().equalsIgnoreCase("time-out")){
+                if(timeInput.equals(timeScheduled) || timeInput.after(timeScheduled)){
+                   btnTime.setEnabled(true);
+                }else{
+                    btnTime.setEnabled(false);
+                }
+            }
+
+            if(timeInput.equals(timeReset)){
+                btnTime.setEnabled(true);
+            }
+
+        }catch (ParseException ex){
+            ex.printStackTrace();
+        }
+
+    }
+
+    private void internLogged(){
+        
     }
 
 
