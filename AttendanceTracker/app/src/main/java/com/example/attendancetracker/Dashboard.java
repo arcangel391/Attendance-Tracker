@@ -37,7 +37,7 @@ import android.widget.TextClock;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import org.apache.commons.net.time.TimeTCPClient;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,26 +55,23 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     private AnnouncementAdapter adapter;
     private ArrayList<AnnouncementsModel> announcementsArrayList;
     
-<<<<<<< Updated upstream
+
     TextView  day, date;
     TextClock time;
-=======
-    TextView  day, date, time,txtDayy,txtDatee;
->>>>>>> Stashed changes
+
+
     Button btnTime;
 
     Context context;
     String mess = "time in";
     int nswitch = 0;
-    ListView listView;
-<<<<<<< Updated upstream
+
+
     String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_announcements.php";
     String uRl1 = "http://192.168.1.110/MCC-AttendanceTracker/v1/time.php";
-=======
-    String uRl = "http://192.168.100.51/MCC-AttendanceTracker/v1/get_announcements.php";
->>>>>>> Stashed changes
-    /*ArrayList<String> announceList = new ArrayList<String>();*/
-    private TimeTCPClient timeTCPClient;
+
+
+
 
     @Nullable
     @Override
@@ -86,7 +83,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
         btnTime.setOnClickListener(this);
 
-        timeTCPClient = new TimeTCPClient();
+      /*  timeTCPClient = new TimeTCPClient();
         //day
         txtDayy = (TextView)view.findViewById(R.id.txtDay);
         txtDatee = (TextView)view.findViewById(R.id.txtDate);
@@ -100,7 +97,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
         } catch (IOException e) {
             e.printStackTrace();
-        }
+        }*/
 
         //listView= (ListView)view.findViewById(R.id.listAnnounceView);
         recyclerView = view.findViewById(R.id.recyclerAnnouncement);
