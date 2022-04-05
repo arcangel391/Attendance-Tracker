@@ -69,6 +69,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
     String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_announcements.php";
     String uRl1 = "http://192.168.1.110/MCC-AttendanceTracker/v1/time.php";
+    String uRl2 = "http://192.168.1.110/MCC-AttendanceTracker/v1/user_time_logs.php";
 
 
     @Nullable
@@ -246,7 +247,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     }
 
     private void internLogged(){
-        
+
     }
 
 
