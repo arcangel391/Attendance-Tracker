@@ -14,7 +14,8 @@
         android:theme="@style/Theme.AttendanceTracker"
         android:usesCleartextTraffic="true">
 
-        <activity android:name=".AnnouncementsDetails"></activity>
+        <activity android:name=".AttendanceLog"/>
+        <activity android:name=".AnnouncementsDetails"/>
         <activity android:name=".Navbar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

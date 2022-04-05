@@ -59,6 +59,7 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
 
         CardHolder(View v){
             super(v);
+
             txtAnnouncementTitle = v.findViewById(R.id.txtAnnouncementTitle);
             txtAnnouncementDate = v.findViewById(R.id.txtAnnouncementDate);
             txtAnnouncementTime = v.findViewById(R.id.txtAnnouncementTime);
