@@ -1,8 +1,10 @@
 package com.example.attendancetracker;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.res.ColorStateList;
 import android.graphics.Color;
+import android.os.Parcelable;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -65,6 +67,17 @@ public class AnnouncementAdapter extends RecyclerView.Adapter<AnnouncementAdapte
             txtAnnouncementTime.setTextColor(context.getResources().getColor(R.color.white));
             txtAnnouncementDate.setTextColor(context.getResources().getColor(R.color.white));
             txtAnnouncementTitle.setTextColor(context.getResources().getColor(R.color.white));
+
+            itemView.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    Intent i = new Intent (view.getContext(),AnnouncementsDetails.class);
+                    i.putExtra("title", announcementsModels.get(getAdapterPosition()).getTitle());
+                    i.putExtra("date", announcementsModels.get(getAdapterPosition()).getDate());
+                    i.putExtra("details", announcementsModels.get(getAdapterPosition()).getDetails());
+                    view.getContext().startActivity(i);
+                }
+            });
 
 
         }

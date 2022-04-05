@@ -49,13 +49,15 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     private RecyclerView recyclerView;
     private AnnouncementAdapter adapter;
     private ArrayList<AnnouncementsModel> announcementsArrayList;
+    
     TextView  day, date, time;
     Button btnTime;
+
     Context context;
     String mess = "time in";
     int nswitch = 0;
     ListView listView;
-    String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_announcements.php";
+    String uRl = "http://192.168.1.50/Melham/MCC-AttendanceTracker/v1/get_announcements.php";
     /*ArrayList<String> announceList = new ArrayList<String>();*/
 
 
@@ -66,6 +68,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         time = (TextView)view.findViewById(R.id.digitalClock);
         btnTime = (Button)view.findViewById(R.id.btnAttendance);
         btnTime.setOnClickListener(this);
+
 
        // listView= (ListView)view.findViewById(R.id.listAnnounceView);
         recyclerView = view.findViewById(R.id.recyclerAnnouncement);
@@ -89,8 +92,9 @@ public class Dashboard extends Fragment implements View.OnClickListener{
                     String title = announcementsObject.getString("title");
                     String date = announcementsObject.getString("date");
                     String time = announcementsObject.getString("time");
+                    String details = announcementsObject.getString("details");
 
-                    AnnouncementsModel announcementsModel = new AnnouncementsModel(title, date, time);
+                    AnnouncementsModel announcementsModel = new AnnouncementsModel(title, date, time, details);
                     announcementsArrayList.add(announcementsModel);
 
 
@@ -159,5 +163,6 @@ public class Dashboard extends Fragment implements View.OnClickListener{
             nswitch = 0;
         }
     }
+
 
 }

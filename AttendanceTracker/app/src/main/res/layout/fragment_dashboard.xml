@@ -79,7 +79,7 @@
         android:orientation="vertical"
         android:gravity="center"
         >
-
+        <!--Day-->
         <TextView
             android:id="@+id/txtDay"
             android:layout_width="wrap_content"
