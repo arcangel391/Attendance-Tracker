@@ -2,15 +2,27 @@ package com.example.attendancetracker;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.view.View;
 import android.widget.TextView;
+import org.apache.commons.net.time.TimeTCPClient;
 
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
+import org.apache.commons.net.time.TimeTCPClient;
+
+import java.io.IOException;
+import java.sql.Time;
+import java.text.DateFormat;
+import java.util.Calendar;
+
 public class AnnouncementsDetails extends AppCompatActivity {
-    TextView titleCard,dateCard,detailsCard,backbtn;
+    TextView titleCard,dateCard,detailsCard,backbtn,curTime;
+
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
