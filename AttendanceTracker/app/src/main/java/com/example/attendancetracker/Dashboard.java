@@ -65,8 +65,8 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     private AnnouncementAdapter adapter;
     private ArrayList<AnnouncementsModel> announcementsArrayList;
 
-    TextView  day, date;
-    TextClock time;
+    TextView  day, date, time;
+    TextClock runner;
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -75,7 +75,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
     Context context;
     String mess = "time in";
-    int nswitch = 0;
+    int buttonStatus = 0;
 
     String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_announcements.php";
     String uRl1 = "http://192.168.1.110/MCC-AttendanceTracker/v1/time.php";
@@ -98,6 +98,16 @@ public class Dashboard extends Fragment implements View.OnClickListener{
         btnAttendanceLog.setOnClickListener(this);
         recyclerView = view.findViewById(R.id.recyclerAnnouncement);
         recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        buttonStatus = sharedPreferences.getInt("button_status", 0);
+        if(buttonStatus == 0){
+            btnTime.setText("TIME-OUT");
+            btnTime.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.pink)));
+        }else{
+            btnTime.setText("TIME-IN");
+            btnTime.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
+        }
+
 
         time.addTextChangedListener(new TextWatcher() {
             @Override
@@ -171,7 +181,6 @@ public class Dashboard extends Fragment implements View.OnClickListener{
             if(v==btnAttendanceLog){
                 Intent i = new Intent(getContext(), AttendanceLog.class);
                 getContext().startActivity(i);
-                getActivity().finish();
             }
 
     }
@@ -214,7 +223,7 @@ public class Dashboard extends Fragment implements View.OnClickListener{
                 switch (which){
                     case DialogInterface.BUTTON_POSITIVE:
                         internLogged();
-                        clicked(btnTime,nswitch);
+                        clicked(btnTime);
                         break;
                     case DialogInterface.BUTTON_NEGATIVE:
 
@@ -229,20 +238,22 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
     }
 
-    public void clicked(Button b, int a){
+    public void clicked(Button b){
 
-
-        if(a==0){
+        if(b.getText().toString().equalsIgnoreCase("time-in")){
             btnTime.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.pink)));
             b.setText("TIME-OUT");
+            editor.putInt("button_status", 0);
+            editor.commit();
             mess = "time-out";
-            nswitch = 1;
+
         }else{
             btnTime.setBackgroundTintList(ColorStateList.valueOf(getResources().getColor(R.color.green)));
             b.setText("TIME-IN");
+            editor.putInt("button_status", 1);
+            editor.commit();
             b.setEnabled(false);
             mess = "time-in";
-            nswitch = 0;
         }
     }
 
@@ -259,11 +270,20 @@ public class Dashboard extends Fragment implements View.OnClickListener{
                 }else{
                     btnTime.setEnabled(false);
                 }
+            }else{
+                if(timeInput.after(timeScheduled)){
+                    btnTime.setEnabled(false);
+                }else{
+                    btnTime.setEnabled(true);
+                }
             }
+
 
             if(timeInput.equals(timeReset)){
                 btnTime.setEnabled(true);
             }
+
+
 
         }catch (ParseException ex){
             ex.printStackTrace();

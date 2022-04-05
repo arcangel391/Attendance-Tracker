@@ -5,15 +5,14 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
-
     <ImageView
         android:id="@+id/toolbar"
-        android:layout_width="357dp"
-        android:layout_height="637dp"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
         android:layout_marginTop="-20dp"
         android:background="@drawable/rounded_box_shape"
         android:fontFamily="@font/barlow_black"
-        app:backgroundTint="@color/blue" />
+        app:backgroundTint="@color/blue"/>
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -43,6 +42,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical"
+
         android:layout_marginTop="40dp">
 
         <TextView
@@ -65,7 +65,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:scrollbars="vertical" />
+                android:scrollbars="vertical"/>
 
         </LinearLayout>
 
@@ -77,18 +77,17 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
-        android:gravity="center"
-        >
-        <!--Day-->
+        android:gravity="center">
+
         <TextView
             android:id="@+id/txtDay"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:fontFamily="@font/barlow_bold"
+            android:text="txtDay"
+            android:layout_marginTop="-50dp"
             android:textColor="@color/gray"
-            android:text="Day"
-            android:textSize="24sp"
-            android:layout_marginTop="-40dp"/>
+            android:textSize="24sp" />
 
         <!--Date-->
         <TextView
@@ -106,10 +105,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/gray"
-            android:format12Hour="hh:mm:ss a"
             android:fontFamily="@font/barlow_regular"
-            android:timeZone="Asia/Manila"
-            android:textSize="36sp" />
+            android:textSize="36sp"
+            android:text="12:00:00 PM"
+            android:format12Hour="hh:mm:ss a"/>
 
         <!--Btn Time In/ Timeout-->
         <Button
@@ -120,7 +119,6 @@
             android:width="320dp"
             android:background="@drawable/rounded_box_shape1"
             android:fontFamily="@font/barlow_semibold"
-            android:onClick="clickTimeBtn"
             android:text="Time-in"
             android:textSize="18sp"
             app:backgroundTint="@color/green" />
@@ -138,6 +136,9 @@
             android:drawableLeft="@drawable/att_log"
             android:textSize="18sp"
             app:backgroundTint="@color/sky"/>
+
+
+
 
 
     </LinearLayout>

@@ -1,7 +1,10 @@
 package com.example.attendancetracker;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -32,6 +35,7 @@ public class AttendanceLog extends AppCompatActivity {
     private ArrayList<AttendanceLogModel> attendanceLogArrayList;
 
     TextView refresh, filter;
+    EditText txtSearch;
 
     String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_attendance_log.php";
     @Override
@@ -41,6 +45,7 @@ public class AttendanceLog extends AppCompatActivity {
 
         refresh = findViewById(R.id.txtRefresh);
         filter = findViewById(R.id.txtFilter);
+        txtSearch = findViewById(R.id.tbxSearch);
 
         refresh.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -49,15 +54,59 @@ public class AttendanceLog extends AppCompatActivity {
             }
         });
 
+        filter.setText("\uf0b0");
+
+        filter.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if(filter.getText().toString().equalsIgnoreCase("\uf0b0") ||
+                filter.getText().toString().equalsIgnoreCase("\uf160")){
+                    filter.setText("\uf161");
+                    getAttendanceLogs();
+                }else if(filter.getText().toString().equalsIgnoreCase("\uf161")){
+                    filter.setText("\uf160");
+                    getAttendanceLogs();
+                }
+            }
+        });
+
         recyclerView = findViewById(R.id.attendanceRecyclerView);
         recyclerView.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         getAttendanceLogs();
+
+        txtSearch.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence s, int start, int count, int after) {
+
+            }
+
+            @Override
+            public void onTextChanged(CharSequence s, int start, int before, int count) {
+
+            }
+
+            @Override
+            public void afterTextChanged(Editable s) {
+                getAttendanceLogs();
+            }
+        });
 
 
     }
 
     private void getAttendanceLogs(){
         final String userEmail = "intensityg36@gmail.com";
+        final String search = txtSearch.getText().toString().trim();
+        String filterBy = "NA";
+
+        if(filter.getText().toString().trim().equalsIgnoreCase("\uf160")){
+            filterBy = "ASC";
+        }else{
+            filterBy = "DESC";
+        }
+
+        final String userFilter = filterBy;
+
         StringRequest stringRequest = new StringRequest(Request.Method.POST , uRl,(response) ->{
 
             try{
@@ -97,10 +146,14 @@ public class AttendanceLog extends AppCompatActivity {
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params  = new HashMap<>();
                 params.put("email", userEmail);
+                params.put("search", search);
+                params.put("filter", userFilter);
                 return params;
             }
         };
         RequestQueue requestQueue = Volley.newRequestQueue(getApplicationContext());
         requestQueue.add(stringRequest);
     }
+
+
 }
