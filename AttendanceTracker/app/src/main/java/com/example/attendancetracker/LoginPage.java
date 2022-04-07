@@ -102,11 +102,6 @@ public class LoginPage extends AppCompatActivity {
                }
                 /* email validation */
 
-               if (txtUsername.getText().toString().trim().matches(emailPattern)) {
-                   Toast.makeText(getApplicationContext(),"Valid email address",Toast.LENGTH_SHORT).show();
-               } else {
-                       Toast.makeText(getApplicationContext(),"Invalid email address", Toast.LENGTH_SHORT).show();
-               }
 
            }
        });
