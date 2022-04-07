@@ -280,6 +280,10 @@ public class Dashboard extends Fragment implements View.OnClickListener{
 
 
             if(timeInput.equals(timeReset)){
+                if(btnTime.getText().toString().equalsIgnoreCase("time-out")){
+                    internLogged();
+                    clicked(btnTime);
+                }
                 btnTime.setEnabled(true);
             }
 
