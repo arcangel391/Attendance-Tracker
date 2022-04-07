@@ -60,11 +60,11 @@ public class AttendanceLog extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 if(filter.getText().toString().equalsIgnoreCase("\uf0b0") ||
-                filter.getText().toString().equalsIgnoreCase("\uf160")){
-                    filter.setText("\uf161");
-                    getAttendanceLogs();
-                }else if(filter.getText().toString().equalsIgnoreCase("\uf161")){
+                filter.getText().toString().equalsIgnoreCase("\uf161")){
                     filter.setText("\uf160");
+                    getAttendanceLogs();
+                }else if(filter.getText().toString().equalsIgnoreCase("\uf160")){
+                    filter.setText("\uf161");
                     getAttendanceLogs();
                 }
             }
