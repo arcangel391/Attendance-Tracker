@@ -47,6 +47,8 @@ public class ResetPassword extends AppCompatActivity implements View.OnClickList
         btnCancel = findViewById(R.id.btnCancel);
 
         btnSavePassword.setOnClickListener(this);
+        eye1.setOnClickListener(this);
+        eye2.setOnClickListener(this);
 
     }
 
