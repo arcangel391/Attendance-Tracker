@@ -38,8 +38,6 @@ public class LoginPage extends AppCompatActivity {
     Button register,login;
     CheckBox checkedStatus;
     SharedPreferences sharedPreferences;
-    /*email validation*/
-    String emailPattern = "[a-zA-Z0-9._-]+@[a-z]+\\.+[a-z]+";
     @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
 
     public static final String ROOT_URL="http://192.168.1.50/Melham/";
