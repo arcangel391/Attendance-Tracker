@@ -10,10 +10,14 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.AttendanceTracker">
         <!-- <activity
+           android:name=".TeamMonitoring"
+            android:exported="false" />
+
+         <activity
             android:name=".Navbar"
             android:exported="false" />
         <activity android:name=".LoginPage" />
-         -->
+        -->
         <!--
 <activity
             android:name=".SplashScreen"
@@ -24,7 +28,7 @@
             android:exported="false"
             android:label="@string/title_activity_dashboard"
             android:theme="@style/Theme.AttendanceTracker.NoActionBar" />
-        <activity android:name=".Navbar">
+        <activity android:name=".TeamMonitoring">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
