@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".TeamMonitoring"
+    android:background="@color/blue">
+
+    <TextView
+        android:id="@+id/txtName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Jose Nathaniel Perez"
+        android:textColor="@color/white"
+        android:textSize="20sp"
+
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.019" />
+
+    <TextView
+        android:id="@+id/txtDepartment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Proj-IT-29"
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtRole" />
+
+    <TextView
+        android:id="@+id/txtRole"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
+        android:text="Quality Assurance"
+
+        android:textColor="@color/white"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtName" />
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="450dp"
+        android:layout_height="600dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.512"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/txtDepartment"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/mem_background" />
+
+    <LinearLayout
+        android:layout_width="397dp"
+        android:layout_height="500dp"
+        android:orientation="vertical"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/imageView3"
+        app:layout_constraintVertical_bias="0.05">
+
+        <LinearLayout
+            android:layout_width="240dp"
+            android:layout_height="54dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="80dp"
+            android:layout_marginBottom="20dp"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnLeaders"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/green"
+                android:text="Leaders" />
+
+            <Button
+                android:id="@+id/btnMembers"
+                android:layout_width="120dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:backgroundTint="@color/gray"
+                android:text="Members"
+                android:textColor="@color/black" />
+        </LinearLayout>
+
+        <ScrollView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">>
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:scrollbars="vertical" />
+        </ScrollView>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="150dp"
+                android:layout_marginTop="10dp"
+                android:orientation="vertical">
+
+            </LinearLayout>
+
+            <!--   <androidx.cardview.widget.CardView
+                    android:id="@+id/card_view1"
+                    android:layout_width="380dp"
+                    android:layout_height="100dp"
+                    android:layout_marginStart="10dp"
+                    android:layout_marginTop="10sp"
+                    android:backgroundTint="@color/gray"
+                    app:cardCornerRadius="12dp">
+
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:id="@+id/imageView5"
+                            android:layout_width="10dp"
+                            android:layout_height="match_parent"
+                            android:layout_gravity="center"
+                            android:layout_weight="1"
+                            app:srcCompat="@drawable/img" />
+
+                        <LinearLayout
+                            android:layout_width="100dp"
+                            android:layout_height="match_parent"
+                            android:layout_marginLeft="10dp"
+                            android:layout_weight="1"
+                            android:orientation="vertical">
+
+                            <TextView
+                                android:id="@+id/txtName1"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="18sp"
+                                android:text="Ryan Dusong"
+                                android:layout_marginTop="10dp"/>
+                            <TextView
+                                android:id="@+id/txtRole1"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="Team Leader" />
+                            <TextView
+                                android:id="@+id/txtDep1"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="Project_IT-29" />
+                            <TextView
+                                android:id="@+id/txtStatus1"
+                                android:layout_width="200dp"
+                                android:layout_height="wrap_content"
+                                android:textSize="15sp"
+                                android:text="Active Now"
+                                android:textColor="@color/green"/>
+                        </LinearLayout>-->
+
+            <Button
+                android:id="@+id/btnReport1"
+                android:layout_width="80dp"
+                android:layout_height="50dp"
+                android:layout_gravity="center"
+                android:layout_marginRight="10dp"
+                android:backgroundTint="@color/pink"
+                android:text="Report"
+                android:textColor="@color/white"
+                android:textSize="11sp" />
+
+        </LinearLayout>
+        <!--  </androidx.cardview.widget.CardView>-->
+        <androidx.cardview.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="380dp"
+            android:layout_height="100dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginTop="10sp"
+            android:backgroundTint="@color/gray"
+            app:cardCornerRadius="12dp">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="horizontal">
+
+
+                <LinearLayout
+                    android:layout_width="100dp"
+                    android:layout_height="match_parent"
+                    android:layout_marginLeft="10dp"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/txtName2"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="10dp"
+                        android:text="Cedrick Cruz"
+                        android:textSize="18sp" />
+
+                    <TextView
+                        android:id="@+id/txtRole2"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Co-Leader"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/txtDep2"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Project_IT-29"
+                        android:textSize="15sp" />
+
+                    <TextView
+                        android:id="@+id/txtStatus2"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Active 5hrs Ago"
+                        android:textColor="@color/pink"
+                        android:textSize="15sp" />
+                </LinearLayout>
+
+                <Button
+                    android:id="@+id/btnReport2"
+                    android:layout_width="80dp"
+                    android:layout_height="50dp"
+                    android:layout_gravity="center"
+                    android:layout_marginRight="10dp"
+                    android:backgroundTint="@color/pink"
+                    android:text="Report"
+                    android:textColor="@color/white"
+                    android:textSize="11sp" />
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+
+    </LinearLayout>
+
+
+
+
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
