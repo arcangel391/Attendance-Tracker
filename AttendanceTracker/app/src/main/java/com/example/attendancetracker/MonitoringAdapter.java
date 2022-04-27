@@ -18,8 +18,8 @@ public class MonitoringAdapter  extends RecyclerView.Adapter<MonitoringAdapter.M
     private Context context;
     private ArrayList<MonitoringModel> monitoringModels;
 
-    public MonitoringAdapter(TeamMonitoring teamMonitoring, ArrayList<MonitoringModel> monitoringModelArrayList) {
-        this.context = teamMonitoring;
+    public MonitoringAdapter(Context context, ArrayList<MonitoringModel> monitoringModelArrayList) {
+        this.context = context;
         this.monitoringModels = monitoringModelArrayList;
 
     }
