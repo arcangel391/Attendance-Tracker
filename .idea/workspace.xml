@@ -21,10 +21,13 @@
   <component name="PropertiesComponent">
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Team_Monitoring" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AttendanceTracker" />
     <property name="settings.editor.selected.configurable" value="AndroidSdkUpdater" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
       <changelist id="9b693307-694e-4809-aa91-778376afe941" name="Default Changelist" comment="" />
@@ -34,5 +37,11 @@
       <updated>1650136853076</updated>
     </task>
     <servers />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="651" y="137" key="FileChooserDialogImpl" timestamp="1651145832575">
+      <screen x="0" y="0" width="1536" height="864" />
+    </state>
+    <state x="651" y="137" key="FileChooserDialogImpl/1920.0.1920.1080/0.0.1536.864@0.0.1536.864" timestamp="1651145832575" />
   </component>
 </project>

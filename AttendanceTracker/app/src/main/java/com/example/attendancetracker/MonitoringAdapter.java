@@ -104,6 +104,15 @@ public class MonitoringAdapter  extends RecyclerView.Adapter<MonitoringAdapter.M
                     View view = inflater.inflate(R.layout.layout_dialog, null);
                     txtDisplayName= view.findViewById(R.id.txtName);
                     txtDisplayRole= view.findViewById(R.id.txtRole);
+                    btnSubmit = view.findViewById(R.id.btnSubmitRep);
+
+                    btnSubmit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            Toast.makeText(context, "ASDSADAD", Toast.LENGTH_SHORT).show();
+                        }
+                    });
+
 
                     builder.setView(view);
                     builder.setTitle("Report Team Member");
@@ -130,21 +139,21 @@ public class MonitoringAdapter  extends RecyclerView.Adapter<MonitoringAdapter.M
             });
 
 
-            //SubmitReport
-            View view1 = inflater.inflate(R.layout.layout_dialog, null);
-            btnSubmit = view1.findViewById(R.id.btnSubmitRep);
-            txtDisplayName =view1.findViewById(R.id.txtName);
-            txtDisplayRole =view1.findViewById(R.id.txtRole);
-            txtReason = view1.findViewById(R.id.txtReason);
-
-            btnSubmit.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View v) {
-
-                    insertFileReport(txtDisplayName.getText().toString(),txtDisplayRole.getText().toString(), mTeam,txtReason.getText().toString(),mUser );
-
-                }
-            });
+//            //SubmitReport
+//            View view1 = inflater.inflate(R.layout.layout_dialog, null);
+//            btnSubmit = view1.findViewById(R.id.btnSubmitRep);
+//            txtDisplayName =view1.findViewById(R.id.txtName);
+//            txtDisplayRole =view1.findViewById(R.id.txtRole);
+//            txtReason = view1.findViewById(R.id.txtReason);
+//
+//            btnSubmit.setOnClickListener(new View.OnClickListener() {
+//                @Override
+//                public void onClick(View v) {
+//
+//                    insertFileReport(txtDisplayName.getText().toString(),txtDisplayRole.getText().toString(), mTeam,txtReason.getText().toString(),mUser );
+//
+//                }
+//            });
 
 
 
