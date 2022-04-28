@@ -24,10 +24,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 
 public class TeamMonitoring extends AppCompatActivity {
-    private Button btnReport1, btnReport2,btnMember,btnLeader;
+    private Button btnReport,btnMember,btnLeader;
     private RecyclerView recyclerView2;
-    String uRlMember = "http://192.168.1.5/MCC-AttendanceTracker/v1/get_monitoringMember.php";
-    String uRlLeader = "http://192.168.1.5/MCC-AttendanceTracker/v1/get_monitoringLeader.php";
+    String uRlMember = "http://192.168.1.4/MCC-AttendanceTracker/v1/get_monitoringMember.php";
+    String uRlLeader = "http://192.168.1.4/MCC-AttendanceTracker/v1/get_monitoringLeader.php";
     private ArrayList<MonitoringModel> monitoringModelArrayList;
     private MonitoringAdapter adapter;
     @Override
@@ -35,22 +35,11 @@ public class TeamMonitoring extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_team_monitoring);
 
-        btnReport1 = (Button) findViewById(R.id.btnReport1);
-        btnReport2 = (Button) findViewById(R.id.btnReport2);
         btnMember = (Button) findViewById(R.id.btnMembers);
         btnLeader = (Button) findViewById(R.id.btnLeaders);
         recyclerView2 = findViewById(R.id.recyclerMonitoring);
         recyclerView2.setLayoutManager(new LinearLayoutManager(TeamMonitoring.this));
-        btnReport1.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                AlertDialog.Builder builder = new AlertDialog.Builder(TeamMonitoring.this);
-                View view = getLayoutInflater().inflate(R.layout.layout_dialog,null);
-                builder.setView(view);
-                builder.setTitle("Report Team Member");
-                builder.show();
-            }
-        });
+
 
         //default recyclerload
         viewMonitoring(uRlLeader);
@@ -63,6 +52,10 @@ public class TeamMonitoring extends AppCompatActivity {
 
                 //fetch data
                 viewMonitoring(uRlLeader);
+                btnLeader.setBackgroundColor(getResources().getColor(R.color.green));
+                btnMember.setBackgroundColor(getResources().getColor(R.color.lgray));
+                btnLeader.setTextColor(getResources().getColor(R.color.white));
+                btnMember.setTextColor(getResources().getColor(R.color.black));
             }
         });
 
@@ -73,6 +66,10 @@ public class TeamMonitoring extends AppCompatActivity {
             public void onClick(View v) {
                 ////fetch data
                 viewMonitoring(uRlMember);
+                btnLeader.setBackgroundColor(getResources().getColor(R.color.lgray));
+                btnMember.setBackgroundColor(getResources().getColor(R.color.green));
+                btnLeader.setTextColor(getResources().getColor(R.color.black));
+                btnMember.setTextColor(getResources().getColor(R.color.white));
             }
         });
 
@@ -115,6 +112,13 @@ public class TeamMonitoring extends AppCompatActivity {
         });
         RequestQueue requestQueue = Volley.newRequestQueue(TeamMonitoring.this .getApplicationContext());
         requestQueue.add(stringRequest);
+    }
+    public void showDialog(){
+        AlertDialog.Builder builder = new AlertDialog.Builder(TeamMonitoring.this);
+        View view = getLayoutInflater().inflate(R.layout.layout_dialog, null);
+        builder.setView(view);
+        builder.setTitle("Report Team Member");
+        builder.show();
     }
 
 

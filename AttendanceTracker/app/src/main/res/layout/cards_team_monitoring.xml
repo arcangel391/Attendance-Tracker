@@ -9,8 +9,9 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#464645"
-        android:orientation="horizontal">
+        android:background="@color/lgray"
+        android:orientation="horizontal"
+        android:layout_marginBottom="10dp">
 
         <ImageView
             android:id="@+id/imageView4"
@@ -37,8 +38,8 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/barlow_semibold"
                 android:text="Clint Cantones"
-                android:textColor="@color/white"
-                android:textSize="20sp" />
+                android:textColor="@color/black"
+                android:textSize="18sp" />
 
             <TextView
                 android:id="@+id/txtRoleMonitoring"
@@ -49,7 +50,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/barlow_regular"
                 android:text="Application Developer"
-                android:textColor="@color/white" />
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/txtTeam"
@@ -60,7 +61,7 @@
                 android:layout_weight="1"
                 android:fontFamily="@font/barlow_regular"
                 android:text="Proj-IT-29"
-                android:textColor="@color/green"
+                android:textColor="@color/black"
                 android:textSize="14sp" />
 
         </LinearLayout>
@@ -69,7 +70,7 @@
             android:id="@+id/btn_reportmonitoring"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="25dp"
+            android:layout_marginTop="38dp"
             android:layout_marginLeft="-100dp"
             android:text="Report"
             app:backgroundTint="@color/pink" />
