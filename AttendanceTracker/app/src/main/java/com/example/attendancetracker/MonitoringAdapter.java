@@ -81,7 +81,7 @@ public class MonitoringAdapter  extends RecyclerView.Adapter<MonitoringAdapter.M
 
 
     class MCardHolder extends RecyclerView.ViewHolder{
-        private TextView txtMemberName, txtMemberRole, txtMemberTeam, txtDisplayName, txtDisplayRole,txtReason;
+        private TextView txtMemberName, txtMemberRole, txtMemberTeam, txtDisplayName, txtDisplayRole, txtReason;
         private CardView MonitoringCard;
         private Button btnReport, btnSubmit;
         private LayoutInflater layoutInflater;
@@ -105,18 +105,7 @@ public class MonitoringAdapter  extends RecyclerView.Adapter<MonitoringAdapter.M
                     txtDisplayName= view.findViewById(R.id.txtName);
                     txtDisplayRole= view.findViewById(R.id.txtRole);
                     btnSubmit = view.findViewById(R.id.btnSubmitRep);
-
-                    btnSubmit.setOnClickListener(new View.OnClickListener() {
-                        @Override
-                        public void onClick(View v) {
-                            Toast.makeText(context, "ASDSADAD", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-
-
-                    builder.setView(view);
-                    builder.setTitle("Report Team Member");
-                    builder.show();
+                    txtReason = view.findViewById(R.id.txtReason);
 
                     Intent i = new Intent (view.getContext(),TeamMonitoring.class);
                     i.putExtra("name", monitoringModels.get(getAdapterPosition()).getName());
@@ -129,7 +118,20 @@ public class MonitoringAdapter  extends RecyclerView.Adapter<MonitoringAdapter.M
                     mUser = "Sample";
                     txtDisplayName.setText(getName);
                     txtDisplayRole.setText(getRole);
-                    //insertFileReport(txtDisplayName.getText().toString(),txtDisplayRole.getText().toString(), mTeam,txtReason.getText().toString(),mUser );
+
+
+
+
+                    btnSubmit.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            insertFileReport(txtDisplayName.getText().toString(),txtDisplayRole.getText().toString(), mTeam,txtReason.getText().toString(),mUser );
+                        }
+                    });
+                    builder.setView(view);
+                    builder.setTitle("Report Team Member");
+                    builder.show();
+
 
 
 
@@ -138,37 +140,6 @@ public class MonitoringAdapter  extends RecyclerView.Adapter<MonitoringAdapter.M
                 }
             });
 
-
-//            //SubmitReport
-//            View view1 = inflater.inflate(R.layout.layout_dialog, null);
-//            btnSubmit = view1.findViewById(R.id.btnSubmitRep);
-//            txtDisplayName =view1.findViewById(R.id.txtName);
-//            txtDisplayRole =view1.findViewById(R.id.txtRole);
-//            txtReason = view1.findViewById(R.id.txtReason);
-//
-//            btnSubmit.setOnClickListener(new View.OnClickListener() {
-//                @Override
-//                public void onClick(View v) {
-//
-//                    insertFileReport(txtDisplayName.getText().toString(),txtDisplayRole.getText().toString(), mTeam,txtReason.getText().toString(),mUser );
-//
-//                }
-//            });
-
-
-
-
-
-           /* itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    Intent i = new Intent (view.getContext(),AnnouncementsDetails.class);
-                    i.putExtra("title", announcementsModels.get(getAdapterPosition()).getTitle());
-                    i.putExtra("date", announcementsModels.get(getAdapterPosition()).getDate());
-                    i.putExtra("details", announcementsModels.get(getAdapterPosition()).getDetails());
-                    view.getContext().startActivity(i);
-                }
-            });*/
 
 
         }

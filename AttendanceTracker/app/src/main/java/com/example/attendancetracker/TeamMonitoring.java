@@ -47,17 +47,6 @@ public class TeamMonitoring extends AppCompatActivity{
         recyclerView2 = findViewById(R.id.recyclerMonitoring);
         recyclerView2.setLayoutManager(new LinearLayoutManager(TeamMonitoring.this));
 
-        LayoutInflater inflater = TeamMonitoring.this.getLayoutInflater();
-        View v = inflater.inflate(R.layout.layout_dialog, null);
-        btnSubmitRep = (Button) v.findViewById(R.id.btnSubmitRep);
-        btnSubmitRep.setOnClickListener(new View.OnClickListener() {
-//putanginamo kang btn ka
-            public void onClick(View v) {
-                // TODO Auto-generated method stub
-                Toast.makeText(TeamMonitoring.this, "try", Toast.LENGTH_LONG).show();
-            }
-        });
-
         //default recyclerload
         viewMonitoring(uRlLeader);
 
