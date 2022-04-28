@@ -70,6 +70,9 @@ public class AttendanceLogAdapter extends RecyclerView.Adapter<AttendanceLogAdap
             txtAttendanceTimeIn.setTextColor(context.getResources().getColor(R.color.white));
             txtAttendanceTimeOut.setTextColor(context.getResources().getColor(R.color.white));
 
+
+
+
            /* itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
