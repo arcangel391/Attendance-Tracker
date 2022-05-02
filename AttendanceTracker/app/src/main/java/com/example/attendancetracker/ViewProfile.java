@@ -69,7 +69,7 @@ public class ViewProfile extends Fragment implements View.OnClickListener{
     }
 
     private void getUserData(){
-        final String userEmail = "intensityg36@gmail.com";
+        final String userEmail = "hasannormandi167@gmail.com";
 
         StringRequest stringRequest = new StringRequest(Request.Method.POST,
                 Constants.URL_VIEW_PROFILE,

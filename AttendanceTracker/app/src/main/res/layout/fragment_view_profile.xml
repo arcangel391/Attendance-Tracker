@@ -29,7 +29,8 @@
             android:orientation="horizontal"
             android:layout_marginTop="-230dp"
             android:layout_gravity="center_horizontal"
-            android:gravity="center_horizontal">
+            android:paddingStart="30dp"
+            android:gravity="start">
             
             <de.hdodenhof.circleimageview.CircleImageView
                 android:layout_width="96dp"
