@@ -123,7 +123,6 @@ public class Dashboard extends Fragment implements View.OnClickListener{
             @Override
             public void afterTextChanged(Editable s) {
                 compareTime(time.getText().toString(), "05:00:00 PM");
-                getDate();
 
             }
         });
