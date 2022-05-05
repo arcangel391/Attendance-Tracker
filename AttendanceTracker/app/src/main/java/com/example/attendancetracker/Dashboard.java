@@ -77,9 +77,9 @@ public class Dashboard extends Fragment implements View.OnClickListener{
     String mess = "time in";
     int buttonStatus = 0;
 
-    String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_announcements.php";
-    String uRl1 = "http://192.168.1.110/MCC-AttendanceTracker/v1/time.php";
-    String uRl2 = "http://192.168.1.110/MCC-AttendanceTracker/v1/user_time_logs.php";
+    String uRl = "http://192.168.1.110/LocalHost_MCC-AttendanceTracker/v1/get_announcements.php";
+    String uRl1 = "http://192.168.1.110/LocalHost_MCC-AttendanceTracker/v1/time.php";
+    String uRl2 = "http://192.168.1.110/LocalHost_MCC-AttendanceTracker/v1/user_time_logs.php";
 
 
     @Nullable
@@ -251,7 +251,6 @@ public class Dashboard extends Fragment implements View.OnClickListener{
             b.setText("TIME-IN");
             editor.putInt("button_status", 1);
             editor.commit();
-            b.setEnabled(false);
             mess = "time-in";
         }
     }
@@ -263,19 +262,6 @@ public class Dashboard extends Fragment implements View.OnClickListener{
             Date timeScheduled = sdf.parse(time);
             Date timeReset = sdf.parse("12:00:00 AM");
 
-            if(btnTime.getText().toString().equalsIgnoreCase("time-out")){
-                if(timeInput.equals(timeScheduled) || timeInput.after(timeScheduled)){
-                   btnTime.setEnabled(true);
-                }else{
-                    btnTime.setEnabled(false);
-                }
-            }else{
-                if(timeInput.after(timeScheduled)){
-                    btnTime.setEnabled(false);
-                }else{
-                    btnTime.setEnabled(true);
-                }
-            }
 
 
             if(timeInput.equals(timeReset)){

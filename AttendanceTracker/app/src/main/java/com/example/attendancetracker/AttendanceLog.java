@@ -37,7 +37,7 @@ public class AttendanceLog extends AppCompatActivity {
     TextView refresh, filter;
     EditText txtSearch;
 
-    String uRl = "http://192.168.1.110/MCC-AttendanceTracker/v1/get_attendance_log.php";
+    String uRl = "http://192.168.1.110/LocalHost_MCC-AttendanceTracker/v1/get_attendance_log.php";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
