@@ -2,19 +2,28 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="100dp"
+    android:stateListAnimator="@null"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     app:cardCornerRadius="4dp">
 
     <LinearLayout
+        android:id="@+id/cardbg"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@drawable/rounded_box_shape"
+        android:backgroundTint="#99CA97"
+        android:layout_marginBottom="10dp"
+        android:stateListAnimator="@null"
         android:orientation="horizontal">
 
         <LinearLayout
             android:layout_width="300dp"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:layout_margin="4dp">
+            android:layout_marginLeft="20dp"
+            android:layout_marginTop="4dp"
+            android:stateListAnimator="@null"
+
+            android:orientation="vertical">
 
             <TextView
                 android:id="@+id/txtTitle2"
@@ -24,7 +33,8 @@
                 android:layout_marginTop="10dp"
                 android:fontFamily="@font/barlow_semibold"
                 android:text="Title"
-                android:textSize="20sp" />
+                android:textColor="@color/white"
+                android:textSize="30sp" />
 
             <TextView
                 android:id="@+id/txtDateAnnce2"
@@ -34,7 +44,8 @@
                 android:layout_marginTop="5dp"
                 android:layout_weight="1"
                 android:fontFamily="@font/barlow_regular"
-                android:text="Date" />
+                android:text="Date"
+                android:textColor="@color/white" />
         </LinearLayout>
 
         <TextView
@@ -47,6 +58,7 @@
             android:gravity="center_horizontal"
             android:paddingTop="20dp"
             android:text="ID"
+            android:textColor="@color/white"
             android:textSize="14sp" />
     </LinearLayout>
 

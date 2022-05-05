@@ -32,17 +32,18 @@
     </LinearLayout>
 
     <EditText
-        android:background="@drawable/textbox_shape1"
+        android:id="@+id/p_search"
         android:layout_width="340dp"
         android:layout_height="47dp"
-        android:hint="Search"
-        android:textSize="14sp"
-        android:paddingStart="15dp"
-        android:paddingEnd="15dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="20dp"
+        android:background="@drawable/textbox_shape1"
         android:drawableEnd="@drawable/ic_magnifying_glass_solid"
         android:drawableTint="@color/gray"
-        android:layout_marginTop="20dp"
-        android:layout_gravity="center"/>
+        android:hint="Search"
+        android:paddingStart="15dp"
+        android:paddingEnd="15dp"
+        android:textSize="14sp" />
 
     <LinearLayout
         android:layout_width="match_parent"
@@ -60,14 +61,15 @@
             android:backgroundTint = "@color/green">
 
             <TextView
+                android:id="@+id/p_refresh"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/fa_solid"
-                android:text="\uf021"
-                android:textSize="24dp"
-                android:textColor="@color/white"
                 android:layout_gravity="center"
-                android:gravity="center"/>
+                android:fontFamily="@font/fa_solid"
+                android:gravity="center"
+                android:text="\uf021"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
 
         </LinearLayout>
 
@@ -80,40 +82,48 @@
             android:layout_marginStart="5dp">
 
             <TextView
+                android:id="@+id/p_filter"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:fontFamily="@font/fa_solid"
-                android:text="\uf0b0"
-                android:textSize="24dp"
-                android:textColor="@color/white"
                 android:layout_gravity="center"
-                android:gravity="center"/>
+                android:fontFamily="@font/fa_solid"
+                android:gravity="center"
+                android:text="\uf0b0"
+                android:textColor="@color/white"
+                android:textSize="24dp" />
+
 
         </LinearLayout>
+
 
     </LinearLayout>
 
     <LinearLayout
+        android:stateListAnimator="@null"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical"
         android:layout_marginTop="10dp">
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/status_view"
+            android:stateListAnimator="@null"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:padding="10dp"
-            android:scrollbars="vertical"/>
+            android:layout_height="match_parent"
+            android:layout_marginLeft="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginBottom="30dp" />
+
+
     </LinearLayout>
-
-
     <com.google.android.material.floatingactionbutton.FloatingActionButton
+        android:id="@+id/submit_proj"
         android:layout_width="55dp"
         android:layout_height="55dp"
-        android:src="@drawable/ic_add"
         android:layout_gravity="center"
-        android:layout_marginTop="-100dp"
+        android:layout_marginTop="-80dp"
         android:backgroundTint="@color/pink"
+        android:src="@drawable/ic_add"
         app:backgroundTint="@color/white"
         app:tint="@color/white" />
 

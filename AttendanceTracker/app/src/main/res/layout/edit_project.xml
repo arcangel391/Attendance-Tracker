@@ -105,14 +105,15 @@
         </LinearLayout>
 
         <EditText
-            android:background="@drawable/textbox_shape"
+            android:id="@+id/t_name"
             android:layout_width="350dp"
             android:layout_height="47dp"
-            android:hint="Group Meeting"
-            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:background="@drawable/textbox_shape"
             android:fontFamily="@font/barlow_medium"
+            android:hint="Group Meeting"
             android:paddingStart="15dp"
-            android:layout_gravity="center"/>
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -145,18 +146,21 @@
         </LinearLayout>
 
         <EditText
-            android:background="@drawable/textbox_shape"
+            android:id="@+id/date_ass"
             android:layout_width="350dp"
             android:layout_height="47dp"
+            android:layout_gravity="center"
+            android:background="@drawable/textbox_shape"
+            android:drawableEnd="@drawable/ic_calendar"
+            android:drawableTint="@color/gray"
+            android:focusable="false"
+            android:focusableInTouchMode="false"
+            android:fontFamily="@font/barlow_medium"
             android:hint="mm/dd/yy"
             android:inputType="date"
-            android:textSize="14sp"
-            android:fontFamily="@font/barlow_medium"
             android:paddingStart="15dp"
-            android:layout_gravity="center"
-            android:drawableEnd="@drawable/ic_calendar"
             android:paddingEnd="15dp"
-            android:drawableTint="@color/gray"/>
+            android:textSize="14sp" />
     </LinearLayout>
 
     <LinearLayout
@@ -196,10 +200,10 @@
             android:background="@drawable/textbox_shape">
 
             <Spinner
+                android:id="@+id/fileformats"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:spinnerMode="dropdown"
-                 />
+                android:spinnerMode="dropdown" />
         </LinearLayout>
 
     </LinearLayout>
@@ -234,40 +238,43 @@
         </LinearLayout>
 
         <EditText
-            android:background="@drawable/textbox_shape"
+            android:id="@+id/gd_link"
             android:layout_width="350dp"
             android:layout_height="47dp"
-            android:hint="drive.google.com/drive/u/1/folder"
-            android:textSize="14sp"
+            android:layout_gravity="center"
+            android:background="@drawable/textbox_shape"
             android:fontFamily="@font/barlow_medium"
+            android:hint="drive.google.com/drive/u/1/folder"
             android:paddingStart="15dp"
-            android:layout_gravity="center"/>
+            android:textSize="14sp" />
     </LinearLayout>
 
 
     <Button
+        android:id="@+id/p_save"
         android:layout_width="310dp"
         android:layout_height="48dp"
-        android:background="@drawable/rounded_box_shape1"
-        app:backgroundTint = "@color/green"
-        android:textSize="18sp"
-        android:fontFamily="@font/barlow_bold"
-        android:text="SAVE"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="30dp"/>
+        android:layout_marginTop="30dp"
+        android:background="@drawable/rounded_box_shape1"
+        android:fontFamily="@font/barlow_bold"
+        android:gravity="center"
+        android:text="SAVE"
+        android:textSize="18sp"
+        app:backgroundTint="@color/green" />
 
     <Button
+        android:id="@+id/btn_can"
         android:layout_width="310dp"
         android:layout_height="48dp"
-        android:background="@drawable/rounded_box_shape1"
-        app:backgroundTint = "@color/pink"
-        android:textSize="18sp"
-        android:fontFamily="@font/barlow_bold"
-        android:text="CANCEL"
-        android:gravity="center"
         android:layout_gravity="center"
-        android:layout_marginTop="10dp"/>
+        android:layout_marginTop="10dp"
+        android:background="@drawable/rounded_box_shape1"
+        android:fontFamily="@font/barlow_bold"
+        android:gravity="center"
+        android:text="CANCEL"
+        android:textSize="18sp"
+        app:backgroundTint="@color/pink" />
     
 
 </LinearLayout>
