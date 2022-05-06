@@ -1,0 +1,342 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical">
+
+    <ImageView
+        android:id="@+id/curve"
+        android:layout_width="match_parent"
+        android:layout_height="351dp"
+        android:layout_marginTop="-100dp"
+        android:background="@drawable/curve_shape" />
+
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="400dp"
+        android:layout_height="400dp"
+        android:layout_marginTop="-280dp"
+        android:layout_gravity="center"
+        app:srcCompat="@drawable/ic_undraw_online_ad_re_ol62" />
+
+    <TextView
+        android:id="@+id/txt_welcome"
+        android:layout_width="wrap_content"
+        android:layout_height="64dp"
+        android:layout_marginTop="-100dp"
+        android:fontFamily="@font/barlow_medium"
+        android:layout_gravity="center"
+        android:text="SIGN-UP"
+        android:textColor="#000000"
+        android:textSize="43sp" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="10dp">
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center">
+
+            <!-- START DATE INPUT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp"
+                android:layout_marginEnd="20dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Start Date"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/pink"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/et_sdate"
+                    android:layout_width="165dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/textbox_shape"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:drawableTint="@color/gray"
+                    android:fontFamily="@font/barlow_medium"
+                    android:hint="mm/dd/yyyy"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+            <!-- END DATE INPUT TEXT-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_marginTop="10dp">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Estimated End Date"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"
+                        android:textColor="@color/black"/>
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="*"
+                        android:textColor="@color/pink"
+                        android:textSize="14sp"
+                        android:fontFamily="@font/barlow_regular"/>
+                </LinearLayout>
+
+                <EditText
+                    android:id="@+id/et_edate"
+                    android:layout_width="165dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:background="@drawable/textbox_shape"
+                    android:drawableEnd="@drawable/ic_calendar"
+                    android:drawableTint="@color/gray"
+                    android:fontFamily="@font/barlow_medium"
+                    android:hint="mm/dd/yyyy"
+                    android:paddingStart="15dp"
+                    android:paddingEnd="10dp"
+                    android:textSize="14sp" />
+            </LinearLayout>
+
+        </LinearLayout>
+
+        <!-- REQUIRED HOURS INPUT TEXT-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Required Hours"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_regular"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/pink"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_regular"/>
+            </LinearLayout>
+
+            <EditText
+                android:id="@+id/et_reqhrs"
+                android:layout_width="350dp"
+                android:layout_height="48dp"
+                android:layout_gravity="center"
+                android:background="@drawable/textbox_shape"
+                android:fontFamily="@font/barlow_medium"
+                android:hint="e.g. 500 Hours"
+                android:paddingStart="15dp"
+                android:textSize="14sp" />
+        </LinearLayout>
+
+        <!-- COMPANY NAME INPUT TEXT-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Company Name"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_regular"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/pink"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_regular"/>
+
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/sp_company"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:background="@drawable/textbox_shape"
+                android:layout_height="48dp"
+                android:contentDescription="@string/gender_value"
+                android:spinnerMode="dropdown" />
+
+        </LinearLayout>
+
+        <!-- DEPARTMENT INPUT TEXT-->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginStart="30dp">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Department"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_regular"
+                    android:textColor="@color/black"/>
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="*"
+                    android:textColor="@color/pink"
+                    android:textSize="14sp"
+                    android:fontFamily="@font/barlow_regular"/>
+            </LinearLayout>
+
+            <Spinner
+                android:id="@+id/sp_department"
+                android:layout_width="350dp"
+                android:layout_gravity="center"
+                android:background="@drawable/textbox_shape"
+                android:layout_height="48dp"
+                android:contentDescription="@string/gender_value"
+                android:spinnerMode="dropdown" />
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:gravity="center_horizontal"
+            android:layout_marginTop="30dp">
+
+            <ImageView
+                android:id="@+id/vpage"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rounded_box_shape"
+                app:backgroundTint="@color/green" />
+
+            <ImageView
+                android:id="@+id/vpage1"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rounded_box_shape"
+                app:backgroundTint="@color/green" />
+
+            <ImageView
+                android:id="@+id/vpage2"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rounded_box_shape"
+                app:backgroundTint="@color/sky" />
+
+            <ImageView
+                android:id="@+id/vpage3"
+                android:layout_width="20dp"
+                android:layout_height="20dp"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="5dp"
+                android:background="@drawable/rounded_box_shape"
+                app:backgroundTint="@color/green" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:gravity="center">
+
+            <TextView
+                android:id="@+id/tv_previous2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginEnd="130dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="Previous"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/tv_next2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="130dp"
+                android:fontFamily="@font/barlow_semibold"
+                android:text="Next"
+                android:textColor="@color/gray"
+                android:textSize="14sp" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+
+
+
+
+
+
+</LinearLayout>
