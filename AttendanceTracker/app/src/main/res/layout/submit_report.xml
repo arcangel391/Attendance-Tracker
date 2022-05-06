@@ -20,14 +20,15 @@
         android:layout_marginTop="-80dp">
 
         <TextView
+            android:id="@+id/tvBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/fa_solid"
             android:text="\uf060"
-            android:textSize="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -64,71 +65,73 @@
             android:layout_marginStart="35dp"
             android:layout_marginBottom="10dp"
             android:layout_marginTop="30dp"/>
-        
+
         <EditText
+            android:id="@+id/etTime"
             android:layout_width="340dp"
             android:layout_height="35dp"
-            android:hint="Title"
-            android:background="@drawable/rounded_box_shape1"
             android:layout_gravity="center"
+            android:layout_marginBottom="15dp"
+            android:background="@drawable/rounded_box_shape1"
+            android:hint=" Subject"
             android:paddingStart="10dp"
-            android:textSize="14sp"
-            android:layout_marginBottom="15dp"/>
+            android:textSize="14sp" />
 
         <EditText
+            android:id="@+id/etDetails"
             android:layout_width="340dp"
-            android:layout_height="289dp"
-            android:hint="Details"
-            android:background="@drawable/rounded_box_shape1"
+            android:layout_height="240dp"
             android:layout_gravity="center"
-            android:paddingStart="10dp"
-            android:textSize="14sp"
+            android:background="@drawable/rounded_box_shape1"
+            android:gravity="top|left"
+            android:hint="Details"
             android:inputType="textMultiLine"
             android:lines="20"
-            android:paddingTop="10dp"
-            android:gravity="top|left"
             android:minLines="6"
+            android:paddingStart="10dp"
+            android:paddingTop="10dp"
+            android:scrollbars="vertical"
             android:scrollHorizontally="false"
-            android:scrollbars="vertical"/>
+            android:textSize="14sp" />
 
-        <LinearLayout
+        <TextView
+            android:id="@+id/textView6"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:fontFamily="@font/barlow_regular"
+            android:text="Files"
+            android:textColor="@color/black"
+            android:textSize="17sp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginTop="15dp"/>
+
+        <EditText
+            android:id="@+id/etDrive"
+            android:layout_width="match_parent"
+            android:layout_height="47dp"
             android:layout_gravity="center"
-            android:gravity="center"
-            android:layout_marginTop="10dp">
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:text="Supporting Document"
-                android:fontFamily="@font/barlow_medium"
-                android:textSize="14sp"
-                android:textColor="@color/gray"
-                android:layout_marginEnd="100dp"/>
-
-            <Button
-                android:id="@+id/button"
-                android:layout_width="wrap_content"
-                android:layout_height="40dp"
-                android:backgroundTint="#9F9A9A"
-                android:fontFamily="@font/barlow_medium"
-                android:text="Upload File"
-                android:textSize="10sp" />
-        </LinearLayout>
+            android:background="@drawable/textbox_shape"
+            android:fontFamily="@font/barlow_medium"
+            android:hint="Google Drive Link"
+            android:paddingStart="15dp"
+            android:textSize="14sp"
+            android:layout_marginLeft="35dp"
+            android:layout_marginRight="35dp"
+            android:layout_marginTop="10dp"/>
 
         <Button
+            android:id="@+id/btnSubmit"
             android:layout_width="310dp"
             android:layout_height="48dp"
-            android:background="@drawable/rounded_box_shape1"
-            app:backgroundTint = "@color/green"
-            android:textSize="18sp"
-            android:fontFamily="@font/barlow_bold"
-            android:text="SUBMIT"
-            android:gravity="center"
             android:layout_gravity="center"
-            android:layout_marginTop="30dp"/>
+            android:layout_marginTop="30dp"
+            android:background="@drawable/rounded_box_shape1"
+            android:fontFamily="@font/barlow_bold"
+            android:gravity="center"
+            android:onClick="saveData"
+            android:text="SUBMIT"
+            android:textSize="18sp"
+            app:backgroundTint="@color/green" />
 
     </LinearLayout>
 

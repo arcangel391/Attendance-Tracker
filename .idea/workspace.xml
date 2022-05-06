@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="NONE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="d8ed6b1c-2b3b-4b24-a415-b5c6928d2577" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AttendanceTracker/app/src/main/java/com/example/attendancetracker/SubmitReport.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/AttendanceTracker/app/src/main/java/com/example/attendancetracker/UploadNotificationConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/app/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/app/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/app/src/main/java/com/example/attendancetracker/Reports.java" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/app/src/main/java/com/example/attendancetracker/Reports.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/app/src/main/res/layout/fragment_reports.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/app/src/main/res/layout/fragment_reports.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/app/src/main/res/layout/submit_report.xml" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/app/src/main/res/layout/submit_report.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/AttendanceTracker/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" afterPath="$PROJECT_DIR$/AttendanceTracker/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="27PfNRivE1kWXeLjU5QFB5PL68i" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="RunOnceActivity.cidr.known.project.marker" value="true" />
+    <property name="android.sdk.path" value="$USER_HOME$/AppData/Local/Android/Sdk" />
+    <property name="cidr.known.project.marker" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/AttendanceTracker" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="d8ed6b1c-2b3b-4b24-a415-b5c6928d2577" name="Default Changelist" comment="" />
+      <created>1649226602112</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1649226602112</updated>
+    </task>
+    <servers />
+  </component>
+</project>

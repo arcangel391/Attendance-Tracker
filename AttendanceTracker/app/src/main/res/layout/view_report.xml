@@ -20,14 +20,15 @@
         android:layout_marginTop="-80dp">
 
         <TextView
+            android:id="@+id/tvBack"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
             android:fontFamily="@font/fa_solid"
             android:text="\uf060"
-            android:textSize="25sp"
-            android:layout_marginTop="10dp"
-            android:layout_marginStart="20dp"
-            android:textColor="@color/white"/>
+            android:textColor="@color/white"
+            android:textSize="25sp" />
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -50,79 +51,94 @@
 
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:layout_marginStart="30dp"
         android:layout_marginTop="80dp"
-        android:layout_marginStart="30dp">
+        android:orientation="horizontal">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:fontFamily="@font/barlow_bold"
             android:text="Title:"
-            android:textSize="16sp"
-            android:fontFamily="@font/barlow_bold"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/etTime"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="TIME IN ERROR"
-            android:textSize="16sp"
             android:fontFamily="@font/barlow_bold"
-            android:textColor="@color/gray"/>
+            android:text="TIME IN ERROR"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <LinearLayout
-        android:layout_width="match_parent"
+        android:layout_width="368dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="10dp">
+        android:layout_marginBottom="10dp"
+        android:orientation="horizontal">
 
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginTop="15dp"
+            android:fontFamily="@font/barlow_bold"
             android:text="Date:"
-            android:textSize="16sp"
-            android:fontFamily="@font/barlow_bold"
-            android:textColor="@color/gray"/>
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
 
         <TextView
+            android:id="@+id/etDate"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="March 2, 2022"
-            android:textSize="16sp"
+            android:layout_marginTop="15dp"
             android:fontFamily="@font/barlow_bold"
-            android:textColor="@color/gray"/>
+            android:text="March 2, 2022"
+            android:textColor="@color/gray"
+            android:textSize="16sp" />
 
     </LinearLayout>
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Lorem Ipsum Lorem ipsum (Details Here)"
-        android:fontFamily="@font/barlow_regular"
-        android:textSize="16sp"
+        android:id="@+id/etDetails"
+        android:layout_width="345dp"
+        android:layout_height="274dp"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="10dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginRight="40dp"
+        android:layout_marginBottom="10dp"
+        android:fontFamily="@font/barlow_regular"
+        android:text="Lorem Ipsum Lorem ipsum (Details Here)"
+        android:textSize="17sp" />
 
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Attachment/s:"
-        android:fontFamily="@font/barlow_regular"
-        android:textSize="16sp"
+        android:layout_width="369dp"
+        android:layout_height="37dp"
         android:layout_marginStart="30dp"
-        android:layout_marginBottom="5dp"/>
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginBottom="5dp"
+        android:fontFamily="@font/barlow_regular"
+        android:text="GDrive Link:"
+        android:textSize="16sp" />
 
-    <ImageView
-        android:layout_width="350dp"
-        android:layout_height="350dp"
-        android:src="@mipmap/ic_launcher"
-        android:layout_gravity="center"/>
+    <TextView
+        android:id="@+id/etLink"
+        android:layout_width="370dp"
+        android:layout_height="62dp"
+        android:layout_marginLeft="30dp"
+        android:layout_marginTop="10dp"
+        android:fontFamily="@font/barlow_bold"
+        android:text=" GDrive Link"
+        android:textColor="@color/blue"
+        android:textSize="16sp" />
 
 </LinearLayout>
