@@ -1,14 +1,51 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
+    android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical">
 
     <LinearLayout
+        android:id="@+id/header"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical">
+        android:orientation="vertical"
+        android:transitionName="transition-header">
+
+        <ImageView
+            android:id="@+id/curve"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-200dp"
+            android:background="@drawable/curve_shape" />
+
+
+        <ImageView
+            android:id="@+id/imageView7"
+            android:layout_width="400dp"
+            android:layout_height="400dp"
+            android:layout_gravity="center"
+            android:layout_marginTop="-350dp"
+            app:srcCompat="@drawable/ic_undraw_online_ad_re_ol62" />
+
+        <TextView
+            android:id="@+id/txt_welcome"
+            android:layout_width="wrap_content"
+            android:layout_height="64dp"
+            android:layout_marginTop="-100dp"
+            android:fontFamily="@font/barlow_medium"
+            android:layout_gravity="center"
+            android:text="SIGN-UP"
+            android:textColor="#000000"
+            android:textSize="43sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_marginTop="-30dp">
 
         <LinearLayout
             android:layout_width="wrap_content"
@@ -227,6 +264,19 @@
                 android:contentDescription="@string/gender_value"
                 android:spinnerMode="dropdown" />
         </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:gravity="bottom"
+        android:paddingBottom="20dp">
+
+        <include
+            android:id="@+id/footer"
+            layout="@layout/sign_up_previous_next" />
 
     </LinearLayout>
 
