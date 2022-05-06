@@ -258,20 +258,14 @@
                         android:fontFamily="@font/barlow_regular"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="160dp"
-                    android:layout_height="47dp"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:background="@drawable/textbox_shape">
-
                     <Spinner
                         android:id="@+id/sp_gender"
-                        android:layout_width="match_parent"
+                        android:paddingStart="10dp"
+                        android:layout_width="160dp"
                         android:layout_height="48dp"
-                        android:contentDescription="@string/gender_value"
-                        android:spinnerMode="dropdown" />
-                </LinearLayout>
+                        android:background="@drawable/dropdown_box"
+                        android:spinnerMode="dialog" />
+
             </LinearLayout>
 
             <!-- CIVIL STATUS INPUT TEXT-->
@@ -303,20 +297,14 @@
                         android:fontFamily="@font/barlow_regular"/>
                 </LinearLayout>
 
-                <LinearLayout
-                    android:layout_width="160dp"
-                    android:layout_height="47dp"
-                    android:orientation="vertical"
-                    android:layout_gravity="center"
-                    android:background="@drawable/textbox_shape">
-
                     <Spinner
                         android:id="@+id/sp_civilstat"
-                        android:layout_width="match_parent"
+                        android:layout_width="160dp"
                         android:layout_height="48dp"
-                        android:contentDescription="@string/civilstat_value"
-                        android:spinnerMode="dropdown" />
-                </LinearLayout>
+                        android:paddingStart="10dp"
+                        android:background="@drawable/dropdown_box"
+                        android:spinnerMode="dialog" />
+
             </LinearLayout>
 
         </LinearLayout>

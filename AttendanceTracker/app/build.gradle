@@ -45,6 +45,7 @@ dependencies {
 
     /*FLOATING ACTION BUTTON*/
     implementation 'com.github.clans:fab:1.6.2'
+    implementation 'com.android.volley:volley:1.1.0'
 
     
 
