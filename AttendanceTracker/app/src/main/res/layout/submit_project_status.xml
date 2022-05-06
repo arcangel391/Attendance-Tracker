@@ -64,7 +64,7 @@
 
         <EditText
             android:background="@drawable/textbox_shape"
-            android:id="@+id/txt_password"
+            android:id="@+id/etdepartment"
             android:layout_width="350dp"
             android:layout_height="47dp"
             android:hint="PROJ-IT-29"
