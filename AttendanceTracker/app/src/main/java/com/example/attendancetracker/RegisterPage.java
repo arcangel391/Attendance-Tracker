@@ -57,7 +57,7 @@ public class RegisterPage extends AppCompatActivity {
                 }else{
                     next.setText("Sign-up");
                     next.setVisibility(View.VISIBLE);
-                    previous.setVisibility(View.INVISIBLE);
+                    previous.setVisibility(View.VISIBLE);
                     previous.setEnabled(false);
                     next.setEnabled(true);
 
