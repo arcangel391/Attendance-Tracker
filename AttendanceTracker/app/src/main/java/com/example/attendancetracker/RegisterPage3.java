@@ -9,6 +9,8 @@ import android.graphics.Bitmap;
 import android.net.Uri;
 import android.os.Bundle;
 import android.provider.MediaStore;
+import android.util.Base64;
+import android.util.Log;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
@@ -22,6 +24,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
 
+import java.io.ByteArrayOutputStream;
 import java.io.IOException;
 
 public class RegisterPage3 extends AppCompatActivity implements View.OnClickListener {
@@ -31,6 +34,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
     LinearLayout header;
     LinearLayout dotLayout, uploadImageLayout;
 
+    Boolean checkPermission= false;
     private static final int STORAGE_PERMISSION_CODE = 0701;
     private static final int PICK_IMAGE_REQUEST = 0173;
 
@@ -42,7 +46,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
         setContentView(R.layout.register_page3);
         getWindow().setEnterTransition(null);
 
-        requestStoragePermission();
+
         footer = findViewById(R.id.footer);
         previous = footer.findViewById(R.id.btnPrevious);
         next = footer.findViewById(R.id.btnNext);
@@ -87,6 +91,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
 
     private void requestStoragePermission(){
         if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+            checkPermission = true;
             return;
         }
 
@@ -99,7 +104,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
             if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
                 Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
             }else{
-                Toast.makeText(this, "Permission not granted", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "Please accept permission.", Toast.LENGTH_SHORT).show();
             }
         }
     }
@@ -112,6 +117,10 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
             filePath = data.getData();
             try{
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                Bitmap lastBitmap = null;
+                lastBitmap = bitmap;
+                String image = getStringImage(lastBitmap);
+                Log.d("image", image);
                 img2x2.setImageBitmap(bitmap);
                 img2x2.setVisibility(View.VISIBLE);
                 imageLayout.setVisibility(View.GONE);
@@ -123,18 +132,38 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
     }
 
     private void showFileChooser(){
-        Intent intent = new Intent();
-        intent.setType("image/*");
-        intent.setAction(Intent.ACTION_GET_CONTENT);
-        startActivityForResult(Intent.createChooser(intent, "Select a photo"), PICK_IMAGE_REQUEST);
+        Intent pickImageIntent = new Intent(Intent.ACTION_PICK,
+                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
+        pickImageIntent.setType("image/*");
+        pickImageIntent.putExtra("aspectX", 1);
+        pickImageIntent.putExtra("aspectY", 1);
+        pickImageIntent.putExtra("scale", true);
+        pickImageIntent.putExtra("outputFormat",
+                Bitmap.CompressFormat.JPEG.toString());
+        startActivityForResult(pickImageIntent, PICK_IMAGE_REQUEST);
     }
 
     @Override
     public void onClick(View v) {
 
-        if(v == uploadImageLayout){
-            showFileChooser();
+        if(v == uploadImageLayout || v == img2x2){
+            requestStoragePermission();
+            if(checkPermission){
+                showFileChooser();
+            }else{
+                requestStoragePermission();
+            }
+
         }
+
+    }
+
+    public String getStringImage(Bitmap bmp) {
+        ByteArrayOutputStream baos = new ByteArrayOutputStream();
+        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        byte[] imageBytes = baos.toByteArray();
+        String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
+        return encodedImage;
 
     }
 }

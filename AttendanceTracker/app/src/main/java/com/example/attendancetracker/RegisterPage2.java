@@ -65,6 +65,16 @@ public class RegisterPage2 extends AppCompatActivity implements View.OnClickList
 
         startDate.setOnClickListener(this);
         endDate.setOnClickListener(this);
+
+        String[] companyItems = {"Melham Construction Corporation", "Anafara", "Visvis"};
+        String[] departmentItems = {"Information Technology", "Accounting"};
+        ArrayAdapter aa = new ArrayAdapter(getApplicationContext(), R.layout.custom_spinner, companyItems);
+        aa.setDropDownViewResource(R.layout.custom_spinner_background);
+        company.setAdapter(aa);
+
+        ArrayAdapter bb = new ArrayAdapter(getApplicationContext(), R.layout.custom_spinner, departmentItems);
+        bb.setDropDownViewResource(R.layout.custom_spinner_background);
+        department.setAdapter(bb);
         getData();
 
 
@@ -109,15 +119,7 @@ public class RegisterPage2 extends AppCompatActivity implements View.OnClickList
             }
         });
 
-        String[] companyItems = {"Melham Construction Corporation", "Anafara", "Visvis"};
-        String[] departmentItems = {"Information Technology", "Accounting"};
-        ArrayAdapter aa = new ArrayAdapter(getApplicationContext(), R.layout.custom_spinner, companyItems);
-        aa.setDropDownViewResource(R.layout.custom_spinner_background);
-        company.setAdapter(aa);
 
-        ArrayAdapter bb = new ArrayAdapter(getApplicationContext(), R.layout.custom_spinner, departmentItems);
-        bb.setDropDownViewResource(R.layout.custom_spinner_background);
-        department.setAdapter(bb);
     }
 
     @Override
