@@ -135,9 +135,10 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
                     public void onResponse(String response) {
                         try{
                             JSONObject obj = new JSONObject(response);
+                            sharedPreferences.edit().clear().commit();
+                            getData();
                             Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
-                            editor.clear();
-                            editor.commit();
+
                         }catch(JSONException e){
                             e.printStackTrace();
                         }
@@ -146,6 +147,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
+
                         Toast.makeText(getApplicationContext(), error.getMessage(), Toast.LENGTH_LONG).show();
                     }
                 }
@@ -207,15 +209,14 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
             filePath = data.getData();
             try{
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
-                Bitmap lastBitmap = null;
-                lastBitmap = bitmap;
-                String image = getStringImage(lastBitmap);
-                storeImage = image;
-                Log.d("image", image);
+                storeImage = getStringImage(bitmap);
+                editor.putString("image", storeImage);
+                editor.commit();
                 img2x2.setImageBitmap(bitmap);
                 img2x2.setVisibility(View.VISIBLE);
                 imageLayout.setVisibility(View.GONE);
                 imageText.setVisibility(View.GONE);
+
             }catch (IOException e){
                 e.printStackTrace();
             }
@@ -223,15 +224,10 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
     }
 
     private void showFileChooser(){
-        Intent pickImageIntent = new Intent(Intent.ACTION_PICK,
-                android.provider.MediaStore.Images.Media.EXTERNAL_CONTENT_URI);
-        pickImageIntent.setType("image/*");
-        pickImageIntent.putExtra("aspectX", 1);
-        pickImageIntent.putExtra("aspectY", 1);
-        pickImageIntent.putExtra("scale", true);
-        pickImageIntent.putExtra("outputFormat",
-                Bitmap.CompressFormat.JPEG.toString());
-        startActivityForResult(pickImageIntent, PICK_IMAGE_REQUEST);
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(intent, PICK_IMAGE_REQUEST);
     }
 
     @Override
