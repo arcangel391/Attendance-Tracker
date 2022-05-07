@@ -116,6 +116,10 @@ public class RegisterPage extends AppCompatActivity {
         });
     }
 
-
-
+    @Override
+    protected void onDestroy() {
+        editor.clear();
+        editor.commit();
+        super.onDestroy();
+    }
 }

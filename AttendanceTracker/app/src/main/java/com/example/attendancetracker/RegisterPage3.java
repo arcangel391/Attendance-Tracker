@@ -1,30 +1,48 @@
 package com.example.attendancetracker;
 
+import android.Manifest;
 import android.app.ActivityOptions;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.graphics.Bitmap;
+import android.net.Uri;
 import android.os.Bundle;
+import android.provider.MediaStore;
 import android.util.Pair;
 import android.view.View;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.core.app.ActivityCompat;
+import androidx.core.content.ContextCompat;
 
-public class RegisterPage3 extends AppCompatActivity {
+import java.io.IOException;
+
+public class RegisterPage3 extends AppCompatActivity implements View.OnClickListener {
     View footer;
-    TextView previous, next;
-    ImageView dot3, dot4, dot1;
+    TextView previous, next, imageText;
+    ImageView dot3, dot4, dot1, img2x2, imageLayout;
     LinearLayout header;
-    LinearLayout dotLayout;
+    LinearLayout dotLayout, uploadImageLayout;
 
+    private static final int STORAGE_PERMISSION_CODE = 0701;
+    private static final int PICK_IMAGE_REQUEST = 0173;
+
+    private Uri filePath;
+    private Bitmap bitmap;
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.register_page3);
         getWindow().setEnterTransition(null);
 
+        requestStoragePermission();
         footer = findViewById(R.id.footer);
         previous = footer.findViewById(R.id.btnPrevious);
         next = footer.findViewById(R.id.btnNext);
@@ -39,6 +57,13 @@ public class RegisterPage3 extends AppCompatActivity {
         dot4 = footer.findViewById(R.id.dot4);
         dot3.setBackgroundTintList(getResources().getColorStateList(R.color.green));
         dot4.setBackgroundTintList(getResources().getColorStateList(R.color.sky));
+
+        imageLayout = findViewById(R.id.imageLayout);
+        imageText = findViewById(R.id.imageTextView);
+        uploadImageLayout = findViewById(R.id.uploadImageLayout);
+        img2x2 = findViewById(R.id.img2x2);
+        uploadImageLayout.setOnClickListener(this);
+        img2x2.setOnClickListener(this);
 
 
 
@@ -58,5 +83,58 @@ public class RegisterPage3 extends AppCompatActivity {
                 startActivity(intent, options.toBundle());
             }
         });
+    }
+
+    private void requestStoragePermission(){
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) == PackageManager.PERMISSION_GRANTED){
+            return;
+        }
+
+        ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.READ_EXTERNAL_STORAGE}, STORAGE_PERMISSION_CODE);
+    }
+
+    @Override
+    public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
+        if(requestCode == STORAGE_PERMISSION_CODE){
+            if(grantResults.length > 0 && grantResults[0] == PackageManager.PERMISSION_GRANTED){
+                Toast.makeText(this, "Permission granted", Toast.LENGTH_SHORT).show();
+            }else{
+                Toast.makeText(this, "Permission not granted", Toast.LENGTH_SHORT).show();
+            }
+        }
+    }
+
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, @Nullable Intent data) {
+        super.onActivityResult(requestCode, resultCode, data);
+
+        if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
+            filePath = data.getData();
+            try{
+                bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
+                img2x2.setImageBitmap(bitmap);
+                img2x2.setVisibility(View.VISIBLE);
+                imageLayout.setVisibility(View.GONE);
+                imageText.setVisibility(View.GONE);
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+        }
+    }
+
+    private void showFileChooser(){
+        Intent intent = new Intent();
+        intent.setType("image/*");
+        intent.setAction(Intent.ACTION_GET_CONTENT);
+        startActivityForResult(Intent.createChooser(intent, "Select a photo"), PICK_IMAGE_REQUEST);
+    }
+
+    @Override
+    public void onClick(View v) {
+
+        if(v == uploadImageLayout){
+            showFileChooser();
+        }
+
     }
 }

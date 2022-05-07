@@ -214,7 +214,10 @@
                     android:drawableEnd="@drawable/ic_calendar"
                     android:drawableTint="@color/gray"
                     android:fontFamily="@font/barlow_medium"
-                    android:hint="mm/dd/yyyy"
+                    android:hint="yyyy/mm/dd"
+                    android:cursorVisible="false"
+                    android:focusable="false"
+                    android:focusableInTouchMode="false"
                     android:paddingStart="15dp"
                     android:paddingEnd="10dp"
                     android:textSize="14sp" />
