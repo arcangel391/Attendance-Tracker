@@ -40,6 +40,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.IOException;
 import java.util.HashMap;
 import java.util.Map;
@@ -59,6 +60,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
     private Uri filePath;
     private Bitmap bitmap;
     String storeImage = "";
+    String fileName = "";
 
     SharedPreferences sharedPreferences;
     SharedPreferences.Editor editor;
@@ -95,7 +97,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
         googleDrive = findViewById(R.id.et_gdrive);
         discordName = findViewById(R.id.et_dcname);
 
-
+        getData();
 
         previous.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -120,10 +122,11 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
             @Override
             public void onClick(View v) {
                 insertDataToServer();
+
             }
         });
 
-        getData();
+
     }
 
     private void insertDataToServer(){
@@ -135,10 +138,14 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
                     public void onResponse(String response) {
                         try{
                             JSONObject obj = new JSONObject(response);
-                            sharedPreferences.edit().clear().commit();
-                            getData();
                             Toast.makeText(getApplicationContext(), obj.getString("message"), Toast.LENGTH_LONG).show();
-
+                            editor.clear().apply();
+                            googleDrive.setText("");
+                            discordName.setText("");
+                            img2x2.setImageBitmap(null);
+                            img2x2.setVisibility(View.GONE);
+                            imageLayout.setVisibility(View.VISIBLE);
+                            imageText.setVisibility(View.VISIBLE);
                         }catch(JSONException e){
                             e.printStackTrace();
                         }
@@ -156,6 +163,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
             protected Map<String, String> getParams() throws AuthFailureError {
                 Map<String, String> params  = new HashMap<>();
                 params.put("applicationID", appID);
+                params.put("email", sharedPreferences.getString("email", ""));
                 params.put("first_name", sharedPreferences.getString("first_name", ""));
                 params.put("middle_name", sharedPreferences.getString("middle_name", ""));
                 params.put("last_name", sharedPreferences.getString("last_name", ""));
@@ -207,6 +215,10 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
 
         if(requestCode == PICK_IMAGE_REQUEST && resultCode == RESULT_OK && data != null && data.getData() != null){
             filePath = data.getData();
+            /*String temp = filePath.getLastPathSegment();
+            File temp_file = new File(temp);
+            fileName = temp_file.getName();
+            Log.i("fileName", fileName);*/
             try{
                 bitmap = MediaStore.Images.Media.getBitmap(getContentResolver(), filePath);
                 storeImage = getStringImage(bitmap);
@@ -247,7 +259,7 @@ public class RegisterPage3 extends AppCompatActivity implements View.OnClickList
 
     public String getStringImage(Bitmap bmp) {
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
-        bmp.compress(Bitmap.CompressFormat.JPEG, 100, baos);
+        bmp.compress(Bitmap.CompressFormat.JPEG, 20, baos);
         byte[] imageBytes = baos.toByteArray();
         String encodedImage = Base64.encodeToString(imageBytes, Base64.DEFAULT);
         return encodedImage;
