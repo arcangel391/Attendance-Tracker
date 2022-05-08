@@ -126,6 +126,8 @@ public class MonitoringAdapter  extends RecyclerView.Adapter<MonitoringAdapter.M
                         @Override
                         public void onClick(View v) {
                             insertFileReport(txtDisplayName.getText().toString(),txtDisplayRole.getText().toString(), mTeam,txtReason.getText().toString(),mUser );
+                            Toast.makeText(context, "Successfully Reported", Toast.LENGTH_LONG).show();
+                            txtReason.setText("");
                         }
                     });
                     builder.setView(view);

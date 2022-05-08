@@ -32,8 +32,8 @@ import java.util.ArrayList;
 public class TeamMonitoring extends AppCompatActivity{
     private Button btnReport,btnMember,btnLeader,btnSubmitRep;
     private RecyclerView recyclerView2;
-    String uRlMember = "http://192.168.1.4/MCC-AttendanceTracker/v1/get_monitoringMember.php";
-    String uRlLeader = "http://192.168.1.4/MCC-AttendanceTracker/v1/get_monitoringLeader.php";
+    String uRlMember = "http://192.168.1.50/MCC-AttendanceTracker/v1/get_monitoringMember.php";
+    String uRlLeader = "http://192.168.1.50/MCC-AttendanceTracker/v1/get_monitoringLeader.php";
     private ArrayList<MonitoringModel> monitoringModelArrayList;
     private MonitoringAdapter adapter;
     private TextView txtDisplayName, txtDisplayRole;
@@ -118,7 +118,7 @@ public class TeamMonitoring extends AppCompatActivity{
                 Toast.makeText(TeamMonitoring.this , error.getMessage(), Toast.LENGTH_LONG).show();
             }
         });
-        RequestQueue requestQueue = Volley.newRequestQueue(TeamMonitoring.this .getApplicationContext());
+        RequestQueue requestQueue = Volley.newRequestQueue(TeamMonitoring.this.getApplicationContext());
         requestQueue.add(stringRequest);
     }
 
